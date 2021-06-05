@@ -1,0 +1,15 @@
+C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\bin\Debug\ETPro.exe.config
+C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\bin\Debug\ETPro.exe
+C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\bin\Debug\ETPro.pdb
+C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\obj\Debug\ETPro.csproj.AssemblyReference.cache
+C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\obj\Debug\MainWindow.g.cs
+C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\obj\Debug\App.g.cs
+C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\obj\Debug\ETPro_MarkupCompile.cache
+C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\obj\Debug\ETPro_MarkupCompile.lref
+C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\obj\Debug\MainWindow.baml
+C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\obj\Debug\ETPro.g.resources
+C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\obj\Debug\ETPro.Properties.Resources.resources
+C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\obj\Debug\ETPro.csproj.GenerateResource.cache
+C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\obj\Debug\ETPro.csproj.CoreCompileInputs.cache
+C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\obj\Debug\ETPro.exe
+C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\obj\Debug\ETPro.pdb

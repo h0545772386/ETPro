@@ -1,0 +1,324 @@
+﻿USE ETPro1
+GO
+
+CREATE TABLE [dbo].[Clients](
+	[ClntId] [int] IDENTITY(1000001,1) NOT NULL PRIMARY KEY,
+	[ClntIDN] [nvarchar](100) NULL,
+	[CompCode] [nvarchar](100) NULL,
+	[FullName] [nvarchar](200) NOT NULL,
+	[AliaseName] [nvarchar](200) NULL,
+	[ClntDesc] [nvarchar](200) NULL,
+	[City] [nvarchar](100) NULL,
+	[ZipCode] [nvarchar](100) NULL,
+	[Address1] [nvarchar](100) NULL,
+	[Address2] [nvarchar](100) NULL,
+	[Address3] [nvarchar](100) NULL,
+	[Worthy] [nvarchar](100) NOT NULL,
+	[OwnerCode] [int] NOT NULL DEFAULT 0,   -- if he has vehicle ( vehicle owner )
+	[Status] [nvarchar](100) NOT NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create unique index i1 on [Clients] ( [ClntId])
+
+CREATE TABLE [dbo].[ClientDesc](
+	[CDId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[ClntId] [int] NOT NULL DEFAULT 0,
+	[TName] [nvarchar](100) NULL,
+	[TValue] [nvarchar](700) NULL,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create  index i1 on [ClientDesc] ( [ClntId])
+
+CREATE TABLE [dbo].[ClientCommus](
+	[CCId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[ClntId] [int] NOT NULL DEFAULT 0,
+	[CommuType] [nvarchar](100) NULL,
+	[PersonName] [nvarchar](100) NULL,
+	[CommuValu] [nvarchar](100) NULL,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create  index i1 on [ClientCommus] ( [ClntId])
+
+
+
+CREATE TABLE [dbo].[Drivers](
+	[DrvId] [int] IDENTITY(90001,1) NOT NULL PRIMARY KEY,
+	[DrvIDN] [nvarchar](100) NULL,
+	[CompCode] [nvarchar](100) NULL,
+	[FullName] [nvarchar](200) NOT NULL,
+	[AliaseName] [nvarchar](200) NULL,
+	[DrvDesc] [nvarchar](200) NULL,
+	[City] [nvarchar](100) NULL,
+	[ZipCode] [nvarchar](100) NULL,
+	[Address1] [nvarchar](100) NULL,
+	[Address2] [nvarchar](100) NULL,
+	[Address3] [nvarchar](100) NULL,
+	[Worthy] [nvarchar](100) NOT NULL,
+	[OwnerCode] [int] NOT NULL DEFAULT 0,   -- if he has vehicle ( vehicle owner )
+	[PerHour] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[PerWaitHour] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[Status] [nvarchar](100) NOT NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create unique index i1 on [Drivers] ( [DrvId])
+
+CREATE TABLE [dbo].[DriverDesc](
+	[DId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[DrvId] [int] NOT NULL DEFAULT 0,
+	[TName] [nvarchar](100) NULL,
+	[TValue] [nvarchar](700) NULL,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create  index i1 on [DriverDesc] ( [DrvId])
+
+CREATE TABLE [dbo].[DriverLincs](
+	[DId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[DrvId] [int] NOT NULL DEFAULT 0,
+	[LncName] [nvarchar](100) NULL,
+	[LncText] [nvarchar](300) NULL,
+	[LncExpireAt] [int] NOT NULL DEFAULT 0,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create  index i1 on [DriverLincs] ( [DrvId])
+
+CREATE TABLE [dbo].[DriverCommus](
+	[DId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[DrvId] [int] NOT NULL DEFAULT 0,
+	[CommuType] [nvarchar](100) NULL,
+	[PersonName] [nvarchar](100) NULL,
+	[CommuValu] [nvarchar](100) NULL,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create  index i1 on [DriverCommus] ( [DrvId])
+
+
+CREATE TABLE [dbo].[Vehicles](
+	[VehId] [int] IDENTITY(90001,1) NOT NULL PRIMARY KEY,
+	[VehCode] [nvarchar](100) NULL,
+	[VehType] [nvarchar](200) NOT NULL,	
+	[NumPsngrs] [int] NOT NULL DEFAULT 0,
+	[ManufYear] [int] NOT NULL,
+	[Model] [nvarchar](200) NULL,
+	[Type] [nvarchar](200) NULL,
+	[Color] [nvarchar](200) NULL,
+	[LockCode] [nvarchar](100) NULL,
+	[DrvId] [int] NOT NULL DEFAULT 0,
+	[CurrentKM] [int] NOT NULL DEFAULT 0,           -- current kelometers
+	[NxtTimingAt] [int] NOT NULL,     -- kilometers
+	[NxtTreatmntAt] [int] NOT NULL,   -- kilometers
+	[NxtTreatmnt1At] [int] NOT NULL,   -- kilometers
+	[NxtTreatmnt2At] [int] NOT NULL,   -- kilometers
+	[NxtTreatmnt3At] [int] NOT NULL,   -- kilometers
+	[NxtTestAt] [int] NOT NULL,       -- YYYYMMDD
+	[NxtInsuranceAt] [int] NOT NULL,  -- YYYYMMDD
+	[ActivatDate] [int] NOT NULL,     -- YYYYMMDD
+    [BrakesDate] [int] NOT NULL,  -- YYYYMMDD
+    [WinterDate] [int] NOT NULL,  -- YYYYMMDD
+    [AdminDate] [int] NOT NULL ,  -- YYYYMMDD
+    [AdminDate1] [int] NOT NULL,  -- YYYYMMDD
+    [AdminDate2] [int] NOT NULL,  -- YYYYMMDD
+    [AdminDate3] [int] NOT NULL,  -- YYYYMMDD
+    [AdminDate4] [int] NOT NULL,  -- YYYYMMDD
+    [Date1] [int] NOT NULL,  -- YYYYMMDD  buy date
+    [Date2] [int] NOT NULL,  -- YYYYMMDD  in fleet 
+    [Date3] [int] NOT NULL,  -- YYYYMMDD 
+	[HasWIFI] [bit] NOT NULL,
+	[Worthy] [nvarchar](100) NOT NULL,	
+	[OwnerCode] [int] NOT NULL DEFAULT 0,   -- the vehicle owner  (if zero the vehicle is company ownered )
+	[Status] [nvarchar](100) NOT NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create unique index i1 on [Vehicles] ( [VehId])
+
+CREATE TABLE [dbo].[VehDesc](
+	[VId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[VehId] [int] NOT NULL DEFAULT 0,
+	[TName] [nvarchar](100) NULL,
+	[TValue] [nvarchar](700) NULL,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create  index i1 on [VehDesc] ( [VehId])
+
+CREATE TABLE [dbo].[VehLincs](
+	[VId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[VehId] [int] NOT NULL DEFAULT 0,
+	[LncName] [nvarchar](100) NULL,
+	[LncText] [nvarchar](300) NULL,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create  index i1 on [VehLincs] ( [VehId])
+
+
+CREATE TABLE [dbo].[Users](
+	[UserId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[UserName] [nvarchar](100) NOT NULL DEFAULT ' ',
+	[UserPass] [nvarchar](100) NOT NULL DEFAULT ' ',
+	[FullName] [nvarchar](200) NULL DEFAULT ' ',
+	[Admin] [bit] NOT NULL DEFAULT 0,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+	
+
+CREATE TABLE [dbo].[UserCommus](
+	[DId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[UserId] [int] NOT NULL DEFAULT 0,
+	[CommuType] [nvarchar](100) NULL,
+	[PersonName] [nvarchar](100) NULL,
+	[CommuValu] [nvarchar](100) NULL,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create  index i1 on [UserCommus] ( [UserId] )
+
+
+CREATE TABLE [dbo].[ClntOrders](
+	[OrdId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[OrdNum] [int] NOT NULL DEFAULT 0,
+	[OrdType] [nvarchar](100) NOT NULL,  -- איסוף  /  פיזור
+	[OrdTime] [nvarchar](100) NOT NULL,  -- בוקר /  צהריים  / לילה
+	[OrdPath] [nvarchar](100) NOT NULL,  -- ארוך /  קצר  / בינוני
+	[ClntId] [int] NOT NULL DEFAULT 0,
+	[DistanceKM] [int] NOT NULL DEFAULT 0,
+	[LenghtMinutes] [int] NOT NULL DEFAULT 0,   -- זמן נסיעה בדקות
+	[NumPsngrs] [int] NOT NULL DEFAULT 0,
+	[FromLocation] [nvarchar](200) NOT NULL,
+	[ToLocation] [nvarchar](200) NOT NULL,
+	[StartHour] [int] NOT NULL DEFAULT 0,
+	[AriveHour] [int] NOT NULL DEFAULT 0,
+	[FreeAtHour] [int] NOT NULL DEFAULT 0,
+	[TotalCost] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[DrvFee] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[VehFee] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[OthrCosts] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[NetProfit] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[CommitionFee] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[CommitionToId] [int] NOT NULL DEFAULT 0,
+	[OrdIsActive] [bit] NOT NULL,
+    [OrdIfExtraHours] [bit] NOT NULL,
+	[IsSunday] [bit] NOT NULL,
+	[IsMonday] [bit] NOT NULL,
+	[IsTuesday] [bit] NOT NULL,
+	[IsWednesday] [bit] NOT NULL,
+	[IsThursday] [bit] NOT NULL,
+	[IsFriday] [bit] NOT NULL,
+	[IsSaturday] [bit] NOT NULL,
+	[OrdDays] [nvarchar](100) NOT NULL,  -- Sunday Monday Tuesday Wednesday Thursday Friday Saturday
+	[OrdDays1111111] [nvarchar](100) NOT NULL,  -- examples  (1001001 => Sunday Wednesday Saturday)   (1000000 => Sunday)   (0011000  Tuesday Wednesday)   (0000001 Saturday)
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create  index i1 on [ClntOrders] ( [OrdId] )
+
+CREATE TABLE [dbo].[Passengers](
+	[PsngrId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[FullName] [nvarchar](200) NOT NULL,
+	[Phone1] [nvarchar](100) NULL,
+	[Phone2] [nvarchar](100) NULL,
+	[Phone3] [nvarchar](100) NULL,
+	[City] [nvarchar](100) NULL,
+	[ZipCode] [nvarchar](100) NULL,
+	[Address1] [nvarchar](100) NULL,
+	[Address2] [nvarchar](100) NULL,
+	[Address3] [nvarchar](100) NULL,
+	[Status] [nvarchar](100) NOT NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create unique index i1 on [Passengers] ( [PsngrId])
+
+
+CREATE TABLE [dbo].[DiaryColors](
+	[DryCId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[DryCCondition] [nvarchar](100) NULL,
+	[Color] [nvarchar](100) NULL,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+	
+CREATE TABLE [dbo].[DiaryShuttles](
+	[DryId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[OrdId] [int] NOT NULL DEFAULT 0,
+	[ShtlYear] [int] NOT NULL DEFAULT 0,         -- Shuttle year
+	[ShtlMonth] [int] NOT NULL DEFAULT 0,        -- Shuttle month
+	[ShtlDateYYYYMMDD] [int] NOT NULL DEFAULT 0, -- Shuttle date yyyymmdd
+	[ShtlDay] [nvarchar](100) NOT NULL,  -- day of week
+	[OrdType] [nvarchar](100) NOT NULL,  -- איסוף  /  פיזור
+	[OrdTime] [nvarchar](100) NOT NULL,  -- בוקר /  צהריים  / לילה
+	[OrdPath] [nvarchar](100) NOT NULL,  -- ארוך /  קצר  / בינוני
+	[ClntId] [int] NOT NULL DEFAULT 0,
+	[DistanceKM] [int] NOT NULL DEFAULT 0,
+	[LenghtMinutes] [int] NOT NULL DEFAULT 0,   -- זמן נסיעה בדקות
+	[NumPsngrs] [int] NOT NULL DEFAULT 0,
+	[FromLocation] [nvarchar](200) NOT NULL,
+	[ToLocation] [nvarchar](200) NOT NULL,
+	[StartHour] [int] NOT NULL DEFAULT 0,
+	[AriveHour] [int] NOT NULL DEFAULT 0,
+	[FreeAtHour] [int] NOT NULL DEFAULT 0,
+	[TotalCost] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[DrvFee] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[VehFee] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[OthrCosts] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[NetProfit] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[CommitionFee] [decimal](12, 2) NOT NULL DEFAULT 0,	
+	[ClntAddishtionCredit] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[ClntAddishtionCharge] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[DrvAddishtionCredit] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[DrvAddishtionCharge] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[CommitionToId] [int] NOT NULL DEFAULT 0,
+	[OrdIsActive] [bit] NOT NULL,
+    [OrdIfExtraHours] [bit] NOT NULL,
+	[PerHour] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[TotWaitMinutes] [int] NOT NULL DEFAULT 0,
+	[PerWaitHour] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[IsChecked] [bit] NOT NULL,   -- with driver
+	[IsApproved] [bit] NOT NULL,  -- with client
+	[IsFinished] [bit] NOT NULL,  -- shuttle was done by driver
+	[IsFeeChecked] [bit] NOT NULL,
+	[IsMarkedOk] [bit] NOT NULL,
+	[IsDoneOk] [bit] NOT NULL,
+	[IsPayed] [bit] NOT NULL,
+	[IsReadOnly] [bit] NOT NULL,
+	[DryText] [nvarchar](300) NULL,  -- 
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+

@@ -8,12 +8,16 @@ CREATE TABLE [dbo].[Clients](
 	[ClntType] [nvarchar](100) NULL,   -- לקוח מזדמן / לקוח קבוע / קבלן משנה   
 	[FullName] [nvarchar](200) NOT NULL,
 	[AliaseName] [nvarchar](200) NULL,
-	[ClntDesc] [nvarchar](200) NULL,
+	[ClntDesc] [nvarchar](300) NULL,
+	[Date1] [int] NOT NULL,  -- YYYYMMDD  
+	[Date2] [int] NOT NULL,  -- YYYYMMDD  
+	[Date3] [int] NOT NULL,  -- YYYYMMDD  
 	[City] [nvarchar](100) NULL,
 	[ZipCode] [nvarchar](100) NULL,
-	[Address1] [nvarchar](100) NULL,
-	[Address2] [nvarchar](100) NULL,
-	[Address3] [nvarchar](100) NULL,
+	[Address1] [nvarchar](200) NULL,
+	[Address2] [nvarchar](200) NULL,
+	[Address3] [nvarchar](200) NULL,
+	[Address4] [nvarchar](200) NULL,
 	[Worthy] [nvarchar](100) NOT NULL,
 	[OwnerCode] [int] NOT NULL DEFAULT 0,   -- if he has vehicle ( vehicle owner )
 	[Status] [nvarchar](100) NOT NULL,
@@ -27,7 +31,7 @@ CREATE TABLE [dbo].[ClientDesc](
 	[CDId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[ClntId] [int] NOT NULL DEFAULT 0,
 	[TName] [nvarchar](100) NULL,
-	[TValue] [nvarchar](700) NULL,
+	[TValue] [nvarchar](800) NULL,
 	[Status] [nvarchar](100) NULL,
 	[CreatedBy] [int] NOT NULL DEFAULT 0,
 	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
@@ -84,6 +88,19 @@ CREATE TABLE [dbo].[DriverDesc](
 	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
 create  index i1 on [DriverDesc] ( [DrvId])
 
+CREATE TABLE [dbo].[DriverCommus](
+	[DId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[DrvId] [int] NOT NULL DEFAULT 0,
+	[PersonName] [nvarchar](100) NULL,
+	[CommuType] [nvarchar](100) NULL,
+	[CommuValue] [nvarchar](200) NULL,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create  index i1 on [DriverCommus] ( [DrvId])
+
 CREATE TABLE [dbo].[DriverLincs](
 	[DId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[DrvId] [int] NOT NULL DEFAULT 0,
@@ -97,18 +114,26 @@ CREATE TABLE [dbo].[DriverLincs](
 	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
 create  index i1 on [DriverLincs] ( [DrvId])
 
-CREATE TABLE [dbo].[DriverCommus](
-	[DId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[DrvId] [int] NOT NULL DEFAULT 0,
-	[PersonName] [nvarchar](100) NULL,
-	[CommuType] [nvarchar](100) NULL,
-	[CommuValue] [nvarchar](200) NULL,
+CREATE TABLE [dbo].[Addresses](
+	[AdrsId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[ObjType] [nvarchar](100) NOT NULL,  -- Client Driver 
+	[ObjId] [int] NOT NULL DEFAULT 0,    -- ClntId DrvId
+	[Street] [nvarchar](100) NULL,
+	[Street1] [nvarchar](100) NULL,
+	[City] [nvarchar](100) NULL,
+	[ZipCode] [nvarchar](100) NULL,
+	[Address1] [nvarchar](100) NULL,
+	[Address2] [nvarchar](100) NULL,
+	[Address3] [nvarchar](100) NULL,
+	[Address4] [nvarchar](100) NULL,
 	[Status] [nvarchar](100) NULL,
 	[CreatedBy] [int] NOT NULL DEFAULT 0,
 	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
 	[ChangedBy] [int] NOT NULL DEFAULT 0,
 	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
-create  index i1 on [DriverCommus] ( [DrvId])
+create  index i1 on [Addresses] ( [AdrsId])
+create  index i2 on [Addresses] ( [ObjType])
+create  index i3 on [Addresses] ( [ObjId])
 
 
 CREATE TABLE [dbo].[Vehicles](
@@ -163,18 +188,6 @@ CREATE TABLE [dbo].[VehDesc](
 	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
 create  index i1 on [VehDesc] ( [VehId])
 
-CREATE TABLE [dbo].[VehLincs](
-	[VId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[VehId] [int] NOT NULL DEFAULT 0,
-	[LncName] [nvarchar](100) NULL,
-	[LncText] [nvarchar](300) NULL,
-	[Status] [nvarchar](100) NULL,
-	[CreatedBy] [int] NOT NULL DEFAULT 0,
-	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
-	[ChangedBy] [int] NOT NULL DEFAULT 0,
-	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
-create  index i1 on [VehLincs] ( [VehId])
-
 CREATE TABLE [dbo].[VehicleCommus](
 	[VId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[VehId] [int] NOT NULL DEFAULT 0,
@@ -188,6 +201,18 @@ CREATE TABLE [dbo].[VehicleCommus](
 	[ChangedBy] [int] NOT NULL DEFAULT 0,
 	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
 create  index i1 on [VehicleCommus] ( [VehId] )
+
+CREATE TABLE [dbo].[VehLincs](
+	[VId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[VehId] [int] NOT NULL DEFAULT 0,
+	[LncName] [nvarchar](100) NULL,
+	[LncText] [nvarchar](300) NULL,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create  index i1 on [VehLincs] ( [VehId])
 
 
 CREATE TABLE [dbo].[ClntOrders](
@@ -314,6 +339,25 @@ create index i1 on [DiaryShuttles] ( [ShtlYear])
 create index i2 on [DiaryShuttles] ( [ShtlMonth])
 create index i3 on [DiaryShuttles] ( [ShtlDateYYYYMMDD])
 create index i4 on [DiaryShuttles] ( [ClntId])
+
+CREATE TABLE [dbo].[DryShtlsPassengers](
+	[DSPId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[DryId] [int] NOT NULL DEFAULT 0,
+	[PsngrId] [int] NOT NULL DEFAULT 0,
+	[FullName] [nvarchar](200) NOT NULL,
+	[Phone1] [nvarchar](100) NULL,
+	[Phone2] [nvarchar](100) NULL,
+	[City] [nvarchar](100) NULL,
+	[Address1] [nvarchar](100) NULL,
+	[Address2] [nvarchar](100) NULL,
+	[Status] [nvarchar](100) NOT NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create index i1 on [DryShtlsPassengers] ( [DryId])
+create index i2 on [DryShtlsPassengers] ( [PsngrId])
+
 
 CREATE TABLE [dbo].[Reminders](
 	[RemId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,

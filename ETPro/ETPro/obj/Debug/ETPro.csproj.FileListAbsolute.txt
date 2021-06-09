@@ -45,3 +45,5 @@ C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\bin\Debug\de\PdfSharp.Ch
 C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\obj\Debug\App.baml
 C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\obj\Debug\ETPro.csproj.CopyComplete
 C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\obj\Debug\ETPro.csproj.AssemblyReference.cache
+C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\bin\Debug\Dapper.dll
+C:\Users\Hamzi AbuKhalla\source\repos\ETPro\ETPro\ETPro\bin\Debug\Dapper.xml

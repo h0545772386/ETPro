@@ -1,12 +1,31 @@
-﻿<Window x:Class="ETPro.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ETPro"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+﻿<mah:MetroWindow x:Class="ETPro.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                 xmlns:local="clr-namespace:ETPro"
+                 xmlns:properties="clr-namespace:ETPro.Properties"
+                 mc:Ignorable="d"
+                 Icon="Images/2.256x256 transparent.ico"
+                 FlowDirection="RightToLeft"
+                 FontSize="{Binding Source={x:Static properties:Settings.Default }, Path=AppFont}"
+                 FontWeight="Medium"
+                 FontFamily="Arial"
+                 ShowCloseButton="True"
+                 ShowMaxRestoreButton="False"
+                 ShowMinButton="True"
+                 WindowState="Maximized"
+                 ResizeMode="CanResizeWithGrip"
+                 WindowStartupLocation="CenterScreen"
+                 Loaded="MetroWindow_Loaded"
+                 ContentRendered="MetroWindow_ContentRendered"
+                 Title="ETPro"
+                 Height="768"
+                 Width="1024">
     <Grid>
-        
+        <TextBlock Text="GGGGGGGGGGGGGGGGGGG"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
     </Grid>
-</Window>
+</mah:MetroWindow>

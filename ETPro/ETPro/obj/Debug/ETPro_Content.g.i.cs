@@ -8,6 +8,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("db%20scripts.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/1.256x256%20transparent.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/1.256x256%20transparent.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/1.256x256.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/1.256x256.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/2.256x256%20transparent.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/2.256x256%20transparent.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/2.256x256.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/3.256x256%20transparent.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/3.256x256%20transparent.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/3.256x256.png")]
 
 

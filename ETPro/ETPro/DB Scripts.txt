@@ -5,6 +5,7 @@ CREATE TABLE [dbo].[Clients](
 	[ClntId] [int] IDENTITY(1000001,1) NOT NULL PRIMARY KEY,
 	[ClntIDN] [nvarchar](100) NULL,
 	[CompCode] [nvarchar](100) NULL,
+	[ClntType] [nvarchar](100) NULL,   -- לקוח מזדמן / לקוח קבוע / קבלן משנה   
 	[FullName] [nvarchar](200) NOT NULL,
 	[AliaseName] [nvarchar](200) NULL,
 	[ClntDesc] [nvarchar](200) NULL,
@@ -37,16 +38,15 @@ create  index i1 on [ClientDesc] ( [ClntId])
 CREATE TABLE [dbo].[ClientCommus](
 	[CCId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[ClntId] [int] NOT NULL DEFAULT 0,
-	[CommuType] [nvarchar](100) NULL,
 	[PersonName] [nvarchar](100) NULL,
-	[CommuValu] [nvarchar](100) NULL,
+	[CommuType] [nvarchar](100) NULL,
+	[CommuValue] [nvarchar](200) NULL,
 	[Status] [nvarchar](100) NULL,
 	[CreatedBy] [int] NOT NULL DEFAULT 0,
 	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
 	[ChangedBy] [int] NOT NULL DEFAULT 0,
 	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
 create  index i1 on [ClientCommus] ( [ClntId])
-
 
 
 CREATE TABLE [dbo].[Drivers](
@@ -100,9 +100,9 @@ create  index i1 on [DriverLincs] ( [DrvId])
 CREATE TABLE [dbo].[DriverCommus](
 	[DId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[DrvId] [int] NOT NULL DEFAULT 0,
-	[CommuType] [nvarchar](100) NULL,
 	[PersonName] [nvarchar](100) NULL,
-	[CommuValu] [nvarchar](100) NULL,
+	[CommuType] [nvarchar](100) NULL,
+	[CommuValue] [nvarchar](200) NULL,
 	[Status] [nvarchar](100) NULL,
 	[CreatedBy] [int] NOT NULL DEFAULT 0,
 	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
@@ -131,7 +131,7 @@ CREATE TABLE [dbo].[Vehicles](
 	[NxtTestAt] [int] NOT NULL,       -- YYYYMMDD
 	[NxtInsuranceAt] [int] NOT NULL,  -- YYYYMMDD
 	[ActivatDate] [int] NOT NULL,     -- YYYYMMDD
-    [BrakesDate] [int] NOT NULL,  -- YYYYMMDD
+    [BrakesDate] [int] NOT NULL,  -- YYYYMMDD  20210507
     [WinterDate] [int] NOT NULL,  -- YYYYMMDD
     [AdminDate] [int] NOT NULL ,  -- YYYYMMDD
     [AdminDate1] [int] NOT NULL,  -- YYYYMMDD
@@ -175,32 +175,19 @@ CREATE TABLE [dbo].[VehLincs](
 	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
 create  index i1 on [VehLincs] ( [VehId])
 
-
-CREATE TABLE [dbo].[Users](
-	[UserId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[UserName] [nvarchar](100) NOT NULL DEFAULT ' ',
-	[UserPass] [nvarchar](100) NOT NULL DEFAULT ' ',
-	[FullName] [nvarchar](200) NULL DEFAULT ' ',
-	[Admin] [bit] NOT NULL DEFAULT 0,
-	[Status] [nvarchar](100) NULL,
-	[CreatedBy] [int] NOT NULL DEFAULT 0,
-	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
-	[ChangedBy] [int] NOT NULL DEFAULT 0,
-	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
-	
-
-CREATE TABLE [dbo].[UserCommus](
-	[DId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[UserId] [int] NOT NULL DEFAULT 0,
-	[CommuType] [nvarchar](100) NULL,
+CREATE TABLE [dbo].[VehicleCommus](
+	[VId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[VehId] [int] NOT NULL DEFAULT 0,
+	[PersonRole] [nvarchar](100) NULL,
 	[PersonName] [nvarchar](100) NULL,
-	[CommuValu] [nvarchar](100) NULL,
+	[CommuType] [nvarchar](100) NULL,
+	[CommuValue] [nvarchar](200) NULL,
 	[Status] [nvarchar](100) NULL,
 	[CreatedBy] [int] NOT NULL DEFAULT 0,
 	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
 	[ChangedBy] [int] NOT NULL DEFAULT 0,
 	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
-create  index i1 on [UserCommus] ( [UserId] )
+create  index i1 on [VehicleCommus] ( [VehId] )
 
 
 CREATE TABLE [dbo].[ClntOrders](
@@ -292,6 +279,8 @@ CREATE TABLE [dbo].[DiaryShuttles](
 	[AriveHour] [int] NOT NULL DEFAULT 0,
 	[FreeAtHour] [int] NOT NULL DEFAULT 0,
 	[TotalCost] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[DrvId] [int] NOT NULL DEFAULT 0, 
+	[VehId] [int] NOT NULL DEFAULT 0,
 	[DrvFee] [decimal](12, 2) NOT NULL DEFAULT 0,
 	[VehFee] [decimal](12, 2) NOT NULL DEFAULT 0,
 	[OthrCosts] [decimal](12, 2) NOT NULL DEFAULT 0,
@@ -320,5 +309,160 @@ CREATE TABLE [dbo].[DiaryShuttles](
 	[CreatedBy] [int] NOT NULL DEFAULT 0,
 	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
 	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)	
+create index i1 on [DiaryShuttles] ( [ShtlYear])
+create index i2 on [DiaryShuttles] ( [ShtlMonth])
+create index i3 on [DiaryShuttles] ( [ShtlDateYYYYMMDD])
+create index i4 on [DiaryShuttles] ( [ClntId])
+
+CREATE TABLE [dbo].[Reminders](
+	[RemId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[ObjType] [nvarchar](100) NOT NULL,  -- Client Vehicle Driver 
+	[ObjId] [int] NOT NULL DEFAULT 0,    -- ClntId VehId DrvId
+	[PopUpAt_YYYYMMDDHHMM] [bigint] NOT NULL DEFAULT 0,
+	[RemText] [nvarchar](300) NULL,
+	[IsRecorsive] [bit] NOT NULL,
+	[RecorsivType] [nvarchar](100) NULL,
+	[Frequence] [nvarchar](100) NULL,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
 	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
 
+	   	
+CREATE TABLE [dbo].[Vacations](
+	[VacId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[ObjType] [nvarchar](100) NOT NULL,  -- Client Vehicle Driver 
+	[ObjId] [int] NOT NULL DEFAULT 0,    -- ClntId VehId DrvId
+	[StartAt_YYYYMMDDHHMM] [bigint] NOT NULL DEFAULT 0,
+	[EndAt_YYYYMMDDHHMM] [bigint] NOT NULL DEFAULT 0,
+	[VacText] [nvarchar](200) NULL,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create index i1 on [Vacations] ( [ObjType])
+create index i2 on [Vacations] ( [ObjId])
+create index i3 on [Vacations] ( [StartAt_YYYYMMDDHHMM])
+create index i4 on [Vacations] ( [EndAt_YYYYMMDDHHMM])
+
+
+CREATE TABLE [dbo].[EventCategs](
+	[ECId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[ObjType] [nvarchar](100) NOT NULL,  -- Client Vehicle Driver 
+	[MainCateg] [nvarchar](100) NOT NULL,
+	[ScndCateg] [nvarchar](100) NOT NULL,
+	[ThrdCateg] [nvarchar](100) NOT NULL,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+
+
+CREATE TABLE [dbo].[Events](
+	[EvntId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[ObjType] [nvarchar](100) NOT NULL,  -- Client Vehicle Driver 
+	[ObjId] [int] NOT NULL DEFAULT 0,    -- ClntId VehId DrvId
+	[EvntDate_YYYYMMDD] [int] NOT NULL DEFAULT 0,
+	[IsReminder] [bit] NOT NULL,
+	[PopUpAt_YYYYMMDDHHMM] [bigint] NOT NULL DEFAULT 0,
+	[EvntText] [nvarchar](300) NULL,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+
+
+CREATE TABLE [dbo].[Docs](
+	[DocId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[DocName] [nvarchar](100) NULL,
+	[ObjType] [nvarchar](100) NOT NULL,  -- Client Vehicle Driver 
+	[ObjId] [int] NOT NULL DEFAULT 0,    -- ClntId VehId DrvId
+	[DocCtg] [nvarchar](100) NOT NULL,
+	[DocText] [nvarchar](300) NULL,
+	[DocPath] [nvarchar](300) NOT NULL,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL,
+	[CreatedAt] [bigint] NOT NULL,
+	[ChangedBy] [int] NOT NULL,
+	[ChangedAt] [bigint] NOT NULL)
+
+CREATE TABLE [dbo].[Packages](
+	[PkgId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[PkgText] [nvarchar](200) NOT NULL,
+	[PkgWidth] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[PkgHeight] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[PkgWeight] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[PkgValue] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[ShippingPrice] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[ShippingDrvFee] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[ShippingVehFee] [decimal](12, 2) NOT NULL DEFAULT 0,
+	[PickDate_YYYYMMDD] [int] NOT NULL DEFAULT 0,
+	[PickAdrs][nvarchar](300) NOT NULL,
+	[DlvrDate_YYYYMMDD] [int] NOT NULL DEFAULT 0,
+	[DlvrAdrs][nvarchar](300) NOT NULL,
+	[PkgOwner] [nvarchar](300) NULL,
+	[PkgSender] [nvarchar](300) NULL,
+	[PkgReceiver] [nvarchar](300) NULL,
+	[PkgTrackCode] [nvarchar](100) NULL,
+	[DryId] [int] NOT NULL DEFAULT 0,   -- On what tirp was sent
+	[IsApproved] [bit] NOT NULL,  -- with client
+	[IsChecked] [bit] NOT NULL,   -- with driver
+	[IsPicked] [bit] NOT NULL,  -- shuttle was done by driver
+	[IsDelivered] [bit] NOT NULL,
+	[IsFinished] [bit] NOT NULL,
+	[IsDoneOk] [bit] NOT NULL,
+	[IsPayed] [bit] NOT NULL,
+	[IsReadOnly] [bit] NOT NULL,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL,
+	[CreatedAt] [bigint] NOT NULL,
+	[ChangedBy] [int] NOT NULL,
+	[ChangedAt] [bigint] NOT NULL)
+	
+CREATE TABLE [dbo].[PackageCommus](
+	[UPId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[PkgId] [int] NOT NULL DEFAULT 0,
+	[PersonRole] [nvarchar](100) NULL,  -- SENDER / Receiver
+	[PersonName] [nvarchar](100) NULL,
+	[CommuType] [nvarchar](100) NULL,
+	[CommuValue] [nvarchar](200) NULL,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create  index i1 on [PackageCommus] ( [PkgId] )
+
+
+CREATE TABLE [dbo].[Users](
+	[UsrId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[UsrName] [nvarchar](50) NOT NULL,
+	[UsrPass] [nvarchar](50) NOT NULL,
+	[FullName] [nvarchar](200) NULL,
+	[Email] [nvarchar](200) NULL,
+	[Phone] [nvarchar](200) NULL,
+	[Admin] [bit] NOT NULL,
+    [Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL,
+	[CreatedAt] [bigint] NOT NULL,
+	[ChangedBy] [int] NOT NULL,
+	[ChangedAt] [bigint] NOT NULL)
+		
+
+CREATE TABLE [dbo].[UserCommus](
+	[UCId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[UsrId] [int] NOT NULL DEFAULT 0,
+	[PersonName] [nvarchar](100) NULL,
+	[CommuType] [nvarchar](100) NULL,
+	[CommuValue] [nvarchar](200) NULL,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create  index i1 on [UserCommus] ( [UsrId] )

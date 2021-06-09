@@ -105,9 +105,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\Address.cs" />
     <Compile Include="Classes\Commu.cs" />
+    <Compile Include="Classes\PassengerCommu.cs" />
     <Compile Include="Classes\Status.cs" />
     <Compile Include="Classes\Worthy.cs" />
+    <Compile Include="Classes\Reminder.cs" />
+    <Compile Include="Classes\User.cs" />
+    <Compile Include="Classes\UserCommu.cs" />
+    <Compile Include="Classes\Vacation.cs" />
+    <Compile Include="Classes\VehDesc.cs" />
+    <Compile Include="Classes\Vehicle.cs" />
+    <Compile Include="Classes\VehicleCommu.cs" />
+    <Compile Include="Classes\VehLinc.cs" />
     <Page Include="Dictionary1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -120,12 +130,30 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\Client.cs" />
+    <Compile Include="Classes\ClientCommu.cs" />
+    <Compile Include="Classes\ClientDesc.cs" />
+    <Compile Include="Classes\ClntOrder.cs" />
+    <Compile Include="Classes\DiaryColor.cs" />
+    <Compile Include="Classes\DiaryShuttle.cs" />
+    <Compile Include="Classes\Doc.cs" />
+    <Compile Include="Classes\Driver.cs" />
+    <Compile Include="Classes\DriverCommu.cs" />
+    <Compile Include="Classes\DriverDesc.cs" />
+    <Compile Include="Classes\DriverLinc.cs" />
+    <Compile Include="Classes\DryShtlsPassenger.cs" />
+    <Compile Include="Classes\Event.cs" />
+    <Compile Include="Classes\EventCateg.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Model1.cs" />
+    <Compile Include="Classes\Package.cs" />
+    <Compile Include="Classes\PackageCommu.cs" />
+    <Compile Include="Classes\Passenger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

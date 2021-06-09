@@ -274,6 +274,22 @@ CREATE TABLE [dbo].[Passengers](
 create unique index i1 on [Passengers] ( [PsngrId])
 
 
+CREATE TABLE [dbo].[PassengerCommus](
+	[PCId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[PsngrId] [int] NOT NULL DEFAULT 0,
+	[PersonRole] [nvarchar](100) NULL,  -- SENDER / Receiver
+	[PersonName] [nvarchar](100) NULL,
+	[CommuType] [nvarchar](100) NULL,
+	[CommuValue] [nvarchar](200) NULL,
+	[Status] [nvarchar](100) NULL,
+	[CreatedBy] [int] NOT NULL DEFAULT 0,
+	[CreatedAt] [bigint] NOT NULL DEFAULT 0,
+	[ChangedBy] [int] NOT NULL DEFAULT 0,
+	[ChangedAt] [bigint] NOT NULL DEFAULT 0)
+create  index i1 on [PassengerCommus] ( [PsngrId] )
+
+
+
 CREATE TABLE [dbo].[DiaryColors](
 	[DryCId] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[DryCCondition] [nvarchar](100) NULL,

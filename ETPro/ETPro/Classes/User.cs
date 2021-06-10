@@ -43,12 +43,16 @@ namespace ETPro
 
 
         [NotMapped]
-        public List<DriverCommu> LCommus { get; set; }
+        public List<Address> LAdrs { get; set; }
+
+        [NotMapped]
+        public List<UserCommu> LCommus { get; set; }
 
 
         public User()
         {
-            LCommus = new List<DriverCommu>();
+            LAdrs = new List<Address>();
+            LCommus = new List<UserCommu>();
         }
     }
 }

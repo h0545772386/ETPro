@@ -102,14 +102,14 @@ namespace ETPro
         public List<VehDesc> LDescs { get; set; }
 
         [NotMapped]
-        public List<DriverCommu> LCommus { get; set; }
+        public List<VehicleCommu> LCommus { get; set; }
 
 
         public Vehicle()
         {
             LLincs = new List<VehLinc>();
             LDescs = new List<VehDesc>();
-            LCommus = new List<DriverCommu>();
+            LCommus = new List<VehicleCommu>();
         }
     }
 }

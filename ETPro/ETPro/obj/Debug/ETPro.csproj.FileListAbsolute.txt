@@ -102,4 +102,5 @@ E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\ETPro.csproj.CoreCompileInpu
 E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\ETPro.csproj.CopyComplete
 E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\AddressWindow.g.cs
 E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\AddressWindow.baml
-E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\ETPro.csprojAssemblyReference.cache
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\ClientWindow.g.cs
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\ClientWindow.baml

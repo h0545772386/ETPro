@@ -38,10 +38,18 @@ namespace ETPro
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            UserWindow userWindow = new UserWindow();
-            userWindow.ShowDialog();
-            //AddressWindow addressWindow = new AddressWindow();
-            //addressWindow.ShowDialog();
+            if (sender is Button b)
+            {
+                Window window=null;
+                string win = b.Content.ToString();
+                switch (win)
+                {
+                    case "UserWindow":window = new UserWindow();break;
+                    case "AddressWindow": window = new AddressWindow(); break;
+                    case "ClientWindow": window = new ClientWindow(); break;
+                }
+                window?.ShowDialog();
+            }
         }
     }
 }

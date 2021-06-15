@@ -1,4 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:properties="clr-namespace:ETPro.Properties"
                     xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <SolidColorBrush x:Key="blue1" Color="#2196f5"></SolidColorBrush>
@@ -114,6 +115,18 @@
         <Setter Property="Background" Value="Transparent"></Setter>
         <Setter Property="Foreground" Value="Gray"></Setter>
         <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+    </Style>
+
+    <Style x:Key="defWindow" TargetType="{x:Type mah:MetroWindow}">
+        <Setter Property="Icon" Value="Images/2.256x256 transparent.ico"></Setter>
+        <Setter Property="FlowDirection" Value="RightToLeft"></Setter>
+        <Setter Property="FontSize" Value="{Binding Source={x:Static properties:Settings.Default }, Path=AppFont}"></Setter>
+        <Setter Property="FontWeight" Value="Medium"></Setter>
+        <Setter Property="FontFamily" Value="Arial"></Setter>
+        <Setter Property="ShowCloseButton" Value="True"></Setter>
+        <Setter Property="ShowMaxRestoreButton" Value="False"></Setter>
+        <Setter Property="ShowMinButton" Value="True"></Setter>
+        <Setter Property="ResizeMode" Value="CanResizeWithGrip"></Setter>
     </Style>
 
     <!-- ScrollViewer  -->

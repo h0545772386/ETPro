@@ -1,0 +1,28 @@
+﻿<mah:MetroWindow x:Class="ETPro.ClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:properties="clr-namespace:ETPro.Properties"
+        xmlns:local="clr-namespace:ETPro"
+        mc:Ignorable="d"
+       Style="{StaticResource defWindow}"
+        WindowStartupLocation="CenterScreen"
+        Title="ClientWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="80"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition x:Name="ContentRow" MaxHeight="700"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition MinHeight="80"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="40"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <local:UCBack Background="AliceBlue"  Grid.Row="1"    Grid.ColumnSpan="5"  Grid.RowSpan="3"></local:UCBack>
+    </Grid>
+</mah:MetroWindow>

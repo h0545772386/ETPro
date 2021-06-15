@@ -121,6 +121,9 @@
     <Compile Include="Classes\Vehicle.cs" />
     <Compile Include="Classes\VehicleCommu.cs" />
     <Compile Include="Classes\VehLinc.cs" />
+    <Compile Include="ClientWindow.xaml.cs">
+      <DependentUpon>ClientWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UCBack.xaml.cs">
       <DependentUpon>UCBack.xaml</DependentUpon>
     </Compile>
@@ -128,6 +131,10 @@
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="AddressWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

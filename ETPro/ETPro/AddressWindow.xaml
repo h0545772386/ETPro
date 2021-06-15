@@ -9,12 +9,12 @@
         mc:Ignorable="d"
        Style="{StaticResource defWindow}"
         WindowStartupLocation="CenterScreen"
-        Title="AddressWindow" Height="800" Width="600" SizeChanged="MetroWindow_SizeChanged">
+        Title="AddressWindow" Height="1000" Width="600" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition MinHeight="80"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
-            <RowDefinition x:Name="ContentRow" MaxHeight="700"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition MinHeight="80"></RowDefinition>
         </Grid.RowDefinitions>
@@ -24,7 +24,7 @@
             <ColumnDefinition Width="40"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <local:UCBack Background="AliceBlue"  Grid.Row="1"    Grid.ColumnSpan="5"  Grid.RowSpan="3"></local:UCBack>
-        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="3" Height="80" VerticalAlignment="Bottom">
+        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="3" >
             <Button  BorderThickness="0"  Style="{StaticResource defButton}"   >
                 <StackPanel Orientation="Horizontal">
                     <TextBlock  Text="{x:Static properties:Resources.Save}" ></TextBlock>
@@ -38,38 +38,23 @@
                 </StackPanel>
             </Button>
         </StackPanel>
-
-        <ScrollViewer Style="{StaticResource for_scrollviewer}" Grid.Row="2" Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
-            <Grid  Margin="0,0,10,0">
-                <!--<Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>-->
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                </Grid.RowDefinitions>
-                <StackPanel Orientation="Vertical"  >
-                    <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.City}" />
-                    <TextBox ></TextBox>
-                    <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.Street}" />
-                    <TextBox ></TextBox>
-                    <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.Street1}" />
-                    <TextBox ></TextBox>
-                    <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.ZipCode}" />
-                    <TextBox ></TextBox>
-                </StackPanel>
-                <StackPanel Grid.Row="1" Orientation="Vertical" Grid.ColumnSpan="2">
-                    <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.Address1}" Width="200" />
-                    <TextBox ></TextBox>
-                    <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.Address2}" Width="200" />
-                    <TextBox ></TextBox>
-                    <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.Address3}" Width="200" />
-                    <TextBox ></TextBox>
-                    <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.Address4}" Width="200" />
-                    <TextBox ></TextBox>
-                </StackPanel>
-            </Grid>
-        </ScrollViewer>
+        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="1" >
+            <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.City}"/>
+            <TextBox ></TextBox>
+            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.Street}"/>
+            <TextBox ></TextBox>
+            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.Street1}"/>
+            <TextBox ></TextBox>
+            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.ZipCode}" />
+            <TextBox ></TextBox>
+            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.Address1}"/>
+            <TextBox ></TextBox>
+            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.Address2}"/>
+            <TextBox ></TextBox>
+            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.Address3}" />
+            <TextBox ></TextBox>
+            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.Address4}" />
+            <TextBox ></TextBox>
+        </StackPanel>
     </Grid>
 </mah:MetroWindow>

@@ -14,11 +14,25 @@
         <Setter Property="FontFamily" Value="Arial"></Setter>
         <Setter Property="FontWeight" Value="Medium"></Setter>
     </Style>
+    <Style TargetType="PasswordBox">
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="FontSize" Value="12"></Setter>
+        <Setter Property="FontFamily" Value="Arial"></Setter>
+        <Setter Property="FontWeight" Value="Medium"></Setter>
+        <Setter Property="Height" Value="40"></Setter>
+    </Style>
     <Style x:Key="defIcoTextblock" TargetType="TextBlock">
         <Setter Property="VerticalAlignment" Value="Center"></Setter>
         <Setter Property="FontSize" Value="20"></Setter>
         <Setter Property="Margin" Value="10,0"></Setter>
         <Setter Property="FontFamily" Value="Segoe MDL2 Assets"></Setter>
+    </Style>
+    <Style TargetType="{x:Type mah:DateTimePicker}">
+        <Setter Property="Height" Value="40"></Setter>
+        <Setter Property="FontSize" Value="12"></Setter>
+        <Setter Property="FontFamily" Value="Arial"></Setter>
+        <Setter Property="FontWeight" Value="Medium"></Setter>
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
     </Style>
     <Style  TargetType="TextBox">
         <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
@@ -357,6 +371,70 @@
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--Combox style-->
+    <ControlTemplate x:Key="ComboBoxTextBox" TargetType="{x:Type TextBox}" >
+        <Border x:Name="PART_ContentHost" Focusable="False" Background="Black"  />
+    </ControlTemplate>
+    <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="ToggleButton">
+        <Border BorderBrush="{TemplateBinding Background}" BorderThickness="1" CornerRadius="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="0"/>
+                    <ColumnDefinition Width="30" />
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" BorderThickness="1,1,0,1" Background="White" BorderBrush="DarkGray" />
+                <Border Grid.Column="1" Background="{StaticResource blue1}" Margin="0,3"/>
+                <Border Grid.Column="2"  Cursor="Hand" Background="{StaticResource  blue1}"  />
+                <!--<Path x:Name="Arrow" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Data="M 0 0 L 4 4 L 8 0 Z" Margin="16,16,10,10" Stretch="Fill" Fill="#2c303c" />-->
+                <Path Name="PathFill" Grid.Column="2" Fill="White" Width="8" Height="8" StrokeThickness="0" Data="M5,0 L10,10 L0,10 z" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="180"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+    <Style  TargetType="ComboBox">
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="FontSize" Value="12"></Setter>
+        <Setter Property="FontFamily" Value="Arial"></Setter>
+        <Setter Property="FontWeight" Value="Medium"></Setter>
+        <Setter Property="Height" Value="40"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid>
+                        <!-- ToggleButton 已数据绑定到 ComboBox 本身以切换 IsDropDownOpen -->
+                        <ToggleButton Grid.Column="2" Background="{TemplateBinding Background}" Template="{DynamicResource ComboBoxToggleButton}" x:Name="ToggleButton" Focusable="false" IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press"/>
+                        <ContentPresenter  HorizontalAlignment="Left" Margin="3,3,23,3" x:Name="ContentSite"  VerticalAlignment="Center" Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" IsHitTestVisible="False"/>
+                        <!-- 必须将 TextBox 命名为 PART_EditableTextBox，否则 ComboBox 将无法识别它 -->
+                        <TextBox  Visibility="Hidden" Template="{DynamicResource ComboBoxTextBox}" HorizontalAlignment="Left" Margin="3,3,23,3" x:Name="PART_EditableTextBox" Style="{x:Null}" VerticalAlignment="Center" Focusable="True" Background="{TemplateBinding Background}"  IsReadOnly="{TemplateBinding IsReadOnly}"/>
+                        <!-- Popup 可显示 ComboBox 中的项列表。IsOpen 已数据绑定到通过 ComboBoxToggleButton 来切换的 IsDropDownOpen -->
+                        <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" AllowsTransparency="True" PopupAnimation="Slide">
+                            <Grid MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
+                                <Border x:Name="DropDownBorder"  BorderThickness="1"/>
+                                <ScrollViewer Margin="4,3,4,3" SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+                                    <!-- StackPanel 用于显示子级，方法是将 IsItemsHost 设置为 True -->
+                                    <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" Background="{TemplateBinding Background}" />
+                                </ScrollViewer>
+                            </Grid>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled"  Value="false">
+                            <Setter Property="Opacity"  Value="0.5"></Setter>
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

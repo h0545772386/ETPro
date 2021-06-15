@@ -124,6 +124,15 @@ namespace ETPro.Properties {
         }
         
         /// <summary>
+        ///   查找类似 AliaseName 的本地化字符串。
+        /// </summary>
+        public static string AliaseName {
+            get {
+                return ResourceManager.GetString("AliaseName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 BaseInfo 的本地化字符串。
         /// </summary>
         public static string BaseInfo {
@@ -151,6 +160,33 @@ namespace ETPro.Properties {
         }
         
         /// <summary>
+        ///   查找类似 Client Desc 的本地化字符串。
+        /// </summary>
+        public static string ClntDesc {
+            get {
+                return ResourceManager.GetString("ClntDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Client IDN 的本地化字符串。
+        /// </summary>
+        public static string ClntIDN {
+            get {
+                return ResourceManager.GetString("ClntIDN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Client Type 的本地化字符串。
+        /// </summary>
+        public static string ClntType {
+            get {
+                return ResourceManager.GetString("ClntType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Communications 的本地化字符串。
         /// </summary>
         public static string Communications {
@@ -160,11 +196,47 @@ namespace ETPro.Properties {
         }
         
         /// <summary>
+        ///   查找类似 CompCode 的本地化字符串。
+        /// </summary>
+        public static string CompCode {
+            get {
+                return ResourceManager.GetString("CompCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 ConfirmPass 的本地化字符串。
         /// </summary>
         public static string ConfirmPass {
             get {
                 return ResourceManager.GetString("ConfirmPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Date1 的本地化字符串。
+        /// </summary>
+        public static string Date1 {
+            get {
+                return ResourceManager.GetString("Date1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Date2 的本地化字符串。
+        /// </summary>
+        public static string Date2 {
+            get {
+                return ResourceManager.GetString("Date2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Date3 的本地化字符串。
+        /// </summary>
+        public static string Date3 {
+            get {
+                return ResourceManager.GetString("Date3", resourceCulture);
             }
         }
         

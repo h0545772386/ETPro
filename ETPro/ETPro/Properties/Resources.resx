@@ -138,6 +138,9 @@
   <data name="Admin" xml:space="preserve">
     <value>Admin</value>
   </data>
+  <data name="AliaseName" xml:space="preserve">
+    <value>AliaseName</value>
+  </data>
   <data name="BaseInfo" xml:space="preserve">
     <value>BaseInfo</value>
   </data>
@@ -147,11 +150,32 @@
   <data name="City" xml:space="preserve">
     <value>City</value>
   </data>
+  <data name="ClntDesc" xml:space="preserve">
+    <value>Client Desc</value>
+  </data>
+  <data name="ClntIDN" xml:space="preserve">
+    <value>Client IDN</value>
+  </data>
+  <data name="ClntType" xml:space="preserve">
+    <value>Client Type</value>
+  </data>
   <data name="Communications" xml:space="preserve">
     <value>Communications</value>
   </data>
+  <data name="CompCode" xml:space="preserve">
+    <value>CompCode</value>
+  </data>
   <data name="ConfirmPass" xml:space="preserve">
     <value>ConfirmPass</value>
+  </data>
+  <data name="Date1" xml:space="preserve">
+    <value>Date1</value>
+  </data>
+  <data name="Date2" xml:space="preserve">
+    <value>Date2</value>
+  </data>
+  <data name="Date3" xml:space="preserve">
+    <value>Date3</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>

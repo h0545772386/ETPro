@@ -9,12 +9,12 @@
         mc:Ignorable="d"
        Style="{StaticResource defWindow}"
         WindowStartupLocation="CenterScreen"
-        Title="ClientWindow" Height="450" Width="800">
+        Title="ClientWindow" Height="700" Width="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition MinHeight="80"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
-            <RowDefinition x:Name="ContentRow" MaxHeight="700"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition MinHeight="80"></RowDefinition>
         </Grid.RowDefinitions>
@@ -24,5 +24,92 @@
             <ColumnDefinition Width="40"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <local:UCBack Background="AliceBlue"  Grid.Row="1"    Grid.ColumnSpan="5"  Grid.RowSpan="3"></local:UCBack>
+        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="3"  >
+            <Button  BorderThickness="0"  Style="{StaticResource defButton}"   >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Text="{x:Static properties:Resources.Save}" ></TextBlock>
+                    <TextBlock    FontFamily="Segoe MDL2 Assets"   ToolTip="{x:Static properties:Resources.Cancel}" Text="&#xE792;" FontSize="20" Margin="10,0" />
+                </StackPanel>
+            </Button>
+            <Button  BorderThickness="0"  Style="{StaticResource defButton}"  Margin="10,0">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Text="{x:Static properties:Resources.Cancel}" ></TextBlock>
+                    <TextBlock    FontFamily="Segoe MDL2 Assets"   ToolTip="{x:Static properties:Resources.Cancel}" Text="&#xED60;" FontSize="20" Margin="10,0" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <StackPanel  Grid.Row="2" Grid.Column="1" Orientation="Vertical">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical"  Margin="0,0,10,0">
+                    <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.FullName}"/>
+                    <TextBox></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Grid.Column="1"  Margin="10,0,0,0">
+                    <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.AliaseName}" />
+                    <TextBox ></TextBox>
+                </StackPanel>
+            </Grid>
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical" Margin="0,0,10,0">
+                    <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.ClntIDN}"/>
+                    <TextBox ></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Grid.Column="1"  Margin="10,0,0,0">
+                    <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.ClntType}"/>
+                    <ComboBox>
+                        <ComboBoxItem Content="קבלן משנה"></ComboBoxItem>
+                        <ComboBoxItem Content="לקוח קבוע"></ComboBoxItem>
+                        <ComboBoxItem Content="לקוח מזדמן"></ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </Grid>
+            <StackPanel Orientation="Vertical">
+                <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.ClntDesc}"/>
+                <TextBox Height="80"></TextBox>
+            </StackPanel>
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical"  Margin="0,0,5,0">
+                    <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.Date1}"/>
+                    <mah:DateTimePicker></mah:DateTimePicker>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Grid.Column="1" Margin="0,0,5,0">
+                    <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.Date2}"/>
+                    <mah:DateTimePicker></mah:DateTimePicker>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Grid.Column="2" >
+                    <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.Date3}"/>
+                    <mah:DateTimePicker></mah:DateTimePicker>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" >
+            <Button x:Name="titalAddress" Style="{StaticResource defButton}"    >
+                <StackPanel  Orientation="Horizontal" >
+                    <TextBlock  Text="{x:Static properties:Resources.Addresses}" VerticalAlignment="Center" ></TextBlock>
+                    <TextBlock Style="{StaticResource defIcoTextblock}" Text="&#xE707;" ></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button    Style="{StaticResource defButton}"     Margin="10,0">
+                <StackPanel  Orientation="Horizontal" >
+                    <TextBlock Text="{x:Static properties:Resources.Communications}" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Style="{StaticResource defIcoTextblock}" Text="&#xE780;" ></TextBlock>
+                </StackPanel>
+            </Button>
+
+        </StackPanel>
     </Grid>
 </mah:MetroWindow>

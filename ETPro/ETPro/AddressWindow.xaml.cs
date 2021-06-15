@@ -25,12 +25,5 @@ namespace ETPro
             InitializeComponent();
         }
 
-        private void MetroWindow_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            double height = this.ActualHeight - 210;
-            //height = height > 650 ? 650 : height;
-            ContentRow.Height = new GridLength(height);
-            System.Diagnostics.Debug.WriteLine($"{this.ActualHeight} ,{height}");
-        }
     }
 }

@@ -35,5 +35,13 @@ namespace ETPro
         {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            UserWindow userWindow = new UserWindow();
+            userWindow.ShowDialog();
+            //AddressWindow addressWindow = new AddressWindow();
+            //addressWindow.ShowDialog();
+        }
     }
 }

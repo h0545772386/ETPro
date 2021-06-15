@@ -24,8 +24,9 @@
                  Height="768"
                  Width="1024">
     <Grid>
-        <TextBlock Text="GGGGGGGGGGGGGGGGGGG"
+        <!--<TextBlock Text="GGGGGGGGGGGGGGGGGGG"
                    VerticalAlignment="Center"
-                   HorizontalAlignment="Center"/>
+                   HorizontalAlignment="Center"/>-->
+        <Button Content="UserWindow" Width="100" Height="40" Click="Button_Click"></Button>
     </Grid>
 </mah:MetroWindow>

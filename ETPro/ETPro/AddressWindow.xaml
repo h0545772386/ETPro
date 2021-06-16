@@ -9,14 +9,14 @@
         mc:Ignorable="d"
        Style="{StaticResource defWindow}"
         WindowStartupLocation="CenterScreen"
-        Title="AddressWindow" Height="1000" Width="600" >
+        Title="AddressWindow" Height="850" Width="600" >
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition MinHeight="80"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition MinHeight="80"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40"></ColumnDefinition>
@@ -24,7 +24,7 @@
             <ColumnDefinition Width="40"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <local:UCBack Background="AliceBlue"  Grid.Row="1"    Grid.ColumnSpan="5"  Grid.RowSpan="3"></local:UCBack>
-        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="3" >
+        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,5">
             <Button  BorderThickness="0"  Style="{StaticResource defButton}"   >
                 <StackPanel Orientation="Horizontal">
                     <TextBlock  Text="{x:Static properties:Resources.Save}" ></TextBlock>

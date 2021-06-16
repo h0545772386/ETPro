@@ -9,22 +9,22 @@
         mc:Ignorable="d"
        Style="{StaticResource defWindow}"
         WindowStartupLocation="CenterScreen"
-        Title="ClientWindow" Height="700" Width="600">
+        Title="ClientWindow" Height="580" Width="600">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition MinHeight="80"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition MinHeight="80"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="40"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <local:UCBack Background="AliceBlue"  Grid.Row="1"    Grid.ColumnSpan="5"  Grid.RowSpan="3"></local:UCBack>
-        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="3"  >
+        <local:UCBack Background="AliceBlue"  Grid.Row="1"  Grid.ColumnSpan="5"  Grid.RowSpan="3"></local:UCBack>
+        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="3"  Margin="0,5"  >
             <Button  BorderThickness="0"  Style="{StaticResource defButton}"   >
                 <StackPanel Orientation="Horizontal">
                     <TextBlock  Text="{x:Static properties:Resources.Save}" ></TextBlock>
@@ -96,7 +96,7 @@
                 </StackPanel>
             </Grid>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" >
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1"  Margin="0,5" >
             <Button x:Name="titalAddress" Style="{StaticResource defButton}"    >
                 <StackPanel  Orientation="Horizontal" >
                     <TextBlock  Text="{x:Static properties:Resources.Addresses}" VerticalAlignment="Center" ></TextBlock>

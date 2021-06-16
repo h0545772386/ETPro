@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\DEV\ETPro\ETPro\ETPro\obj\Debug\
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\
 ETPro
 none
 false
 DEBUG;TRACE
-D:\DEV\ETPro\ETPro\ETPro\App.xaml
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\App.xaml
 61863021274
 
-411316401525
-32734260605
+40348474464
+32-1504277379
 AddressWindow.xaml;ClientWindow.xaml;Dictionary1.xaml;MainWindow.xaml;UCBack.xaml;UserWindow.xaml;
 
-True
+False
 

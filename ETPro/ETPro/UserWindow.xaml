@@ -16,7 +16,7 @@
             <RowDefinition Height="20"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition ></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40"></ColumnDefinition>
@@ -59,7 +59,7 @@
 
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1"  Margin="0,5" >
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.ColumnSpan="4" Grid.Column="1"  Margin="0,5" VerticalAlignment="Center">
             <Button x:Name="titalAddress" Style="{StaticResource defButton}"    Click="titalAddress_Click">
                 <StackPanel  Orientation="Horizontal" >
                     <TextBlock  Text="{x:Static properties:Resources.Addresses}" VerticalAlignment="Center" ></TextBlock>

@@ -28,7 +28,13 @@ namespace ETPro
         private void titalAddress_Click(object sender, RoutedEventArgs e)
         {
             AddressWindow addressWindow = new AddressWindow();
+            addressWindow.Owner = this;
             addressWindow.ShowDialog();
+        }
+
+        private void BSave_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

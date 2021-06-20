@@ -1,22 +1,24 @@
 ﻿<mah:MetroWindow x:Class="ETPro.UserWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        xmlns:properties="clr-namespace:ETPro.Properties"
-        xmlns:local="clr-namespace:ETPro"
-        mc:Ignorable="d"
-      Style="{StaticResource defWindow}"
-        WindowStartupLocation="CenterScreen"
-        Title="UserWindow" Height="460" Width="800">
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                 xmlns:properties="clr-namespace:ETPro.Properties"
+                 xmlns:local="clr-namespace:ETPro"
+                 mc:Ignorable="d"
+                 Style="{StaticResource defWindow}"
+                 WindowStartupLocation="CenterScreen"
+                 Title="UserWindow"
+                 Height="460"
+                 Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition ></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40"></ColumnDefinition>
@@ -25,52 +27,96 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="40"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <local:UCBack Background="AliceBlue"  Grid.Row="1"    Grid.ColumnSpan="5"  Grid.RowSpan="3"></local:UCBack>
+        <local:UCBack Background="AliceBlue"
+                      Grid.Row="1"
+                      Grid.ColumnSpan="5"
+                      Grid.RowSpan="3"></local:UCBack>
 
-        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="3"  Margin="0,5" >
-            <Button  BorderThickness="0"  Style="{StaticResource defButton}"  Margin="5" >
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Margin="0,5">
+            <Button  x:Name="bSave"
+                     BorderThickness="0"
+                     Style="{StaticResource defButton}"
+                     Margin="5"
+                     Click="BSave_Click">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock  Text="{x:Static properties:Resources.Save}" ></TextBlock>
-                    <TextBlock    FontFamily="Segoe MDL2 Assets"   ToolTip="{x:Static properties:Resources.Cancel}" Text="&#xE792;" FontSize="20" Margin="10,0" />
+                    <TextBlock  Text="{x:Static properties:Resources.Save}"></TextBlock>
+                    <TextBlock    FontFamily="Segoe MDL2 Assets"
+                                  ToolTip="{x:Static properties:Resources.Cancel}"
+                                  Text="&#xE792;"
+                                  FontSize="20"
+                                  Margin="10,0" />
                 </StackPanel>
             </Button>
-            <Button  BorderThickness="0"  Style="{StaticResource defButton}"  Margin="10,0">
+            <Button  BorderThickness="0"
+                     Style="{StaticResource defButton}"
+                     Margin="10,0">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock  Text="{x:Static properties:Resources.Cancel}" ></TextBlock>
-                    <TextBlock    FontFamily="Segoe MDL2 Assets"   ToolTip="{x:Static properties:Resources.Cancel}" Text="&#xED60;" FontSize="20" Margin="10,0" />
+                    <TextBlock  Text="{x:Static properties:Resources.Cancel}"></TextBlock>
+                    <TextBlock    FontFamily="Segoe MDL2 Assets"
+                                  ToolTip="{x:Static properties:Resources.Cancel}"
+                                  Text="&#xED60;"
+                                  FontSize="20"
+                                  Margin="10,0" />
                 </StackPanel>
             </Button>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="1">
-            <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.USrName}" />
-            <TextBox ></TextBox>
-            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.UsrPass}" />
-            <PasswordBox ></PasswordBox>
-            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.ConfirmPass}" Width="200" />
-            <PasswordBox ></PasswordBox>
+        <StackPanel Orientation="Vertical"
+                    Grid.Row="2"
+                    Grid.Column="1">
+            <mah:Tile Style="{StaticResource header}"
+                      Title="{x:Static properties:Resources.USrName}" />
+            <TextBox x:Name="tbUsrName"
+                     Text="{Binding UsrName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+            <mah:Tile  Style="{StaticResource header}"
+                       Title="{x:Static properties:Resources.UsrPass}" />
+            <PasswordBox></PasswordBox>
+            <mah:Tile  Style="{StaticResource header}"
+                       Title="{x:Static properties:Resources.ConfirmPass}"
+                       Width="200" />
+            <PasswordBox></PasswordBox>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="3">
-            <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.FullName}" />
-            <TextBox ></TextBox>
-            <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.Phone}" />
-            <TextBox ></TextBox>
-            <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.Email}"/>
-            <TextBox ></TextBox>
+        <StackPanel Orientation="Vertical"
+                    Grid.Row="2"
+                    Grid.Column="3">
+            <mah:Tile Style="{StaticResource header}"
+                      Title="{x:Static properties:Resources.FullName}" />
+            <TextBox></TextBox>
+            <mah:Tile Style="{StaticResource header}"
+                      Title="{x:Static properties:Resources.Phone}" />
+            <TextBox></TextBox>
+            <mah:Tile Style="{StaticResource header}"
+                      Title="{x:Static properties:Resources.Email}" />
+            <TextBox></TextBox>
 
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.ColumnSpan="4" Grid.Column="1"  Margin="0,5" VerticalAlignment="Center">
-            <Button x:Name="titalAddress" Style="{StaticResource defButton}"    Click="titalAddress_Click">
-                <StackPanel  Orientation="Horizontal" >
-                    <TextBlock  Text="{x:Static properties:Resources.Addresses}" VerticalAlignment="Center" ></TextBlock>
-                    <TextBlock Style="{StaticResource defIcoTextblock}" Text="&#xE707;" ></TextBlock>
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="4"
+                    Grid.Column="1"
+                    Margin="0,5"
+                    VerticalAlignment="Center">
+            <Button x:Name="titalAddress"
+                    Style="{StaticResource defButton}"
+                    Click="titalAddress_Click">
+                <StackPanel  Orientation="Horizontal">
+                    <TextBlock  Text="{x:Static properties:Resources.Addresses}"
+                                VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Style="{StaticResource defIcoTextblock}"
+                               Text="&#xE707;"></TextBlock>
                 </StackPanel>
 
             </Button>
-            <Button    Style="{StaticResource defButton}"     Margin="10,0">
-                <StackPanel  Orientation="Horizontal" >
-                    <TextBlock Text="{x:Static properties:Resources.Communications}" ></TextBlock>
-                    <TextBlock Style="{StaticResource defIcoTextblock}" Text="&#xE780;" ></TextBlock>
+            <Button    Style="{StaticResource defButton}"
+                       Margin="10,0">
+                <StackPanel  Orientation="Horizontal">
+                    <TextBlock Text="{x:Static properties:Resources.Communications}"></TextBlock>
+                    <TextBlock Style="{StaticResource defIcoTextblock}"
+                               Text="&#xE780;"></TextBlock>
                 </StackPanel>
             </Button>
 

@@ -1,7 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                      xmlns:properties="clr-namespace:ETPro.Properties"
                     xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter="clr-namespace:ETPro">
+    <converter:DateTimeConverter x:Key="dateTimeConverter"></converter:DateTimeConverter>
     <SolidColorBrush x:Key="blue1" Color="#2196f5"></SolidColorBrush>
     <SolidColorBrush x:Key="blue2" Color="#03A9f5"></SolidColorBrush>
     <SolidColorBrush x:Key="blue3" Color="#00BCD5"></SolidColorBrush>
@@ -47,6 +49,14 @@
         <Setter Property="FontFamily" Value="Arial"></Setter>
         <Setter Property="FontWeight" Value="Medium"></Setter>
         <Setter Property="Height" Value="40"></Setter>
+    </Style>
+    <Style x:Key="numText" TargetType="{x:Type converter:NumberText}">
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        <Setter Property="FontSize" Value="12"></Setter>
+        <Setter Property="FontFamily" Value="Arial"></Setter>
+        <Setter Property="FontWeight" Value="Medium"></Setter>
+        <Setter Property="Height" Value="40"></Setter>
+        <Setter Property="InputMethod.IsInputMethodEnabled" Value="False"></Setter>
     </Style>
     <Style x:Key="imgButton" TargetType="Button">
         <Setter Property="Foreground" Value="Black"></Setter>

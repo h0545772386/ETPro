@@ -9,7 +9,9 @@
         Style="{StaticResource defWindow}"
         WindowStartupLocation="CenterScreen"        
         mc:Ignorable="d"
-        Title="DriverWindow" Height="580" Width="800">
+        Title="DriverWindow" 
+        Height="580" 
+        Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -25,84 +27,154 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="40"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <local:UCBack Background="AliceBlue"  Grid.Row="1"    Grid.ColumnSpan="5"  Grid.RowSpan="3"></local:UCBack>
-        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,5">
-            <Button  BorderThickness="0"  Style="{StaticResource defButton}"   >
+        <local:UCBack   Background="AliceBlue" 
+                        Grid.Row="1"  
+                        Grid.ColumnSpan="5"  
+                        Grid.RowSpan="3"></local:UCBack>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Margin="0,5">
+            <Button  x:Name="bSave"
+                     BorderThickness="0"
+                     Style="{StaticResource defButton}"
+                     Margin="5"
+                     Click="BSave_Click">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock  Text="{x:Static properties:Resources.Save}" ></TextBlock>
-                    <TextBlock    FontFamily="Segoe MDL2 Assets"   ToolTip="{x:Static properties:Resources.Cancel}" Text="&#xE792;" FontSize="20" Margin="10,0" />
+                    <TextBlock  Text="{x:Static properties:Resources.Save}"></TextBlock>
+                    <TextBlock    FontFamily="Segoe MDL2 Assets"
+                                  ToolTip="{x:Static properties:Resources.Cancel}"
+                                  Text="&#xE792;"
+                                  FontSize="20"
+                                  Margin="10,0" />
                 </StackPanel>
             </Button>
-            <Button  BorderThickness="0"  Style="{StaticResource defButton}"  Margin="10,0">
+            <Button x:Name="bCancel" 
+                BorderThickness="0"
+                     Style="{StaticResource defButton}"
+                     Margin="10,0"
+                    Click="BCancel_Click">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock  Text="{x:Static properties:Resources.Cancel}" ></TextBlock>
-                    <TextBlock    FontFamily="Segoe MDL2 Assets"   ToolTip="{x:Static properties:Resources.Cancel}" Text="&#xED60;" FontSize="20" Margin="10,0" />
+                    <TextBlock  Text="{x:Static properties:Resources.Cancel}"></TextBlock>
+                    <TextBlock    FontFamily="Segoe MDL2 Assets"
+                                  ToolTip="{x:Static properties:Resources.Cancel}"
+                                  Text="&#xED60;"
+                                  FontSize="20"
+                                  Margin="10,0" />
                 </StackPanel>
             </Button>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="1">
-            <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.CompCode}" />
-            <TextBox ></TextBox>
+        <StackPanel Orientation="Vertical"
+                    Grid.Row="2"
+                    Grid.Column="1">
+            <mah:Tile Style="{StaticResource header}"
+                      Title="{x:Static properties:Resources.CompCode}" />
+            <TextBox x:Name="tbCompCode"
+                     Text="{Binding CompCode, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" ></TextBox>
             <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.FullName}" />
-            <TextBox ></TextBox>
-            <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.AliaseName}" />
-            <TextBox ></TextBox>
-            <StackPanel Visibility="Collapsed" Orientation="Vertical" Grid.Column="1">
-                <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.Status}"/>
-                <ComboBox>
+            <TextBox x:Name="tbFullName"
+                     Text="{Binding FullName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
+            <mah:Tile Style="{StaticResource header}"
+                      Title="{x:Static properties:Resources.AliaseName}" />
+            <TextBox x:Name="tbAliaseName"
+                     Text="{Binding AliaseName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
+            <StackPanel Visibility="Collapsed" 
+                        Orientation="Vertical"
+                        Grid.Column="1">
+                <mah:Tile Style="{StaticResource header}"
+                          Title="{x:Static properties:Resources.Status}"/>
+                <ComboBox x:Name="cbStatus" 
+                          SelectedValue="{Binding Status}">
                     <ComboBoxItem Content="{x:Static properties:Resources.Active}"></ComboBoxItem>
                     <ComboBoxItem Content="{x:Static properties:Resources.InActive}"></ComboBoxItem>
                 </ComboBox>
             </StackPanel>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="3">
+        <StackPanel Orientation="Vertical" 
+                    Grid.Row="2" 
+                    Grid.Column="3">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <StackPanel Orientation="Vertical" Margin="1,0">
-                    <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.PerHour}" />
-                    <TextBox ></TextBox>
+                <StackPanel Orientation="Vertical" 
+                            Margin="1,0">
+                    <mah:Tile Style="{StaticResource header}"
+                              Title="{x:Static properties:Resources.PerHour}" />
+                    <local:NumberText x:Name="tbPerHour"
+                                      Style="{StaticResource numText}"
+                                      Text="{Binding PerHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
                 </StackPanel>
-                <StackPanel Orientation="Vertical" Grid.Column="1" Margin="1,0">
-                    <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.PerWaitHour}" />
-                    <TextBox ></TextBox>
+                <StackPanel Orientation="Vertical"
+                            Grid.Column="1"
+                            Margin="1,0">
+                    <mah:Tile Style="{StaticResource header}"
+                              Title="{x:Static properties:Resources.PerWaitHour}" />
+                    <local:NumberText x:Name="tbPerWaitHour"
+                                      Style="{StaticResource numText}"
+                                      Text="{Binding PerWaitHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
                 </StackPanel>
             </Grid>
-            <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.Worthy}" />
-            <TextBox Height="80"></TextBox>
-            <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.DrvDesc}" />
-            <TextBox Height="80"></TextBox>
+            <mah:Tile Style="{StaticResource header}" 
+                      Title="{x:Static properties:Resources.Worthy}" />
+            <TextBox  x:Name="tbWorthy"
+                      Text="{Binding Worthy, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
+                      Height="80"></TextBox>
+            <mah:Tile Style="{StaticResource header}" 
+                      Title="{x:Static properties:Resources.DrvDesc}" />
+            <TextBox  x:Name="tbDrvDesc"
+                      Text="{Binding DrvDesc, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
+                      Height="80"></TextBox>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.ColumnSpan="4" Grid.Column="1"  Margin="0,5" VerticalAlignment="Center">
-            <Button x:Name="titalAddress" Style="{StaticResource defButton}"  >
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="4" 
+                    Grid.ColumnSpan="4"
+                    Grid.Column="1"  
+                    Margin="0,5"
+                    VerticalAlignment="Center">
+            <Button x:Name="bAddresses"
+                    Style="{StaticResource defButton}" 
+                    Click="BAddresses_Click">
                 <StackPanel  Orientation="Horizontal" >
-                    <TextBlock  Text="{x:Static properties:Resources.Addresses}" VerticalAlignment="Center" ></TextBlock>
-                    <TextBlock Style="{StaticResource defIcoTextblock}" Text="&#xE707;" ></TextBlock>
+                    <TextBlock  Text="{x:Static properties:Resources.Addresses}" 
+                                VerticalAlignment="Center" ></TextBlock>
+                    <TextBlock Style="{StaticResource defIcoTextblock}" 
+                               Text="&#xE707;" ></TextBlock>
                 </StackPanel>
 
             </Button>
-            <Button    Style="{StaticResource defButton}"     Margin="10,0">
+            <Button   x:Name="bCommunications"
+                       Style="{StaticResource defButton}"   
+                       Margin="10,0"
+                      Click="BCommunications_Click">
                 <StackPanel  Orientation="Horizontal" >
                     <TextBlock Text="{x:Static properties:Resources.Communications}" ></TextBlock>
-                    <TextBlock Style="{StaticResource defIcoTextblock}" Text="&#xE780;" ></TextBlock>
+                    <TextBlock Style="{StaticResource defIcoTextblock}" 
+                               Text="&#xE780;" ></TextBlock>
                 </StackPanel>
             </Button>
-            <Button    Style="{StaticResource defButton}"     Margin="10,0">
+            <Button  x:Name="bDesc"
+                     Style="{StaticResource defButton}"  
+                     Margin="10,0" 
+                     Click="BDesc_Click">
                 <StackPanel  Orientation="Horizontal" >
                     <TextBlock Text="{x:Static properties:Resources.Desc}" ></TextBlock>
-                    <TextBlock Style="{StaticResource defIcoTextblock}" Text="&#xE7BC;" ></TextBlock>
+                    <TextBlock Style="{StaticResource defIcoTextblock}" 
+                               Text="&#xE7BC;" ></TextBlock>
                 </StackPanel>
             </Button>
-            <Button    Style="{StaticResource defButton}"     Margin="10,0">
+            <Button  x:Name="BLinc"
+                     Style="{StaticResource defButton}"  
+                     Margin="10,0"
+                     Click="BLinc_Click">
                 <StackPanel  Orientation="Horizontal" >
                     <TextBlock Text="{x:Static properties:Resources.Linc}" ></TextBlock>
-                    <TextBlock Style="{StaticResource defIcoTextblock}" Text="&#xE71B;" ></TextBlock>
+                    <TextBlock Style="{StaticResource defIcoTextblock}" 
+                               Text="&#xE71B;" ></TextBlock>
                 </StackPanel>
             </Button>
-
-
         </StackPanel>
     </Grid>
 </mah:MetroWindow>

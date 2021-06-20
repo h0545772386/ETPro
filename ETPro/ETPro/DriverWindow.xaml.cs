@@ -24,5 +24,35 @@ namespace ETPro
         {
             InitializeComponent();
         }
+
+        private void BCancel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BSave_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BAddresses_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BCommunications_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BDesc_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BLinc_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

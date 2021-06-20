@@ -51,9 +51,11 @@
                                   Margin="10,0" />
                 </StackPanel>
             </Button>
-            <Button  BorderThickness="0"
+            <Button x:Name="bCancel" 
+                BorderThickness="0"
                      Style="{StaticResource defButton}"
-                     Margin="10,0">
+                     Margin="10,0"
+                    Click="BCancel_Click">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock  Text="{x:Static properties:Resources.Cancel}"></TextBlock>
                     <TextBlock    FontFamily="Segoe MDL2 Assets"
@@ -73,55 +75,54 @@
                      Text="{Binding UsrName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
             <mah:Tile  Style="{StaticResource header}"
                        Title="{x:Static properties:Resources.UsrPass}" />
-            <PasswordBox></PasswordBox>
+            <PasswordBox x:Name="pbUsrPass"></PasswordBox>
             <mah:Tile  Style="{StaticResource header}"
                        Title="{x:Static properties:Resources.ConfirmPass}"
                        Width="200" />
-            <PasswordBox></PasswordBox>
+            <PasswordBox x:Name="pbConfirmPass"></PasswordBox>
         </StackPanel>
         <StackPanel Orientation="Vertical"
                     Grid.Row="2"
                     Grid.Column="3">
             <mah:Tile Style="{StaticResource header}"
                       Title="{x:Static properties:Resources.FullName}" />
-            <TextBox></TextBox>
+            <TextBox x:Name="tbFullName"
+                Text="{Binding FullName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
             <mah:Tile Style="{StaticResource header}"
                       Title="{x:Static properties:Resources.Phone}" />
-            <TextBox></TextBox>
+            <TextBox  x:Name="tbPhone"
+                      Text="{Binding Phone, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
             <mah:Tile Style="{StaticResource header}"
                       Title="{x:Static properties:Resources.Email}" />
-            <TextBox></TextBox>
-
+            <TextBox x:Name="tbEmail"
+                     Text="{Binding Email, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
         </StackPanel>
-
         <StackPanel Orientation="Horizontal"
                     Grid.Row="4"
                     Grid.ColumnSpan="4"
                     Grid.Column="1"
                     Margin="0,5"
                     VerticalAlignment="Center">
-            <Button x:Name="titalAddress"
+            <Button x:Name="bAddress"
                     Style="{StaticResource defButton}"
-                    Click="titalAddress_Click">
+                    Click="BAddress_Click">
                 <StackPanel  Orientation="Horizontal">
                     <TextBlock  Text="{x:Static properties:Resources.Addresses}"
                                 VerticalAlignment="Center"></TextBlock>
                     <TextBlock Style="{StaticResource defIcoTextblock}"
                                Text="&#xE707;"></TextBlock>
                 </StackPanel>
-
             </Button>
-            <Button    Style="{StaticResource defButton}"
-                       Margin="10,0">
+            <Button   x:Name="bCommunication"  
+                      Style="{StaticResource defButton}"
+                      Margin="10,0"
+                      Click="BCommunication_Click" >
                 <StackPanel  Orientation="Horizontal">
                     <TextBlock Text="{x:Static properties:Resources.Communications}"></TextBlock>
                     <TextBlock Style="{StaticResource defIcoTextblock}"
                                Text="&#xE780;"></TextBlock>
                 </StackPanel>
             </Button>
-
         </StackPanel>
-
-
     </Grid>
 </mah:MetroWindow>

@@ -116,3 +116,4 @@ E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\CommuWindow.g.cs
 E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\CommuWindow.baml
 E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DescWindow.g.cs
 E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DescWindow.baml
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\ETPro.csprojAssemblyReference.cache

@@ -23,45 +23,75 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="40"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <local:UCBack Background="AliceBlue"  Grid.Row="1"    Grid.ColumnSpan="5"  Grid.RowSpan="3"></local:UCBack>
-        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,5">
-            <Button  BorderThickness="0"  Style="{StaticResource defButton}"   >
+        <local:UCBack   Background="AliceBlue" 
+                        Grid.Row="1"  
+                        Grid.ColumnSpan="5"  
+                        Grid.RowSpan="3"></local:UCBack>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Margin="0,5">
+            <Button  x:Name="bSave"
+                     BorderThickness="0"
+                     Style="{StaticResource defButton}"
+                     Margin="5"
+                     Click="BSave_Click">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock  Text="{x:Static properties:Resources.Save}" ></TextBlock>
-                    <TextBlock    FontFamily="Segoe MDL2 Assets"   ToolTip="{x:Static properties:Resources.Cancel}" Text="&#xE792;" FontSize="20" Margin="10,0" />
+                    <TextBlock  Text="{x:Static properties:Resources.Save}"></TextBlock>
+                    <TextBlock    FontFamily="Segoe MDL2 Assets"
+                                  ToolTip="{x:Static properties:Resources.Cancel}"
+                                  Text="&#xE792;"
+                                  FontSize="20"
+                                  Margin="10,0" />
                 </StackPanel>
             </Button>
-            <Button  BorderThickness="0"  Style="{StaticResource defButton}"  Margin="10,0">
+            <Button x:Name="bCancel" 
+                    BorderThickness="0"
+                    Style="{StaticResource defButton}"
+                     Margin="10,0"
+                    Click="BCancel_Click">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock  Text="{x:Static properties:Resources.Cancel}" ></TextBlock>
-                    <TextBlock    FontFamily="Segoe MDL2 Assets"   ToolTip="{x:Static properties:Resources.Cancel}" Text="&#xED60;" FontSize="20" Margin="10,0" />
+                    <TextBlock  Text="{x:Static properties:Resources.Cancel}"></TextBlock>
+                    <TextBlock    FontFamily="Segoe MDL2 Assets"
+                                  ToolTip="{x:Static properties:Resources.Cancel}"
+                                  Text="&#xED60;"
+                                  FontSize="20"
+                                  Margin="10,0" />
                 </StackPanel>
             </Button>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="1">
-
+        <StackPanel Orientation="Vertical" 
+                    Grid.Row="2"
+                    Grid.Column="1">
             <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition Width="auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <StackPanel Orientation="Vertical">
-                    <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.TName}" />
-                    <TextBox ></TextBox>
+                    <mah:Tile Style="{StaticResource header}" 
+                              Title="{x:Static properties:Resources.TName}" />
+                    <TextBox x:Name="tbTName"
+                             Text="{Binding TName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" ></TextBox>
                 </StackPanel>
-                <StackPanel Visibility="Collapsed"  Orientation="Vertical" Grid.Column="1">
-                    <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.Status}"/>
-                    <ComboBox>
+                <StackPanel Visibility="Collapsed" 
+                            Orientation="Vertical"
+                            Grid.Column="1">
+                    <mah:Tile Style="{StaticResource header}"
+                              Title="{x:Static properties:Resources.Status}"/>
+                    <ComboBox x:Name="cbStatus"
+                              SelectedValue="{Binding Status}">
                         <ComboBoxItem Content="{x:Static properties:Resources.Active}"></ComboBoxItem>
                         <ComboBoxItem Content="{x:Static properties:Resources.InActive}"></ComboBoxItem>
                     </ComboBox>
                 </StackPanel>
             </Grid>
-        
-            <!--<mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.Status}" />
-            <TextBox ></TextBox>-->
-            <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.TValue}"/>
-            <TextBox  Height="100"></TextBox>
+            <mah:Tile Style="{StaticResource header}" 
+                      Title="{x:Static properties:Resources.TValue}"/>
+            <TextBox   x:Name="tbTValue"
+                       Text="{Binding TValue, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
+                       Height="100"></TextBox>
         </StackPanel>
     </Grid>
 </mah:MetroWindow>

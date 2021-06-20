@@ -26,37 +26,74 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="40"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <local:UCBack Background="AliceBlue"  Grid.Row="1"    Grid.ColumnSpan="7"  Grid.RowSpan="3"></local:UCBack>
-
-        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="3"  Margin="0,5" >
-            <Button  BorderThickness="0"  Style="{StaticResource defButton}"  Margin="5" >
+        <local:UCBack   Background="AliceBlue" 
+                        Grid.Row="1"  
+                        Grid.ColumnSpan="7"  
+                        Grid.RowSpan="3"></local:UCBack>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Margin="0,5">
+            <Button  x:Name="bSave"
+                     BorderThickness="0"
+                     Style="{StaticResource defButton}"
+                     Margin="5"
+                     Click="BSave_Click">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock  Text="{x:Static properties:Resources.Save}" ></TextBlock>
-                    <TextBlock    FontFamily="Segoe MDL2 Assets"   ToolTip="{x:Static properties:Resources.Cancel}" Text="&#xE792;" FontSize="20" Margin="10,0" />
+                    <TextBlock  Text="{x:Static properties:Resources.Save}"></TextBlock>
+                    <TextBlock    FontFamily="Segoe MDL2 Assets"
+                                  ToolTip="{x:Static properties:Resources.Cancel}"
+                                  Text="&#xE792;"
+                                  FontSize="20"
+                                  Margin="10,0" />
                 </StackPanel>
             </Button>
-            <Button  BorderThickness="0"  Style="{StaticResource defButton}"  Margin="10,0">
+            <Button x:Name="bCancel" 
+                    BorderThickness="0"
+                     Style="{StaticResource defButton}"
+                     Margin="10,0"
+                    Click="BCancel_Click">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock  Text="{x:Static properties:Resources.Cancel}" ></TextBlock>
-                    <TextBlock    FontFamily="Segoe MDL2 Assets"   ToolTip="{x:Static properties:Resources.Cancel}" Text="&#xED60;" FontSize="20" Margin="10,0" />
+                    <TextBlock  Text="{x:Static properties:Resources.Cancel}"></TextBlock>
+                    <TextBlock    FontFamily="Segoe MDL2 Assets"
+                                  ToolTip="{x:Static properties:Resources.Cancel}"
+                                  Text="&#xED60;"
+                                  FontSize="20"
+                                  Margin="10,0" />
                 </StackPanel>
             </Button>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="1">
-            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.VehCode}" Width="200" />
+        <StackPanel Orientation="Vertical"
+                    Grid.Row="2"
+                    Grid.Column="1">
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.VehCode}" 
+                       Width="200" />
             <TextBox ></TextBox>
-            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.VehType}" Width="200" />
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.VehType}" 
+                       Width="200" />
             <TextBox Height="80"></TextBox>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.ColumnSpan="4" Grid.Column="1"  Margin="0,5" VerticalAlignment="Center">
-            <Button x:Name="titalAddress" Style="{StaticResource defButton}"    >
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="4"
+                    Grid.Column="1" 
+                    Margin="0,5" 
+                    VerticalAlignment="Center">
+            <Button x:Name="titalAddress" 
+                    Style="{StaticResource defButton}"    >
                 <StackPanel  Orientation="Horizontal" >
-                    <TextBlock  Text="{x:Static properties:Resources.Addresses}" VerticalAlignment="Center" ></TextBlock>
-                    <TextBlock Style="{StaticResource defIcoTextblock}" Text="&#xE707;" ></TextBlock>
+                    <TextBlock  Text="{x:Static properties:Resources.Addresses}"
+                                VerticalAlignment="Center" ></TextBlock>
+                    <TextBlock Style="{StaticResource defIcoTextblock}"
+                               Text="&#xE707;" ></TextBlock>
                 </StackPanel>
 
             </Button>
-            <Button    Style="{StaticResource defButton}"     Margin="10,0">
+            <Button    Style="{StaticResource defButton}"     
+                       Margin="10,0">
                 <StackPanel  Orientation="Horizontal" >
                     <TextBlock Text="{x:Static properties:Resources.Communications}" ></TextBlock>
                     <TextBlock Style="{StaticResource defIcoTextblock}" Text="&#xE780;" ></TextBlock>

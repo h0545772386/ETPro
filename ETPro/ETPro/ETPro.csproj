@@ -124,6 +124,7 @@
     <Compile Include="CommuWindow.xaml.cs">
       <DependentUpon>CommuWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DateTimeConverter.cs" />
     <Compile Include="DescWindow.xaml.cs">
       <DependentUpon>DescWindow.xaml</DependentUpon>
     </Compile>
@@ -139,6 +140,7 @@
     <Compile Include="LincWindow.xaml.cs">
       <DependentUpon>LincWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NumberText.cs" />
     <Compile Include="UCBack.xaml.cs">
       <DependentUpon>UCBack.xaml</DependentUpon>
     </Compile>

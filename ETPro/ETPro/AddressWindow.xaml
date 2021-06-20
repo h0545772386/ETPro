@@ -23,38 +23,79 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="40"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <local:UCBack Background="AliceBlue"  Grid.Row="1"    Grid.ColumnSpan="5"  Grid.RowSpan="3"></local:UCBack>
-        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,5">
-            <Button  BorderThickness="0"  Style="{StaticResource defButton}"   >
+        <local:UCBack   Background="AliceBlue" 
+                        Grid.Row="1"  
+                        Grid.ColumnSpan="3"  
+                        Grid.RowSpan="3"></local:UCBack>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Margin="0,5">
+            <Button  x:Name="bSave"
+                     BorderThickness="0"
+                     Style="{StaticResource defButton}"
+                     Margin="5"
+                     Click="BSave_Click">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock  Text="{x:Static properties:Resources.Save}" ></TextBlock>
-                    <TextBlock    FontFamily="Segoe MDL2 Assets"   ToolTip="{x:Static properties:Resources.Cancel}" Text="&#xE792;" FontSize="20" Margin="10,0" />
+                    <TextBlock  Text="{x:Static properties:Resources.Save}"></TextBlock>
+                    <TextBlock    FontFamily="Segoe MDL2 Assets"
+                                  ToolTip="{x:Static properties:Resources.Cancel}"
+                                  Text="&#xE792;"
+                                  FontSize="20"
+                                  Margin="10,0" />
                 </StackPanel>
             </Button>
-            <Button  BorderThickness="0"  Style="{StaticResource defButton}"  Margin="10,0">
+            <Button  x:Name="bCancel" 
+                     BorderThickness="0"
+                     Style="{StaticResource defButton}"
+                     Margin="10,0"
+                    Click="BCancel_Click">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock  Text="{x:Static properties:Resources.Cancel}" ></TextBlock>
-                    <TextBlock    FontFamily="Segoe MDL2 Assets"   ToolTip="{x:Static properties:Resources.Cancel}" Text="&#xED60;" FontSize="20" Margin="10,0" />
+                    <TextBlock  Text="{x:Static properties:Resources.Cancel}"></TextBlock>
+                    <TextBlock    FontFamily="Segoe MDL2 Assets"
+                                  ToolTip="{x:Static properties:Resources.Cancel}"
+                                  Text="&#xED60;"
+                                  FontSize="20"
+                                  Margin="10,0" />
                 </StackPanel>
             </Button>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="1" >
-            <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.City}"/>
-            <TextBox ></TextBox>
-            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.Street}"/>
-            <TextBox ></TextBox>
-            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.Street1}"/>
-            <TextBox ></TextBox>
-            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.ZipCode}" />
-            <TextBox ></TextBox>
-            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.Address1}"/>
-            <TextBox ></TextBox>
-            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.Address2}"/>
-            <TextBox ></TextBox>
-            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.Address3}" />
-            <TextBox ></TextBox>
-            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.Address4}" />
-            <TextBox ></TextBox>
+        <StackPanel    Orientation="Vertical"
+                       Grid.Row="2" 
+                       Grid.Column="1" >
+            <mah:Tile Style="{StaticResource header}" 
+                      Title="{x:Static properties:Resources.City}"/>
+            <TextBox x:Name="tbCity"
+                     Text="{Binding City, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.Street}"/>
+            <TextBox x:Name="tbStreet"
+                     Text="{Binding Street, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
+            <mah:Tile  Style="{StaticResource header}"
+                       Title="{x:Static properties:Resources.Street1}"/>
+            <TextBox x:Name="tbStreet1"
+                     Text="{Binding Street1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
+            <mah:Tile  Style="{StaticResource header}"
+                       Title="{x:Static properties:Resources.ZipCode}" />
+            <TextBox x:Name="tbZipCode"
+                     Text="{Binding ZipCode, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
+            <mah:Tile  Style="{StaticResource header}"
+                       Title="{x:Static properties:Resources.Address1}"/>
+            <TextBox x:Name="tbAddress1"
+                     Text="{Binding Address1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
+            <mah:Tile  Style="{StaticResource header}"
+                       Title="{x:Static properties:Resources.Address2}"/>
+            <TextBox x:Name="tbAddress2"
+                     Text="{Binding Address2, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
+            <mah:Tile  Style="{StaticResource header}"
+                       Title="{x:Static properties:Resources.Address3}" />
+            <TextBox x:Name="tbAddress3"
+                     Text="{Binding Address3, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
+            <mah:Tile  Style="{StaticResource header}"
+                       Title="{x:Static properties:Resources.Address4}" />
+            <TextBox x:Name="tbAddress4"
+                     Text="{Binding Address4, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
         </StackPanel>
     </Grid>
 </mah:MetroWindow>

@@ -104,3 +104,15 @@ E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\AddressWindow.g.cs
 E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\AddressWindow.baml
 E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\ClientWindow.g.cs
 E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\ClientWindow.baml
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\ClntOrderWindow.g.cs
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\ClntOrderWindow.baml
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\LincWindow.g.cs
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\LincWindow.baml
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DriverWindow.g.cs
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DriverWindow.baml
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\VehicleWindow.g.cs
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\VehicleWindow.baml
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\CommuWindow.g.cs
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\CommuWindow.baml
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DescWindow.g.cs
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DescWindow.baml

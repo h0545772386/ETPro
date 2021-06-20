@@ -48,6 +48,7 @@
             <PasswordBox ></PasswordBox>
             <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.ConfirmPass}" Width="200" />
             <PasswordBox ></PasswordBox>
+            
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="3">
             <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.FullName}" />

@@ -47,6 +47,11 @@ namespace ETPro
                     case "UserWindow":window = new UserWindow();break;
                     case "AddressWindow": window = new AddressWindow(); break;
                     case "ClientWindow": window = new ClientWindow(); break;
+                    case "ClntOrderWindow": window = new ClntOrderWindow();break;
+                    case "CommuWindow": window = new CommuWindow(); break;
+                    case "DescWindow": window = new DescWindow(); break;
+                    case "LincWindow": window = new LincWindow(); break;
+                    case "DriverWindow": window = new DriverWindow(); break;
                 }
                 window?.ShowDialog();
             }

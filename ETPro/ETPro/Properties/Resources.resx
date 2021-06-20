@@ -120,6 +120,12 @@
   <data name="Account" xml:space="preserve">
     <value>Account Information</value>
   </data>
+  <data name="ActivatDate" xml:space="preserve">
+    <value>ActivatDate</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>פעיל</value>
+  </data>
   <data name="Address1" xml:space="preserve">
     <value>Address1</value>
   </data>
@@ -138,17 +144,41 @@
   <data name="Admin" xml:space="preserve">
     <value>Admin</value>
   </data>
+  <data name="AdminDate" xml:space="preserve">
+    <value>AdminDate</value>
+  </data>
+  <data name="AdminDate1" xml:space="preserve">
+    <value>AdminDate1</value>
+  </data>
+  <data name="AdminDate2" xml:space="preserve">
+    <value>AdminDate2</value>
+  </data>
+  <data name="AdminDate3" xml:space="preserve">
+    <value>AdminDate3</value>
+  </data>
+  <data name="AdminDate4" xml:space="preserve">
+    <value>AdminDate4</value>
+  </data>
   <data name="AliaseName" xml:space="preserve">
     <value>AliaseName</value>
   </data>
+  <data name="AriveHour" xml:space="preserve">
+    <value>AriveHour</value>
+  </data>
   <data name="BaseInfo" xml:space="preserve">
     <value>BaseInfo</value>
+  </data>
+  <data name="BrakesDate" xml:space="preserve">
+    <value>BrakesDate</value>
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
   <data name="City" xml:space="preserve">
     <value>City</value>
+  </data>
+  <data name="ClientName" xml:space="preserve">
+    <value>ClientName</value>
   </data>
   <data name="ClntDesc" xml:space="preserve">
     <value>Client Desc</value>
@@ -159,14 +189,32 @@
   <data name="ClntType" xml:space="preserve">
     <value>Client Type</value>
   </data>
+  <data name="Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="CommitionFee" xml:space="preserve">
+    <value>CommitionFee</value>
+  </data>
+  <data name="CommitionToId" xml:space="preserve">
+    <value>CommitionToId</value>
+  </data>
   <data name="Communications" xml:space="preserve">
     <value>Communications</value>
+  </data>
+  <data name="CommuType" xml:space="preserve">
+    <value>CommuType</value>
+  </data>
+  <data name="CommuValue" xml:space="preserve">
+    <value>CommuValue</value>
   </data>
   <data name="CompCode" xml:space="preserve">
     <value>CompCode</value>
   </data>
   <data name="ConfirmPass" xml:space="preserve">
     <value>ConfirmPass</value>
+  </data>
+  <data name="CurrentKM" xml:space="preserve">
+    <value>CurrentKM</value>
   </data>
   <data name="Date1" xml:space="preserve">
     <value>Date1</value>
@@ -177,17 +225,140 @@
   <data name="Date3" xml:space="preserve">
     <value>Date3</value>
   </data>
+  <data name="Desc" xml:space="preserve">
+    <value>Desc</value>
+  </data>
+  <data name="DistanceKM" xml:space="preserve">
+    <value>DistanceKM</value>
+  </data>
+  <data name="DrvDesc" xml:space="preserve">
+    <value>DrvDesc</value>
+  </data>
+  <data name="DrvFee" xml:space="preserve">
+    <value>DrvFee</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>
+  </data>
+  <data name="FreeAtHour" xml:space="preserve">
+    <value>FreeAtHour</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>Friday</value>
+  </data>
+  <data name="FromLocation" xml:space="preserve">
+    <value>FromLocation</value>
   </data>
   <data name="FullName" xml:space="preserve">
     <value>FullName</value>
   </data>
+  <data name="HasWIFI" xml:space="preserve">
+    <value>HasWIFI</value>
+  </data>
+  <data name="InActive" xml:space="preserve">
+    <value>לא פעיל</value>
+  </data>
+  <data name="LenghtMinutes" xml:space="preserve">
+    <value>LenghtMinutes</value>
+  </data>
+  <data name="Linc" xml:space="preserve">
+    <value>Linc</value>
+  </data>
+  <data name="LncName" xml:space="preserve">
+    <value>LncName</value>
+  </data>
+  <data name="LncText" xml:space="preserve">
+    <value>LncText</value>
+  </data>
+  <data name="LockCode" xml:space="preserve">
+    <value>LockCode</value>
+  </data>
+  <data name="ManufYear" xml:space="preserve">
+    <value>ManufYear</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Monday</value>
+  </data>
+  <data name="NetProfit" xml:space="preserve">
+    <value>NetProfit</value>
+  </data>
+  <data name="NumPsngrs" xml:space="preserve">
+    <value>NumPsngrs</value>
+  </data>
+  <data name="NxtInsuranceAt" xml:space="preserve">
+    <value>NxtInsuranceAt</value>
+  </data>
+  <data name="NxtTestAt" xml:space="preserve">
+    <value>NxtTestAt</value>
+  </data>
+  <data name="NxtTimingAt" xml:space="preserve">
+    <value>NxtTimingAt</value>
+  </data>
+  <data name="NxtTreatmnt1At" xml:space="preserve">
+    <value>NxtTreatmnt1At</value>
+  </data>
+  <data name="NxtTreatmnt2At" xml:space="preserve">
+    <value>NxtTreatmnt2At</value>
+  </data>
+  <data name="NxtTreatmnt3At" xml:space="preserve">
+    <value>NxtTreatmnt3At</value>
+  </data>
+  <data name="NxtTreatmntAt" xml:space="preserve">
+    <value>NxtTreatmntAt</value>
+  </data>
+  <data name="OrdDays" xml:space="preserve">
+    <value>OrdDays</value>
+  </data>
+  <data name="OrdDays1111111" xml:space="preserve">
+    <value>OrdDays1111111</value>
+  </data>
+  <data name="OrdIfExtraHours" xml:space="preserve">
+    <value>OrdIfExtraHours</value>
+  </data>
+  <data name="OrdIsActive" xml:space="preserve">
+    <value>OrdIsActive</value>
+  </data>
+  <data name="OrdNum" xml:space="preserve">
+    <value>OrdNum</value>
+  </data>
+  <data name="OrdPath" xml:space="preserve">
+    <value>OrdPath</value>
+  </data>
+  <data name="OrdTime" xml:space="preserve">
+    <value>OrdTime</value>
+  </data>
+  <data name="OrdType" xml:space="preserve">
+    <value>OrdType</value>
+  </data>
+  <data name="OthrCosts" xml:space="preserve">
+    <value>OthrCosts</value>
+  </data>
+  <data name="PerHour" xml:space="preserve">
+    <value>PerHour</value>
+  </data>
+  <data name="PersonName" xml:space="preserve">
+    <value>PersonName</value>
+  </data>
+  <data name="PerWaitHour" xml:space="preserve">
+    <value>PerWaitHour</value>
+  </data>
   <data name="Phone" xml:space="preserve">
     <value>Phone</value>
   </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Saturday</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
+  </data>
+  <data name="StartHour" xml:space="preserve">
+    <value>StartHour</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
   </data>
   <data name="Street" xml:space="preserve">
     <value>Street</value>
@@ -195,11 +366,56 @@
   <data name="Street1" xml:space="preserve">
     <value>Street1</value>
   </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Sunday</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>Thursday</value>
+  </data>
+  <data name="TName" xml:space="preserve">
+    <value>TName</value>
+  </data>
+  <data name="ToLocation" xml:space="preserve">
+    <value>ToLocation</value>
+  </data>
+  <data name="TotalCost" xml:space="preserve">
+    <value>TotalCost</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Tuesday</value>
+  </data>
+  <data name="TValue" xml:space="preserve">
+    <value>TValue</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
   <data name="USrName" xml:space="preserve">
     <value>USrName</value>
   </data>
   <data name="UsrPass" xml:space="preserve">
     <value>UsrPass</value>
+  </data>
+  <data name="VehCode" xml:space="preserve">
+    <value>VehCode</value>
+  </data>
+  <data name="VehFee" xml:space="preserve">
+    <value>VehFee</value>
+  </data>
+  <data name="VehType" xml:space="preserve">
+    <value>VehType</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Wednesday</value>
+  </data>
+  <data name="WeekDay" xml:space="preserve">
+    <value>WeekDay</value>
+  </data>
+  <data name="WinterDate" xml:space="preserve">
+    <value>WinterDate</value>
+  </data>
+  <data name="Worthy" xml:space="preserve">
+    <value>Worthy</value>
   </data>
   <data name="ZipCode" xml:space="preserve">
     <value>ZipCode</value>

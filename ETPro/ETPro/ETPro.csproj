@@ -121,8 +121,23 @@
     <Compile Include="Classes\Vehicle.cs" />
     <Compile Include="Classes\VehicleCommu.cs" />
     <Compile Include="Classes\VehLinc.cs" />
+    <Compile Include="CommuWindow.xaml.cs">
+      <DependentUpon>CommuWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DescWindow.xaml.cs">
+      <DependentUpon>DescWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ClientWindow.xaml.cs">
       <DependentUpon>ClientWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClntOrderWindow.xaml.cs">
+      <DependentUpon>ClntOrderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DriverWindow.xaml.cs">
+      <DependentUpon>DriverWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LincWindow.xaml.cs">
+      <DependentUpon>LincWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UCBack.xaml.cs">
       <DependentUpon>UCBack.xaml</DependentUpon>
@@ -130,7 +145,18 @@
     <Compile Include="UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VehicleWindow.xaml.cs">
+      <DependentUpon>VehicleWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="AddressWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommuWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DescWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -138,7 +164,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ClntOrderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dictionary1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DriverWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LincWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,6 +211,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VehicleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

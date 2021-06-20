@@ -1,0 +1,175 @@
+﻿<mah:MetroWindow x:Class="ETPro.ClntOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:properties="clr-namespace:ETPro.Properties"
+        xmlns:local="clr-namespace:ETPro"
+        Style="{StaticResource defWindow}"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="ClntOrderWindow" Height="700" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition ></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="40"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <local:UCBack Background="AliceBlue"  Grid.Row="1"    Grid.ColumnSpan="7"  Grid.RowSpan="3"></local:UCBack>
+
+        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Grid.Column="1" Grid.ColumnSpan="3"  Margin="0,5" >
+            <Button  BorderThickness="0"  Style="{StaticResource defButton}"  Margin="5" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Text="{x:Static properties:Resources.Save}" ></TextBlock>
+                    <TextBlock    FontFamily="Segoe MDL2 Assets"   ToolTip="{x:Static properties:Resources.Cancel}" Text="&#xE792;" FontSize="20" Margin="10,0" />
+                </StackPanel>
+            </Button>
+            <Button  BorderThickness="0"  Style="{StaticResource defButton}"  Margin="10,0">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Text="{x:Static properties:Resources.Cancel}" ></TextBlock>
+                    <TextBlock    FontFamily="Segoe MDL2 Assets"   ToolTip="{x:Static properties:Resources.Cancel}" Text="&#xED60;" FontSize="20" Margin="10,0" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition  Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical">
+                    <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.OrdNum}" />
+                    <TextBox ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Vertical">
+                    <Grid Height="45"></Grid>
+                    <CheckBox Grid.Column="1"  Content="{x:Static properties:Resources.OrdIsActive}"></CheckBox>
+                </StackPanel>
+            </Grid>
+           
+            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.OrdType}" />
+            <TextBox ></TextBox>
+            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.OrdTime}" Width="200" />
+            <TextBox ></TextBox>
+            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.OrdPath}" Width="200" />
+            <TextBox ></TextBox>
+            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.ClientName}" Width="200" />
+            <TextBox ></TextBox>
+            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.NumPsngrs}" Width="200" />
+            <TextBox ></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="3">
+            <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.FromLocation}" />
+            <TextBox Height="84"></TextBox>
+            <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.ToLocation}" />
+            <TextBox Height="82"></TextBox>
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical" Margin="1,0">
+                    <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.DistanceKM}" />
+                    <TextBox ></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Grid.Column="1" Margin="1,0">
+                    <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.LenghtMinutes}" />
+                    <TextBox ></TextBox>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical" Margin="1,0">
+                    <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.StartHour}" />
+                    <TextBox ></TextBox>
+                    <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.AriveHour}" />
+                    <TextBox ></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Grid.Column="1" Margin="1,0">
+                    <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.FreeAtHour}" />
+                    <TextBox ></TextBox>
+                    <Grid Height="45"></Grid>
+                    <CheckBox Content="{x:Static properties:Resources.OrdIfExtraHours}"></CheckBox>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Column="5" Grid.Row="2">
+            <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.TotalCost}" />
+            <TextBox ></TextBox>
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical" Margin="1,0">
+                    <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.DrvFee}" />
+                    <TextBox ></TextBox>
+                    <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.VehFee}" />
+                    <TextBox ></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Grid.Column="1" Margin="1,0">
+                    <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.CommitionFee}" />
+                    <TextBox ></TextBox>
+                    <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.NetProfit}" />
+                    <TextBox ></TextBox>
+                </StackPanel>
+            </Grid>
+            <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.OthrCosts}" />
+            <TextBox ></TextBox>
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical" Margin="1,0">
+                    <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.OrdDays}" />
+                    <TextBox></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Grid.Column="1" Margin="1,0">
+                    <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.OrdDays1111111}" />
+                    <TextBox ></TextBox>
+                </StackPanel>
+            </Grid>
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical">
+                    <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.WeekDay}" />
+                    <ComboBox >
+                        <ComboBoxItem Content="{x:Static properties:Resources.Sunday}"></ComboBoxItem>
+                        <ComboBoxItem Content="{x:Static properties:Resources.Monday}"></ComboBoxItem>
+                        <ComboBoxItem Content="{x:Static properties:Resources.Tuesday}"></ComboBoxItem>
+                        <ComboBoxItem Content="{x:Static properties:Resources.Wednesday}"></ComboBoxItem>
+                        <ComboBoxItem Content="{x:Static properties:Resources.Thursday}"></ComboBoxItem>
+                        <ComboBoxItem Content="{x:Static properties:Resources.Friday}"></ComboBoxItem>
+                        <ComboBoxItem Content="{x:Static properties:Resources.Saturday}"></ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Visibility="Collapsed" Orientation="Vertical" Grid.Column="1">
+                    <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.Status}"/>
+                    <ComboBox>
+                        <ComboBoxItem Content="{x:Static properties:Resources.Active}"></ComboBoxItem>
+                        <ComboBoxItem Content="{x:Static properties:Resources.InActive}"></ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</mah:MetroWindow>

@@ -9,7 +9,7 @@
         mc:Ignorable="d"
        Style="{StaticResource defWindow}"
         WindowStartupLocation="CenterScreen"
-        Title="ClientWindow" Height="580" Width="600">
+        Title="ClientWindow" Height="660" Width="670" Loaded="MetroWindow_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -40,35 +40,34 @@
         </StackPanel>
 
         <StackPanel  Grid.Row="2" Grid.Column="1" Orientation="Vertical">
+            <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.FullName}"/>
+            <TextBox></TextBox>
+            <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.AliaseName}" />
+            <TextBox ></TextBox>
+            
             <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition ></ColumnDefinition>
-                    <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition  Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <StackPanel Orientation="Vertical"  Margin="0,0,10,0">
-                    <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.FullName}"/>
-                    <TextBox></TextBox>
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Grid.Column="1"  Margin="10,0,0,0">
-                    <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.AliaseName}" />
-                    <TextBox ></TextBox>
-                </StackPanel>
-            </Grid>
-            <Grid >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition ></ColumnDefinition>
-                    <ColumnDefinition ></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <StackPanel Orientation="Vertical" Margin="0,0,10,0">
+                <StackPanel Orientation="Vertical"  Margin="1,0">
                     <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.ClntIDN}"/>
                     <TextBox ></TextBox>
                 </StackPanel>
-                <StackPanel Orientation="Vertical" Grid.Column="1"  Margin="10,0,0,0">
+                <StackPanel Orientation="Vertical" MinWidth="160" Grid.Column="1"  Margin="1,0">
                     <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.ClntType}"/>
                     <ComboBox>
                         <ComboBoxItem Content="קבלן משנה"></ComboBoxItem>
                         <ComboBoxItem Content="לקוח קבוע"></ComboBoxItem>
                         <ComboBoxItem Content="לקוח מזדמן"></ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Visibility="Visible" Grid.Column="2"  Margin="1,0">
+                    <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.Status}"/>
+                    <ComboBox>
+                        <ComboBoxItem Content="{x:Static properties:Resources.Active}"></ComboBoxItem>
+                        <ComboBoxItem Content="{x:Static properties:Resources.InActive}"></ComboBoxItem>
                     </ComboBox>
                 </StackPanel>
             </Grid>
@@ -95,6 +94,7 @@
                     <mah:DateTimePicker></mah:DateTimePicker>
                 </StackPanel>
             </Grid>
+
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1"  Margin="0,5" VerticalAlignment="Center">
             <Button x:Name="titalAddress" Style="{StaticResource defButton}"    >

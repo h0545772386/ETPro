@@ -38,6 +38,7 @@
             <Button Content="LincWindow" Width="140" Height="40" Click="Button_Click" Margin="0,10"></Button>
             <Button Content="VehicleWindow" Width="140" Height="40" Click="Button_Click" Margin="0,10"></Button>
             <Button Content="PassengerWindow" Width="140" Height="40" Click="Button_Click" Margin="0,10"></Button>
+            <Button Content="DocWindow" Width="140" Height="40" Click="Button_Click" Margin="0,10"></Button>
         </StackPanel>
     
     </Grid>

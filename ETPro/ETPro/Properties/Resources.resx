@@ -231,6 +231,18 @@
   <data name="DistanceKM" xml:space="preserve">
     <value>DistanceKM</value>
   </data>
+  <data name="DocCtg" xml:space="preserve">
+    <value>DocCtg</value>
+  </data>
+  <data name="DocName" xml:space="preserve">
+    <value>DocName</value>
+  </data>
+  <data name="DocPath" xml:space="preserve">
+    <value>DocPath</value>
+  </data>
+  <data name="DocText" xml:space="preserve">
+    <value>DocText</value>
+  </data>
   <data name="DrvDesc" xml:space="preserve">
     <value>DrvDesc</value>
   </data>
@@ -242,6 +254,9 @@
   </data>
   <data name="FreeAtHour" xml:space="preserve">
     <value>FreeAtHour</value>
+  </data>
+  <data name="Frequence" xml:space="preserve">
+    <value>Frequence</value>
   </data>
   <data name="Friday" xml:space="preserve">
     <value>Friday</value>
@@ -257,6 +272,9 @@
   </data>
   <data name="InActive" xml:space="preserve">
     <value>לא פעיל</value>
+  </data>
+  <data name="IsRecorsive" xml:space="preserve">
+    <value>IsRecorsive</value>
   </data>
   <data name="LenghtMinutes" xml:space="preserve">
     <value>LenghtMinutes</value>
@@ -309,6 +327,9 @@
   <data name="NxtTreatmntAt" xml:space="preserve">
     <value>NxtTreatmntAt</value>
   </data>
+  <data name="ObjType" xml:space="preserve">
+    <value>ObjType</value>
+  </data>
   <data name="OrdDays" xml:space="preserve">
     <value>OrdDays</value>
   </data>
@@ -347,6 +368,24 @@
   </data>
   <data name="Phone" xml:space="preserve">
     <value>Phone</value>
+  </data>
+  <data name="Phone1" xml:space="preserve">
+    <value>Phone1</value>
+  </data>
+  <data name="Phone2" xml:space="preserve">
+    <value>Phone2</value>
+  </data>
+  <data name="Phone3" xml:space="preserve">
+    <value>Phone3</value>
+  </data>
+  <data name="PopUpAt_YYYYMMDDHHMM" xml:space="preserve">
+    <value>PopUpAt_YYYYMMDDHHMM</value>
+  </data>
+  <data name="RecorsivType" xml:space="preserve">
+    <value>RecorsivType</value>
+  </data>
+  <data name="RemText" xml:space="preserve">
+    <value>RemText</value>
   </data>
   <data name="Saturday" xml:space="preserve">
     <value>Saturday</value>

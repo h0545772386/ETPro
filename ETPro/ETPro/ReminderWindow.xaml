@@ -1,0 +1,119 @@
+﻿<mah:MetroWindow x:Class="ETPro.ReminderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:properties="clr-namespace:ETPro.Properties"
+        xmlns:local="clr-namespace:ETPro"
+        Style="{StaticResource defWindow}"
+        WindowStartupLocation="CenterOwner"
+        mc:Ignorable="d"
+        Title="ReminderWindow" Height="520" Width="650">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="40"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <local:UCBack Background="AliceBlue"
+                      Grid.Row="1"
+                      Grid.ColumnSpan="5"
+                      Grid.RowSpan="4"></local:UCBack>
+
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    Margin="0,5">
+            <Button  x:Name="bSave"
+                     BorderThickness="0"
+                     Style="{StaticResource defButton}"
+                     Margin="5"
+                     Click="BSave_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Text="{x:Static properties:Resources.Save}"></TextBlock>
+                    <TextBlock    FontFamily="Segoe MDL2 Assets"
+                                  ToolTip="{x:Static properties:Resources.Cancel}"
+                                  Text="&#xE792;"
+                                  FontSize="20"
+                                  Margin="10,0" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="bCancel" 
+                BorderThickness="0"
+                     Style="{StaticResource defButton}"
+                     Margin="10,0"
+                    Click="BCancel_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Text="{x:Static properties:Resources.Cancel}"></TextBlock>
+                    <TextBlock    FontFamily="Segoe MDL2 Assets"
+                                  ToolTip="{x:Static properties:Resources.Cancel}"
+                                  Text="&#xED60;"
+                                  FontSize="20"
+                                  Margin="10,0" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Orientation="Vertical"
+                    Grid.Row="2"
+                    Grid.Column="1">
+            <mah:Tile Style="{StaticResource header}"
+                      Title="{x:Static properties:Resources.ObjType}" />
+            <TextBox x:Name="tbObjType"
+                     Text="{Binding ObjType, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+            <mah:Tile Style="{StaticResource header}"
+                      Width="300"
+                      Title="{x:Static properties:Resources.PopUpAt_YYYYMMDDHHMM}" />
+            <TextBox x:Name="tbPopUpAt_YYYYMMDDHHMM"
+                     Text="{Binding PopUpAt_YYYYMMDDHHMM, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+           
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="3">
+            <mah:Tile Style="{StaticResource header}"
+                      Title="{x:Static properties:Resources.RecorsivType}" />
+            <TextBox x:Name="tbRecorsivType"
+                     Text="{Binding RecorsivType, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+            <mah:Tile Style="{StaticResource header}"
+                      Title="{x:Static properties:Resources.Frequence}" />
+            <TextBox x:Name="tbFrequence"
+                     Text="{Binding Frequence, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+          
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3">
+            <mah:Tile Style="{StaticResource header}"
+                      Title="{x:Static properties:Resources.RemText}" />
+            <TextBox x:Name="tbRemText"
+                     Text="{Binding RemText, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="4" Grid.Column="1">
+            <Grid Height="45"></Grid>
+            <CheckBox x:Name="cbIsRecorsive"
+                      Content="{x:Static properties:Resources.IsRecorsive}"
+                      IsChecked="{Binding IsRecorsive}"></CheckBox>
+        </StackPanel>
+        <StackPanel Visibility="Visible"
+                    Grid.Row="4"
+                    Orientation="Vertical" 
+                     Grid.Column="3">
+            <mah:Tile Style="{StaticResource header}"
+                                  Title="{x:Static properties:Resources.Status}"/>
+            <ComboBox x:Name="cbStatus"
+                              SelectedValue="{Binding Status}">
+                <ComboBoxItem Content="{x:Static properties:Resources.Active}"></ComboBoxItem>
+                <ComboBoxItem Content="{x:Static properties:Resources.InActive}"></ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+</mah:MetroWindow>

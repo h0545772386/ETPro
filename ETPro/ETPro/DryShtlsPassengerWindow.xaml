@@ -1,4 +1,4 @@
-﻿<mah:MetroWindow x:Class="ETPro.DescWindow"
+﻿<mah:MetroWindow x:Class="ETPro.DryShtlsPassengerWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,27 +6,29 @@
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:properties="clr-namespace:ETPro.Properties"
         xmlns:local="clr-namespace:ETPro"
-        Style="{StaticResource defWindow}" 
+        Style="{StaticResource defWindow}"
         WindowStartupLocation="CenterOwner"
         mc:Ignorable="d"
-        Title="DescWindow" Height="420" Width="600" >
+        Title="DryShtlsPassengerWindow" Height="735" Width="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition Width="40"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <local:UCBack   Background="AliceBlue" 
-                        Grid.Row="1"  
-                        Grid.ColumnSpan="5"  
-                        Grid.RowSpan="3"></local:UCBack>
+        <local:UCBack Background="AliceBlue"
+                      Grid.Row="1"
+                      Grid.ColumnSpan="5"
+                      Grid.RowSpan="4"></local:UCBack>
+
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Left"
                     Grid.Column="1"
@@ -47,8 +49,8 @@
                 </StackPanel>
             </Button>
             <Button x:Name="bCancel" 
-                    BorderThickness="0"
-                    Style="{StaticResource defButton}"
+                BorderThickness="0"
+                     Style="{StaticResource defButton}"
                      Margin="10,0"
                     Click="BCancel_Click">
                 <StackPanel Orientation="Horizontal">
@@ -61,26 +63,38 @@
                 </StackPanel>
             </Button>
         </StackPanel>
-        <StackPanel Orientation="Vertical" 
+        <StackPanel Orientation="Vertical"
                     Grid.Row="2"
                     Grid.Column="1">
-            <mah:Tile Style="{StaticResource header}" 
-                              Title="{x:Static properties:Resources.TName}" />
-            <TextBox x:Name="tbTName"
-                             Text="{Binding TName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" ></TextBox>
-
-
-            <mah:Tile Style="{StaticResource header}" 
-                      Title="{x:Static properties:Resources.TValue}"/>
-            <TextBox   x:Name="tbTValue"
-                       Text="{Binding TValue, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                       ></TextBox>
-
-            <StackPanel Visibility="Visible" 
-                            Orientation="Vertical"
-                            Grid.Column="1">
+            <mah:Tile Style="{StaticResource header}"
+                      Title="{x:Static properties:Resources.FullName}" />
+            <TextBox x:Name="tbFullName"
+                     Text="{Binding FullName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+            <mah:Tile Style="{StaticResource header}"
+                      Title="{x:Static properties:Resources.Phone1}" />
+            <TextBox x:Name="tbPhone1"
+                     Text="{Binding Phone1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+            <mah:Tile Style="{StaticResource header}"
+                      Title="{x:Static properties:Resources.Phone2}" />
+            <TextBox x:Name="tbPhone2"
+                     Text="{Binding Phone2, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+            <mah:Tile Style="{StaticResource header}"
+                      Title="{x:Static properties:Resources.Phone3}" />
+            <TextBox x:Name="tbPhone3"
+                     Text="{Binding Phone3, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+            <mah:Tile Style="{StaticResource header}"
+                      Title="{x:Static properties:Resources.Address1}" />
+            <TextBox x:Name="tbAddress1"
+                     Text="{Binding Address1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+            <mah:Tile Style="{StaticResource header}"
+                      Title="{x:Static properties:Resources.Address2}" />
+            <TextBox x:Name="tbAddress2"
+                     Text="{Binding Address2, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+            <StackPanel Visibility="Visible"
+                                Orientation="Vertical" 
+                                Grid.Column="1">
                 <mah:Tile Style="{StaticResource header}"
-                              Title="{x:Static properties:Resources.Status}"/>
+                                  Title="{x:Static properties:Resources.Status}"/>
                 <ComboBox x:Name="cbStatus"
                               SelectedValue="{Binding Status}">
                     <ComboBoxItem Content="{x:Static properties:Resources.Active}"></ComboBoxItem>

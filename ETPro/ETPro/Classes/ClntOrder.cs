@@ -10,7 +10,8 @@ namespace ETPro
     {
         [Key]
         public int OrdId { get; set; }
-
+        public int DrvId { get; set; }
+        public int VehId { get; set; }
         public int OrdNum { get; set; }
 
         [Required]

@@ -8,27 +8,29 @@
         xmlns:local="clr-namespace:ETPro"
         Style="{StaticResource defWindow}"
         mc:Ignorable="d"
-        Title="VehicleWindow" Height="700" Width="1000">
+        Title="VehicleWindow" Height="760" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
             <RowDefinition ></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="40"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
             <ColumnDefinition Width="10"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition Width="10"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition Width="40"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <local:UCBack   Background="AliceBlue" 
                         Grid.Row="1"  
-                        Grid.ColumnSpan="7"  
+                        Grid.ColumnSpan="9"  
                         Grid.RowSpan="3"></local:UCBack>
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Left"
@@ -70,11 +72,191 @@
             <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.VehCode}" 
                        Width="200" />
-            <TextBox ></TextBox>
+            <TextBox x:Name="tbVehCode"
+                     Text="{Binding VehCode}"></TextBox>
             <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.VehType}" 
                        Width="200" />
-            <TextBox Height="80"></TextBox>
+            <TextBox x:Name="tbVehType"
+                     Text="{Binding VehType}"></TextBox>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.Model}" 
+                       Width="200" />
+            <TextBox ></TextBox>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.Color}" 
+                       Width="200" />
+            <TextBox x:Name="tbColor"
+                     Text="{Binding Color}"></TextBox>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.LockCode}" 
+                       Width="200" />
+            <TextBox x:Name="tbLockCode"
+                     Text="{Binding LockCode}"></TextBox>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical" Margin="1,0">
+                    <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.NumPsngrs}" 
+                       Width="200" />
+                    <local:NumberText x:Name="tbNumPsngrs"
+                              Style="{StaticResource numText}"></local:NumberText>
+                    <Grid Height="45"></Grid>
+                    <CheckBox x:Name="cbHasWIFI"
+                              Content="{x:Static properties:Resources.HasWIFI}"
+                              IsChecked="{Binding HasWIFI}"></CheckBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Grid.Column="1" Margin="1,0">
+                    <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.ManufYear}" 
+                       Width="200" />
+                    <local:NumberText x:Name="tbManufYear"
+                                      Style="{StaticResource numText}"
+                                      Text="{Binding ManufYear}"></local:NumberText>
+                    <StackPanel Visibility="Visible"
+                                Orientation="Vertical" 
+                                Grid.Column="1">
+                        <mah:Tile Style="{StaticResource header}"
+                                  Title="{x:Static properties:Resources.Status}"/>
+                        <ComboBox x:Name="cbStatus"
+                              SelectedValue="{Binding Status}">
+                            <ComboBoxItem Content="{x:Static properties:Resources.Active}"></ComboBoxItem>
+                            <ComboBoxItem Content="{x:Static properties:Resources.InActive}"></ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Column="3" Grid.Row="2">
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.CurrentKM}" 
+                       Width="200" />
+            <local:NumberText x:Name="tbCurrentKM"
+                              Style="{StaticResource numText}"
+                              Text="{Binding CurrentKM}"></local:NumberText>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.NxtTimingAt}" 
+                       Width="200" />
+            <local:NumberText x:Name="tbNxtTimingAt"
+                              Style="{StaticResource numText}"
+                              Text="{Binding NxtTimingAt}"></local:NumberText>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.NxtTreatmntAt}" 
+                       Width="200" />
+            <local:NumberText x:Name="tbNxtTreatmntAt"
+                              Style="{StaticResource numText}"
+                              Text="{Binding NxtTreatmntAt}"></local:NumberText>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.NxtTreatmnt1At}" 
+                       Width="200" />
+            <local:NumberText x:Name="tbNxtTreatmnt1At"
+                              Style="{StaticResource numText}"
+                              Text="{Binding NxtTreatmnt1At}"></local:NumberText>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.NxtTreatmnt2At}" 
+                       Width="200" />
+            <local:NumberText x:Name="tbNxtTreatmnt2At"
+                              Style="{StaticResource numText}"
+                              Text="{Binding NxtTreatmnt2At}"></local:NumberText>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.NxtTreatmnt3At}" 
+                       Width="200" />
+            <local:NumberText x:Name="tbNxtTreatmnt3At"
+                              Style="{StaticResource numText}"
+                              Text="{Binding NxtTreatmnt3At}"></local:NumberText>
+            <mah:Tile Style="{StaticResource header}" 
+                      Title="{x:Static properties:Resources.Worthy}" />
+            <ComboBox  x:Name="tbWorthy"
+                      SelectedValue="{Binding Worthy}"
+                      >
+                <ComboBoxItem Content="דירוג 5"></ComboBoxItem>
+                <ComboBoxItem Content="דירוג 4"></ComboBoxItem>
+                <ComboBoxItem Content="דירוג 3"></ComboBoxItem>
+                <ComboBoxItem Content="2 דירוג"></ComboBoxItem>
+                <ComboBoxItem Content="דירוג 1"></ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="5">
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.NxtTestAt}" 
+                       Width="200" />
+            <local:NumberText x:Name="tbNxtTestAt"
+                              Style="{StaticResource numText}"
+                              Text="{Binding NxtTestAt}"></local:NumberText>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.NxtInsuranceAt}" 
+                       Width="200" />
+            <local:NumberText x:Name="tbNxtInsuranceAt"
+                              Style="{StaticResource numText}"
+                              Text="{Binding NxtInsuranceAt}"></local:NumberText>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.ActivatDate}" 
+                       Width="200" />
+            <local:NumberText x:Name="tbActivatDate"
+                              Style="{StaticResource numText}"
+                              Text="{Binding ActivatDate}"></local:NumberText>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.BrakesDate}" 
+                       Width="200" />
+            <local:NumberText x:Name="tbBrakesDate"
+                              Style="{StaticResource numText}"
+                              Text="{Binding BrakesDate}"></local:NumberText>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.WinterDate}" 
+                       Width="200" />
+            <local:NumberText x:Name="tbWinterDate"
+                              Style="{StaticResource numText}"
+                              Text="{Binding WinterDate}"></local:NumberText>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.AdminDate}" 
+                       Width="200" />
+            <local:NumberText x:Name="tbAdminDate"
+                              Style="{StaticResource numText}"
+                              Text="{Binding AdminDate}"></local:NumberText>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.AdminDate1}" 
+                       Width="200" />
+            <local:NumberText x:Name="tbAdminDate1"
+                              Style="{StaticResource numText}"
+                              Text="{Binding AdminDate1}"></local:NumberText>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="7">
+
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.AdminDate2}" 
+                       Width="200" />
+            <local:NumberText x:Name="tbAdminDate2"
+                              Style="{StaticResource numText}"
+                              Text="{Binding AdminDate2}"></local:NumberText>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.AdminDate3}" 
+                       Width="200" />
+            <local:NumberText x:Name="tbAdminDate3"
+                              Style="{StaticResource numText}"
+                              Text="{Binding AdminDate3}"></local:NumberText>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.AdminDate4}" 
+                       Width="200" />
+            <local:NumberText x:Name="tbAdminDate4"
+                              Style="{StaticResource numText}"
+                              Text="{Binding AdminDate4}"></local:NumberText>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.Date1}" 
+                       Width="200" />
+            <mah:DateTimePicker x:Name="dtDate1"
+                                SelectedDateTime="{Binding Date1,Converter={StaticResource dateTimeConverter} }"></mah:DateTimePicker>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.Date2}"  />
+            <mah:DateTimePicker x:Name="dtDate2"
+                               SelectedDateTime="{Binding Date2,Converter={StaticResource dateTimeConverter} }"></mah:DateTimePicker>
+            <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.Date3}"  />
+            <mah:DateTimePicker x:Name="dtDate3"
+                                CalendarStyle="{StaticResource MahApps.Styles.Calendar.DateTimePicker}"
+                                SelectedDateTime="{Binding Date3,Converter={StaticResource dateTimeConverter} }"></mah:DateTimePicker>
         </StackPanel>
         <StackPanel Orientation="Horizontal"
                     Grid.Row="4"
@@ -82,24 +264,34 @@
                     Grid.Column="1" 
                     Margin="0,5" 
                     VerticalAlignment="Center">
-            <Button x:Name="titalAddress" 
-                    Style="{StaticResource defButton}"    >
-                <StackPanel  Orientation="Horizontal" >
-                    <TextBlock  Text="{x:Static properties:Resources.Addresses}"
-                                VerticalAlignment="Center" ></TextBlock>
-                    <TextBlock Style="{StaticResource defIcoTextblock}"
-                               Text="&#xE707;" ></TextBlock>
-                </StackPanel>
-
-            </Button>
-            <Button    Style="{StaticResource defButton}"     
-                       Margin="10,0">
+            <Button  x:Name="bCommunications" 
+                     Style="{StaticResource defButton}"     
+                     Margin="10,0"
+                     Click="BCommunications_Click">
                 <StackPanel  Orientation="Horizontal" >
                     <TextBlock Text="{x:Static properties:Resources.Communications}" ></TextBlock>
                     <TextBlock Style="{StaticResource defIcoTextblock}" Text="&#xE780;" ></TextBlock>
                 </StackPanel>
             </Button>
-
+            <Button x:Name="bDesc"  
+                    Style="{StaticResource defButton}"     
+                    Margin="10,0"
+                    Click="BDesc_Click">
+                <StackPanel  Orientation="Horizontal" >
+                    <TextBlock Text="{x:Static properties:Resources.Desc}" ></TextBlock>
+                    <TextBlock Style="{StaticResource defIcoTextblock}" Text="&#xE7BC;" ></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button x:Name="bLinc" 
+                    Style="{StaticResource defButton}" 
+                    Click="BLinc_Click">
+                <StackPanel  Orientation="Horizontal" >
+                    <TextBlock  Text="{x:Static properties:Resources.Linc}"
+                                VerticalAlignment="Center" ></TextBlock>
+                    <TextBlock Style="{StaticResource defIcoTextblock}"
+                               Text="&#xE71B;" ></TextBlock>
+                </StackPanel>
+            </Button>
         </StackPanel>
     </Grid>
 </mah:MetroWindow>

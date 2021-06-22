@@ -52,6 +52,8 @@ namespace ETPro
                     case "DescWindow": window = new DescWindow(); break;
                     case "LincWindow": window = new LincWindow(); break;
                     case "DriverWindow": window = new DriverWindow(); break;
+                    case "VehicleWindow": window = new VehicleWindow(); break;
+                    case "PassengerWindow": window = new PassengerWindow(); break;
                 }
                 window?.ShowDialog();
             }

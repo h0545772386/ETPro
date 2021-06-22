@@ -7,10 +7,10 @@
         xmlns:properties="clr-namespace:ETPro.Properties"
         xmlns:local="clr-namespace:ETPro"
         Style="{StaticResource defWindow}"
-        WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="CenterOwner"
         mc:Ignorable="d"
         Title="CommuWindow"
-        Height="470"
+        Height="510"
         Width="600">
     <Grid>
         <Grid.RowDefinitions>
@@ -66,39 +66,34 @@
         <StackPanel Orientation="Vertical"
                     Grid.Row="2"
                     Grid.Column="1" >
-            <Grid >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition Width="auto"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <StackPanel Orientation="Vertical">
-                    <mah:Tile Style="{StaticResource header}" 
+            <mah:Tile Style="{StaticResource header}" 
                               Title="{x:Static properties:Resources.PersonName}"/>
-                    <TextBox x:Name="tbPersonName"
+            <TextBox x:Name="tbPersonName"
                              Text="{Binding PersonName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
-                </StackPanel>
-                <StackPanel Visibility="Collapsed" 
-                            Orientation="Vertical"
-                            Grid.Column="1">
-                    <mah:Tile Style="{StaticResource header}"
-                              Title="{x:Static properties:Resources.Status}"/>
-                    <ComboBox   x:Name="cbStatus"
-                                SelectedValue="{Binding Status}">
-                        <ComboBoxItem Content="{x:Static properties:Resources.Active}"></ComboBoxItem>
-                        <ComboBoxItem Content="{x:Static properties:Resources.InActive}"></ComboBoxItem>
-                    </ComboBox>
-                </StackPanel>
-            </Grid>
-          
             <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.CommuType}"/>
-            <TextBox x:Name="tbCommuType"
-                     Text="{Binding CommuType, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
+            <ComboBox x:Name="tbCommuType"
+                     SelectedValue="{Binding CommuType}">
+                <ComboBoxItem Content="נייד"></ComboBoxItem>
+                <ComboBoxItem Content="טלפון"></ComboBoxItem>
+                <ComboBoxItem Content="דוא''ל"></ComboBoxItem>
+                <ComboBoxItem Content="פקס"></ComboBoxItem>
+            </ComboBox>
             <mah:Tile  Style="{StaticResource header}"
                        Title="{x:Static properties:Resources.CommuValue}"/>
             <TextBox x:Name="tbCommuValue"
-                     Text="{Binding CommuValue, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
-                     Height="80"></TextBox>
+                     Text="{Binding CommuValue, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
+            <StackPanel Visibility="Visible" 
+                            Orientation="Vertical"
+                            Grid.Column="1">
+                <mah:Tile Style="{StaticResource header}"
+                              Title="{x:Static properties:Resources.Status}"/>
+                <ComboBox   x:Name="cbStatus"
+                                SelectedValue="{Binding Status}">
+                    <ComboBoxItem Content="{x:Static properties:Resources.Active}"></ComboBoxItem>
+                    <ComboBoxItem Content="{x:Static properties:Resources.InActive}"></ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
         </StackPanel>  
     </Grid>
 </mah:MetroWindow>

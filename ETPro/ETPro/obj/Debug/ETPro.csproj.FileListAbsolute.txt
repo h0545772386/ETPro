@@ -116,4 +116,11 @@ E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\CommuWindow.g.cs
 E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\CommuWindow.baml
 E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DescWindow.g.cs
 E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DescWindow.baml
-E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\ETPro.csprojAssemblyReference.cache
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\PassengerWindow.g.cs
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\PassengerWindow.baml
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\ReminderWindow.g.cs
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\ReminderWindow.baml
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DocWindow.g.cs
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DocWindow.baml
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DryShtlsPassengerWindow.g.cs
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DryShtlsPassengerWindow.baml

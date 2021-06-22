@@ -8,8 +8,8 @@
         xmlns:local="clr-namespace:ETPro"
         mc:Ignorable="d"
        Style="{StaticResource defWindow}"
-        WindowStartupLocation="CenterScreen"
-        Title="ClientWindow" Height="660" Width="670" Loaded="MetroWindow_Loaded">
+        WindowStartupLocation="CenterOwner"
+        Title="ClientWindow" Height="710" Width="670" Loaded="MetroWindow_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -76,8 +76,7 @@
             <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition ></ColumnDefinition>
-                    <ColumnDefinition  Width="auto"></ColumnDefinition>
-                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <StackPanel Orientation="Vertical"  Margin="1,0">
                     <mah:Tile Style="{StaticResource header}" 
@@ -98,52 +97,53 @@
                         <ComboBoxItem Content="לקוח מזדמן"></ComboBoxItem>
                     </ComboBox>
                 </StackPanel>
-                <StackPanel Orientation="Vertical"
-                            Visibility="Visible"
-                            Grid.Column="2" 
-                            Margin="1,0">
-                    <mah:Tile Style="{StaticResource header}" 
-                              Title="{x:Static properties:Resources.Status}"/>
-                    <ComboBox x:Name="cbStatus"
-                              SelectedValue="{Binding Status}">
-                        <ComboBoxItem Content="{x:Static properties:Resources.Active}"></ComboBoxItem>
-                        <ComboBoxItem Content="{x:Static properties:Resources.InActive}"></ComboBoxItem>
-                    </ComboBox>
-                </StackPanel>
+              
             </Grid>
             <StackPanel Orientation="Vertical">
                 <mah:Tile Style="{StaticResource header}" 
                           Title="{x:Static properties:Resources.ClntDesc}"/>
-                <TextBox Height="80" 
-                         x:Name="tbClntDesc"
+                <TextBox  x:Name="tbClntDesc"
                          Text="{Binding ClntDesc, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
             </StackPanel>
             <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
+   
                 <StackPanel Orientation="Vertical" 
                             Margin="0,0,5,0">
                     <mah:Tile Style="{StaticResource header}" 
                               Title="{x:Static properties:Resources.Date1}"/>
                     <mah:DateTimePicker x:Name="dtpDate1"
-                                        DisplayDate="{Binding Date1,Converter={StaticResource dateTimeConverter}}"></mah:DateTimePicker>
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Grid.Column="1" Margin="0,0,5,0">
-                    <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.Date2}"/>
-                    <mah:DateTimePicker x:Name="dtpDate2"
-                                        DisplayDate="{Binding Date2,Converter={StaticResource dateTimeConverter}}"></mah:DateTimePicker>
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Grid.Column="2" >
+                                        DisplayDate="{Binding Date1,Converter={StaticResource dateTimeConverter}}"
+                                        ></mah:DateTimePicker>
                     <mah:Tile Style="{StaticResource header}" 
                               Title="{x:Static properties:Resources.Date3}"/>
                     <mah:DateTimePicker x:Name="dtpDate3"
                                         DisplayDate="{Binding Date3,Converter={StaticResource dateTimeConverter}}"></mah:DateTimePicker>
                 </StackPanel>
+                <StackPanel Orientation="Vertical" 
+                            Grid.Column="1" 
+                            Margin="0,0,5,0">
+                    <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.Date2}"/>
+                    <mah:DateTimePicker x:Name="dtpDate2"
+                                        DisplayDate="{Binding Date2,Converter={StaticResource dateTimeConverter}}"></mah:DateTimePicker>
+                    <StackPanel Orientation="Vertical"
+                            Visibility="Visible"
+                            Grid.Column="2" 
+                            Margin="1,0">
+                        <mah:Tile Style="{StaticResource header}" 
+                              Title="{x:Static properties:Resources.Status}"/>
+                        <ComboBox x:Name="cbStatus"
+                              SelectedValue="{Binding Status}">
+                            <ComboBoxItem Content="{x:Static properties:Resources.Active}"></ComboBoxItem>
+                            <ComboBoxItem Content="{x:Static properties:Resources.InActive}"></ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+              
             </Grid>
-
         </StackPanel>
         <StackPanel Orientation="Horizontal" 
                     Grid.Row="4" Grid.Column="1" 

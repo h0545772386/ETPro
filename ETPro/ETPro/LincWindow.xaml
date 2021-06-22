@@ -7,16 +7,16 @@
         xmlns:properties="clr-namespace:ETPro.Properties"
         xmlns:local="clr-namespace:ETPro"
         Style="{StaticResource defWindow}"
-        WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="CenterOwner"
         mc:Ignorable="d"
-        Title="LincWindow" Height="380" Width="600">
+        Title="LincWindow" Height="430" Width="700">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition ></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40"></ColumnDefinition>
@@ -64,38 +64,29 @@
         <StackPanel Orientation="Vertical"
                     Grid.Row="2"
                     Grid.Column="1" >
-        
-            <Grid Visibility="Visible">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition Width="auto"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <StackPanel Orientation="Vertical" 
-                            Margin="1,0">
-                    <mah:Tile Style="{StaticResource header}" 
+
+            <mah:Tile Style="{StaticResource header}" 
                               Title="{x:Static properties:Resources.LncName}"/>
-                    <TextBox  x:Name="tbLncName"
+            <TextBox  x:Name="tbLncName"
                               Text="{Binding LncName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" ></TextBox>
 
-                </StackPanel>
-                <StackPanel Orientation="Vertical" 
-                            Visibility="Collapsed" 
-                            Grid.Column="1"
-                            Margin="1,0">
-                    <mah:Tile Style="{StaticResource header}"
-                              Title="{x:Static properties:Resources.Status}"/>
-                    <ComboBox x:Name="cbStatus" 
-                              SelectedValue="{Binding Status}">
-                        <ComboBoxItem Content="{x:Static properties:Resources.Active}"></ComboBoxItem>
-                        <ComboBoxItem Content="{x:Static properties:Resources.InActive}"></ComboBoxItem>
-                    </ComboBox>
-                </StackPanel>
-            </Grid>
             <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.LncText}"/>
             <TextBox  x:Name="tbLncText"
                       Text="{Binding LncText, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
-                      Height="80"></TextBox>
+                     ></TextBox>
+            <StackPanel Orientation="Vertical" 
+                            Visibility="Visible" 
+                            Grid.Column="1"
+                            Margin="1,0">
+                <mah:Tile Style="{StaticResource header}"
+                              Title="{x:Static properties:Resources.Status}"/>
+                <ComboBox x:Name="cbStatus" 
+                              SelectedValue="{Binding Status}">
+                    <ComboBoxItem Content="{x:Static properties:Resources.Active}"></ComboBoxItem>
+                    <ComboBoxItem Content="{x:Static properties:Resources.InActive}"></ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </mah:MetroWindow>

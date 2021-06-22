@@ -7,7 +7,7 @@
         xmlns:properties="clr-namespace:ETPro.Properties"
         xmlns:local="clr-namespace:ETPro"
         Style="{StaticResource defWindow}"
-        WindowStartupLocation="CenterScreen"        
+        WindowStartupLocation="CenterOwner"        
         mc:Ignorable="d"
         Title="DriverWindow" 
         Height="580" 
@@ -79,7 +79,7 @@
                       Title="{x:Static properties:Resources.AliaseName}" />
             <TextBox x:Name="tbAliaseName"
                      Text="{Binding AliaseName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
-            <StackPanel Visibility="Collapsed" 
+            <StackPanel Visibility="Visible" 
                         Orientation="Vertical"
                         Grid.Column="1">
                 <mah:Tile Style="{StaticResource header}"
@@ -119,14 +119,20 @@
             </Grid>
             <mah:Tile Style="{StaticResource header}" 
                       Title="{x:Static properties:Resources.Worthy}" />
-            <TextBox  x:Name="tbWorthy"
-                      Text="{Binding Worthy, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
-                      Height="80"></TextBox>
+            <ComboBox  x:Name="tbWorthy"
+                      Text="{Binding Worthy}"
+                      >
+                <ComboBoxItem Content="דירוג 5"></ComboBoxItem>
+                <ComboBoxItem Content="דירוג 4"></ComboBoxItem>
+                <ComboBoxItem Content="דירוג 3"></ComboBoxItem>
+                <ComboBoxItem Content="2 דירוג"></ComboBoxItem>
+                <ComboBoxItem Content="דירוג 1"></ComboBoxItem>
+            </ComboBox>
             <mah:Tile Style="{StaticResource header}" 
                       Title="{x:Static properties:Resources.DrvDesc}" />
             <TextBox  x:Name="tbDrvDesc"
                       Text="{Binding DrvDesc, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
-                      Height="80"></TextBox>
+                     ></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal"
                     Grid.Row="4" 

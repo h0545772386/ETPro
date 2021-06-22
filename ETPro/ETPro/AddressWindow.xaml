@@ -9,7 +9,7 @@
         mc:Ignorable="d"
        Style="{StaticResource defWindow}"
         WindowStartupLocation="CenterOwner"
-        Title="AddressWindow" Height="850" Width="600" >
+        Title="AddressWindow" Height="940" Width="600" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -96,6 +96,17 @@
                        Title="{x:Static properties:Resources.Address4}" />
             <TextBox x:Name="tbAddress4"
                      Text="{Binding Address4, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
+            <StackPanel Visibility="Visible"
+                            Orientation="Vertical" 
+                            Grid.Column="1">
+                <mah:Tile Style="{StaticResource header}"
+                              Title="{x:Static properties:Resources.Status}"/>
+                <ComboBox x:Name="cbStatus"
+                              SelectedValue="{Binding Status}">
+                    <ComboBoxItem Content="{x:Static properties:Resources.Active}"></ComboBoxItem>
+                    <ComboBoxItem Content="{x:Static properties:Resources.InActive}"></ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </mah:MetroWindow>

@@ -403,6 +403,42 @@ namespace ETPro.Properties {
         }
         
         /// <summary>
+        ///   查找类似 DocCtg 的本地化字符串。
+        /// </summary>
+        public static string DocCtg {
+            get {
+                return ResourceManager.GetString("DocCtg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 DocName 的本地化字符串。
+        /// </summary>
+        public static string DocName {
+            get {
+                return ResourceManager.GetString("DocName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 DocPath 的本地化字符串。
+        /// </summary>
+        public static string DocPath {
+            get {
+                return ResourceManager.GetString("DocPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 DocText 的本地化字符串。
+        /// </summary>
+        public static string DocText {
+            get {
+                return ResourceManager.GetString("DocText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 DrvDesc 的本地化字符串。
         /// </summary>
         public static string DrvDesc {
@@ -435,6 +471,15 @@ namespace ETPro.Properties {
         public static string FreeAtHour {
             get {
                 return ResourceManager.GetString("FreeAtHour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Frequence 的本地化字符串。
+        /// </summary>
+        public static string Frequence {
+            get {
+                return ResourceManager.GetString("Frequence", resourceCulture);
             }
         }
         
@@ -480,6 +525,15 @@ namespace ETPro.Properties {
         public static string InActive {
             get {
                 return ResourceManager.GetString("InActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 IsRecorsive 的本地化字符串。
+        /// </summary>
+        public static string IsRecorsive {
+            get {
+                return ResourceManager.GetString("IsRecorsive", resourceCulture);
             }
         }
         
@@ -637,6 +691,15 @@ namespace ETPro.Properties {
         }
         
         /// <summary>
+        ///   查找类似 ObjType 的本地化字符串。
+        /// </summary>
+        public static string ObjType {
+            get {
+                return ResourceManager.GetString("ObjType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 OrdDays 的本地化字符串。
         /// </summary>
         public static string OrdDays {
@@ -750,6 +813,60 @@ namespace ETPro.Properties {
         public static string Phone {
             get {
                 return ResourceManager.GetString("Phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Phone1 的本地化字符串。
+        /// </summary>
+        public static string Phone1 {
+            get {
+                return ResourceManager.GetString("Phone1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Phone2 的本地化字符串。
+        /// </summary>
+        public static string Phone2 {
+            get {
+                return ResourceManager.GetString("Phone2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Phone3 的本地化字符串。
+        /// </summary>
+        public static string Phone3 {
+            get {
+                return ResourceManager.GetString("Phone3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 PopUpAt_YYYYMMDDHHMM 的本地化字符串。
+        /// </summary>
+        public static string PopUpAt_YYYYMMDDHHMM {
+            get {
+                return ResourceManager.GetString("PopUpAt_YYYYMMDDHHMM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 RecorsivType 的本地化字符串。
+        /// </summary>
+        public static string RecorsivType {
+            get {
+                return ResourceManager.GetString("RecorsivType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 RemText 的本地化字符串。
+        /// </summary>
+        public static string RemText {
+            get {
+                return ResourceManager.GetString("RemText", resourceCulture);
             }
         }
         

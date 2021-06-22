@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace ETPro
 {
     /// <summary>
-    /// VehicleWindow.xaml 的交互逻辑
+    /// PassengerWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class VehicleWindow : MetroWindow
+    public partial class PassengerWindow : MetroWindow
     {
-        public VehicleWindow()
+        public PassengerWindow()
         {
             InitializeComponent();
-        }
-
-        private void BCancel_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void BSave_Click(object sender, RoutedEventArgs e)
@@ -35,17 +30,17 @@ namespace ETPro
 
         }
 
-        private void BLinc_Click(object sender, RoutedEventArgs e)
+        private void BCancel_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void BDesc_Click(object sender, RoutedEventArgs e)
+        private void BAddress_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void BCommunications_Click(object sender, RoutedEventArgs e)
+        private void BCommunication_Click(object sender, RoutedEventArgs e)
         {
 
         }

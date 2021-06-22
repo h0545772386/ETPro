@@ -43,6 +43,13 @@
         <Setter Property="FontWeight" Value="Medium"></Setter>
         <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
     </Style>
+    <Style TargetType="DatePicker">
+        <Setter Property="Height" Value="40"></Setter>
+        <Setter Property="FontSize" Value="12"></Setter>
+        <Setter Property="FontFamily" Value="Arial"></Setter>
+        <Setter Property="FontWeight" Value="Medium"></Setter>
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+    </Style>
     <Style  TargetType="TextBox">
         <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
         <Setter Property="FontSize" Value="12"></Setter>

@@ -7,7 +7,7 @@
         xmlns:properties="clr-namespace:ETPro.Properties"
         xmlns:local="clr-namespace:ETPro"
         Style="{StaticResource defWindow}"
-        WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="CenterOwner"
         mc:Ignorable="d"
         Title="ClntOrderWindow" Height="700" Width="1000">
     <Grid>
@@ -20,11 +20,11 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition Width="10"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
             <ColumnDefinition Width="10"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition Width="40"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <local:UCBack   Background="AliceBlue" 
@@ -106,27 +106,37 @@
                        Width="200" />
             <TextBox x:Name="tbClientName"
                      Text="{Binding ClientName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
+            <StackPanel Visibility="Visible"
+                            Orientation="Vertical" 
+                            Grid.Column="1">
+                <mah:Tile Style="{StaticResource header}"
+                              Title="{x:Static properties:Resources.Status}"/>
+                <ComboBox x:Name="cbStatus"
+                              SelectedValue="{Binding Status}">
+                    <ComboBoxItem Content="{x:Static properties:Resources.Active}"></ComboBoxItem>
+                    <ComboBoxItem Content="{x:Static properties:Resources.InActive}"></ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Vertical"
+                    Grid.Row="2" 
+                    Grid.Column="3">
             <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.NumPsngrs}"
                        Width="200" />
             <local:NumberText  x:Name="tbNumPsngrs"
                                Style="{StaticResource numText}"
                                Text="{Binding NumPsngrs, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
-        </StackPanel>
-        <StackPanel Orientation="Vertical"
-                    Grid.Row="2" 
-                    Grid.Column="3">
             <mah:Tile Style="{StaticResource header}" 
                       Title="{x:Static properties:Resources.FromLocation}" />
             <TextBox  x:Name="tbFromLocation"
                       Text="{Binding FromLocation, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
-                      Height="84"
+                     
                 ></TextBox>
             <mah:Tile Style="{StaticResource header}"  
                       Title="{x:Static properties:Resources.ToLocation}" />
             <TextBox x:Name="tbToLocation"
                      Text="{Binding ToLocation, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
-                     Height="82"
                 ></TextBox>
             <Grid >
                 <Grid.ColumnDefinitions>
@@ -266,17 +276,7 @@
                         <ComboBoxItem Content="{x:Static properties:Resources.Saturday}"></ComboBoxItem>
                     </ComboBox>
                 </StackPanel>
-                <StackPanel Visibility="Collapsed"
-                            Orientation="Vertical" 
-                            Grid.Column="1">
-                    <mah:Tile Style="{StaticResource header}"
-                              Title="{x:Static properties:Resources.Status}"/>
-                    <ComboBox x:Name="cbStatus"
-                              SelectedValue="{Binding Status}">
-                        <ComboBoxItem Content="{x:Static properties:Resources.Active}"></ComboBoxItem>
-                        <ComboBoxItem Content="{x:Static properties:Resources.InActive}"></ComboBoxItem>
-                    </ComboBox>
-                </StackPanel>
+               
             </Grid>
         </StackPanel>
     </Grid>

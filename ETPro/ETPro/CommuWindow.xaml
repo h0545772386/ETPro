@@ -10,14 +10,14 @@
         WindowStartupLocation="CenterOwner"
         mc:Ignorable="d"
         Title="CommuWindow"
-        Height="510"
+        Height="580"
         Width="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -66,13 +66,31 @@
         <StackPanel Orientation="Vertical"
                     Grid.Row="2"
                     Grid.Column="1" >
-            <mah:Tile Style="{StaticResource header}" 
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical" Margin="1,0">
+                    <mah:Tile Style="{StaticResource header}" 
                               Title="{x:Static properties:Resources.PersonName}"/>
-            <TextBox x:Name="tbPersonName"
+                    <TextBox x:Name="tbPersonName"
                              Text="{Binding PersonName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Visibility="Collapsed" Grid.Column="1" MinWidth="200" Margin="1,0">
+                    <mah:Tile Style="{StaticResource header}" 
+                              Title="{x:Static properties:Resources.Role}"/>
+                    <ComboBox x:Name="cbRole" >
+                        <ComboBoxItem Content="{x:Static properties:Resources.Sender}"></ComboBoxItem>
+                        <ComboBoxItem Content="{x:Static properties:Resources.Receiver}"></ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </Grid>
+          
+         
             <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.CommuType}"/>
-            <ComboBox x:Name="tbCommuType"
+            <ComboBox x:Name="cbCommuType"
                      SelectedValue="{Binding CommuType}">
                 <ComboBoxItem Content="נייד"></ComboBoxItem>
                 <ComboBoxItem Content="טלפון"></ComboBoxItem>

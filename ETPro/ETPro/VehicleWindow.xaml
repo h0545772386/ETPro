@@ -183,80 +183,134 @@
             <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.NxtTestAt}" 
                        Width="200" />
-            <local:NumberText x:Name="tbNxtTestAt"
-                              Style="{StaticResource numText}"
-                              Text="{Binding NxtTestAt}"></local:NumberText>
+            <DatePicker x:Name="tbNxtTestAt"
+                              Height="40"
+                                FontSize="12"
+                                VerticalContentAlignment="Center"
+                                FontFamily="Arial"
+                                FontWeight="Medium"
+                                SelectedDate="{Binding NxtTestAt,Converter={StaticResource dateTimeConverter},ConverterParameter=date}"></DatePicker>
             <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.NxtInsuranceAt}" 
                        Width="200" />
-            <local:NumberText x:Name="tbNxtInsuranceAt"
-                              Style="{StaticResource numText}"
-                              Text="{Binding NxtInsuranceAt}"></local:NumberText>
+            <DatePicker x:Name="tbNxtInsuranceAt"
+                            Height="40"
+                                FontSize="12"
+                                VerticalContentAlignment="Center"
+                                FontFamily="Arial"
+                                FontWeight="Medium"
+                                SelectedDate="{Binding NxtInsuranceAt,Converter={StaticResource dateTimeConverter},ConverterParameter=date}"></DatePicker>
             <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.ActivatDate}" 
                        Width="200" />
-            <local:NumberText x:Name="tbActivatDate"
-                              Style="{StaticResource numText}"
-                              Text="{Binding ActivatDate}"></local:NumberText>
+            <DatePicker x:Name="tbActivatDate"
+                              Height="40"
+                                FontSize="12"
+                                VerticalContentAlignment="Center"
+                                FontFamily="Arial"
+                                FontWeight="Medium"
+                                SelectedDate="{Binding ActivatDate,Converter={StaticResource dateTimeConverter},ConverterParameter=date}"></DatePicker>
             <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.BrakesDate}" 
                        Width="200" />
-            <local:NumberText x:Name="tbBrakesDate"
-                              Style="{StaticResource numText}"
-                              Text="{Binding BrakesDate}"></local:NumberText>
+            <DatePicker x:Name="tbBrakesDate"
+                            Height="40"
+                                FontSize="12"
+                                VerticalContentAlignment="Center"
+                                FontFamily="Arial"
+                                FontWeight="Medium"
+                                SelectedDate="{Binding BrakesDate,Converter={StaticResource dateTimeConverter},ConverterParameter=date}"></DatePicker>
             <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.WinterDate}" 
                        Width="200" />
-            <local:NumberText x:Name="tbWinterDate"
-                              Style="{StaticResource numText}"
-                              Text="{Binding WinterDate}"></local:NumberText>
+            <DatePicker x:Name="tbWinterDate"
+                             Height="40"
+                                FontSize="12"
+                                VerticalContentAlignment="Center"
+                                FontFamily="Arial"
+                                FontWeight="Medium"
+                                SelectedDate="{Binding WinterDate,Converter={StaticResource dateTimeConverter},ConverterParameter=date}"></DatePicker>
             <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.AdminDate}" 
                        Width="200" />
-            <local:NumberText x:Name="tbAdminDate"
-                              Style="{StaticResource numText}"
-                              Text="{Binding AdminDate}"></local:NumberText>
+            <DatePicker x:Name="tbAdminDate"
+                              Height="40"
+                                FontSize="12"
+                                VerticalContentAlignment="Center"
+                                FontFamily="Arial"
+                                FontWeight="Medium"
+                                SelectedDate="{Binding AdminDate,Converter={StaticResource dateTimeConverter},ConverterParameter=date}"></DatePicker>
             <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.AdminDate1}" 
                        Width="200" />
-            <local:NumberText x:Name="tbAdminDate1"
-                              Style="{StaticResource numText}"
-                              Text="{Binding AdminDate1}"></local:NumberText>
+            <DatePicker x:Name="tbAdminDate1"
+                         Height="40"
+                                FontSize="12"
+                                VerticalContentAlignment="Center"
+                                FontFamily="Arial"
+                                FontWeight="Medium"
+                                SelectedDate="{Binding AdminDate1,Converter={StaticResource dateTimeConverter},ConverterParameter=date}"></DatePicker>
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="7">
 
             <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.AdminDate2}" 
                        Width="200" />
-            <local:NumberText x:Name="tbAdminDate2"
-                              Style="{StaticResource numText}"
-                              Text="{Binding AdminDate2}"></local:NumberText>
+            <DatePicker x:Name="tbAdminDate2"
+                              Height="40"
+                                FontSize="12"
+                                VerticalContentAlignment="Center"
+                                FontFamily="Arial"
+                                FontWeight="Medium"
+                                SelectedDate="{Binding AdminDate2,Converter={StaticResource dateTimeConverter},ConverterParameter=date}"></DatePicker>
             <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.AdminDate3}" 
                        Width="200" />
-            <local:NumberText x:Name="tbAdminDate3"
-                              Style="{StaticResource numText}"
-                              Text="{Binding AdminDate3}"></local:NumberText>
+            <DatePicker x:Name="tbAdminDate3"
+                             Height="40"
+                                FontSize="12"
+                                VerticalContentAlignment="Center"
+                                FontFamily="Arial"
+                                FontWeight="Medium"
+                                SelectedDate="{Binding AdminDate3,Converter={StaticResource dateTimeConverter},ConverterParameter=date}"></DatePicker>
             <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.AdminDate4}" 
                        Width="200" />
-            <local:NumberText x:Name="tbAdminDate4"
-                              Style="{StaticResource numText}"
-                              Text="{Binding AdminDate4}"></local:NumberText>
+            <DatePicker x:Name="tbAdminDate4"
+                          Height="40"
+                                FontSize="12"
+                                VerticalContentAlignment="Center"
+                                FontFamily="Arial"
+                                FontWeight="Medium"
+                                SelectedDate="{Binding AdminDate4,Converter={StaticResource dateTimeConverter},ConverterParameter=date}"></DatePicker>
             <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.Date1}" 
                        Width="200" />
-            <mah:DateTimePicker x:Name="dtDate1"
-                                SelectedDateTime="{Binding Date1,Converter={StaticResource dateTimeConverter} }"></mah:DateTimePicker>
+            <DatePicker x:Name="dtDate1"
+                               Height="40"
+                                FontSize="12"
+                                VerticalContentAlignment="Center"
+                                FontFamily="Arial"
+                                FontWeight="Medium"
+                                SelectedDate="{Binding Date1,Converter={StaticResource dateTimeConverter},ConverterParameter=date}"></DatePicker>
             <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.Date2}"  />
-            <mah:DateTimePicker x:Name="dtDate2"
-                               SelectedDateTime="{Binding Date2,Converter={StaticResource dateTimeConverter} }"></mah:DateTimePicker>
+            <DatePicker x:Name="dtDate2"
+                             Height="40"
+                                FontSize="12"
+                                VerticalContentAlignment="Center"
+                                FontFamily="Arial"
+                                FontWeight="Medium"
+                                SelectedDate="{Binding Date2,Converter={StaticResource dateTimeConverter},ConverterParameter=date}"></DatePicker>
             <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.Date3}"  />
-            <mah:DateTimePicker x:Name="dtDate3"
-                                CalendarStyle="{StaticResource MahApps.Styles.Calendar.DateTimePicker}"
-                                SelectedDateTime="{Binding Date3,Converter={StaticResource dateTimeConverter} }"></mah:DateTimePicker>
+            <DatePicker x:Name="dtDate3"
+                          Height="40"
+                          FontSize="12"
+                          VerticalContentAlignment="Center"
+                          FontFamily="Arial"
+                          FontWeight="Medium"
+                          SelectedDate="{Binding Date3,Converter={StaticResource dateTimeConverter},ConverterParameter=date}"></DatePicker>
         </StackPanel>
         <StackPanel Orientation="Horizontal"
                     Grid.Row="4"

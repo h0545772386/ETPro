@@ -853,6 +853,15 @@ namespace ETPro.Properties {
         }
         
         /// <summary>
+        ///   查找类似 Receiver 的本地化字符串。
+        /// </summary>
+        public static string Receiver {
+            get {
+                return ResourceManager.GetString("Receiver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 RecorsivType 的本地化字符串。
         /// </summary>
         public static string RecorsivType {
@@ -871,6 +880,15 @@ namespace ETPro.Properties {
         }
         
         /// <summary>
+        ///   查找类似 Role 的本地化字符串。
+        /// </summary>
+        public static string Role {
+            get {
+                return ResourceManager.GetString("Role", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Saturday 的本地化字符串。
         /// </summary>
         public static string Saturday {
@@ -885,6 +903,15 @@ namespace ETPro.Properties {
         public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Sender 的本地化字符串。
+        /// </summary>
+        public static string Sender {
+            get {
+                return ResourceManager.GetString("Sender", resourceCulture);
             }
         }
         

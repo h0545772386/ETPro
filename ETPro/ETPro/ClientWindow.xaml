@@ -115,20 +115,34 @@
                             Margin="0,0,5,0">
                     <mah:Tile Style="{StaticResource header}" 
                               Title="{x:Static properties:Resources.Date1}"/>
-                    <mah:DateTimePicker x:Name="dtpDate1"
-                                        DisplayDate="{Binding Date1,Converter={StaticResource dateTimeConverter}}"
-                                        ></mah:DateTimePicker>
+                    <DatePicker x:Name="dtpDate1"
+                               Height="40"
+                                FontSize="12"
+                                VerticalContentAlignment="Center"
+                                FontFamily="Arial"
+                                FontWeight="Medium"
+                                SelectedDate="{Binding Date1,Converter={StaticResource dateTimeConverter},ConverterParameter=date}"></DatePicker>
                     <mah:Tile Style="{StaticResource header}" 
                               Title="{x:Static properties:Resources.Date3}"/>
-                    <mah:DateTimePicker x:Name="dtpDate3"
-                                        DisplayDate="{Binding Date3,Converter={StaticResource dateTimeConverter}}"></mah:DateTimePicker>
+                    <DatePicker x:Name="dtpDate3"
+                                Height="40"
+                                FontSize="12"
+                                VerticalContentAlignment="Center"
+                                FontFamily="Arial"
+                                FontWeight="Medium"
+                                SelectedDate="{Binding Date3,Converter={StaticResource dateTimeConverter},ConverterParameter=date}"></DatePicker>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" 
                             Grid.Column="1" 
                             Margin="0,0,5,0">
                     <mah:Tile Style="{StaticResource header}" Title="{x:Static properties:Resources.Date2}"/>
-                    <mah:DateTimePicker x:Name="dtpDate2"
-                                        DisplayDate="{Binding Date2,Converter={StaticResource dateTimeConverter}}"></mah:DateTimePicker>
+                    <DatePicker x:Name="dtpDate2"   
+                                Height="40"
+                                FontSize="12"
+                                VerticalContentAlignment="Center"
+                                FontFamily="Arial"
+                                FontWeight="Medium"
+                                SelectedDate="{Binding Date2,Converter={StaticResource dateTimeConverter},ConverterParameter=date}"></DatePicker>
                     <StackPanel Orientation="Vertical"
                             Visibility="Visible"
                             Grid.Column="2" 

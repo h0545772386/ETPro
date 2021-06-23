@@ -381,17 +381,26 @@
   <data name="PopUpAt_YYYYMMDDHHMM" xml:space="preserve">
     <value>PopUpAt_YYYYMMDDHHMM</value>
   </data>
+  <data name="Receiver" xml:space="preserve">
+    <value>Receiver</value>
+  </data>
   <data name="RecorsivType" xml:space="preserve">
     <value>RecorsivType</value>
   </data>
   <data name="RemText" xml:space="preserve">
     <value>RemText</value>
   </data>
+  <data name="Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
   <data name="Saturday" xml:space="preserve">
     <value>Saturday</value>
   </data>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
+  </data>
+  <data name="Sender" xml:space="preserve">
+    <value>Sender</value>
   </data>
   <data name="StartHour" xml:space="preserve">
     <value>StartHour</value>

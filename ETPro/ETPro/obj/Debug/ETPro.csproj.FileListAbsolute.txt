@@ -124,4 +124,5 @@ E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DocWindow.g.cs
 E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DocWindow.baml
 E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DryShtlsPassengerWindow.g.cs
 E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DryShtlsPassengerWindow.baml
-E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\ETPro.csprojAssemblyReference.cache
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DiaryShuttleWindow.g.cs
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DiaryShuttleWindow.baml

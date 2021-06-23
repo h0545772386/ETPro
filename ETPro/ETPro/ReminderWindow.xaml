@@ -30,7 +30,7 @@
         <local:UCBack Background="AliceBlue"
                       Grid.Row="1"
                       Grid.ColumnSpan="5"
-                      Grid.RowSpan="4"></local:UCBack>
+                      Grid.RowSpan="5"></local:UCBack>
 
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Left"
@@ -76,9 +76,14 @@
             <mah:Tile Style="{StaticResource header}"
                       Width="300"
                       Title="{x:Static properties:Resources.PopUpAt_YYYYMMDDHHMM}" />
-            <TextBox x:Name="tbPopUpAt_YYYYMMDDHHMM"
-                     Text="{Binding PopUpAt_YYYYMMDDHHMM, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
-           
+            <mah:DateTimePicker  x:Name="tbPopUpAt_YYYYMMDDHHMM"
+                                 Height="40"
+                                FontSize="12"
+                                VerticalContentAlignment="Center"
+                                FontFamily="Arial"
+                                FontWeight="Medium"
+                                SelectedDateTime="{Binding PopUpAt_YYYYMMDDHHMM,Converter={StaticResource dateTimeConverter},ConverterParameter=time}"></mah:DateTimePicker>
+
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="3">
             <mah:Tile Style="{StaticResource header}"

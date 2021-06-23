@@ -54,6 +54,7 @@ namespace ETPro
                     case "DriverWindow": window = new DriverWindow(); break;
                     case "VehicleWindow": window = new VehicleWindow(); break;
                     case "PassengerWindow": window = new PassengerWindow(); break;
+                    case "ReminderWindow": window = new ReminderWindow(); break;
                     case "DocWindow": window = new DocWindow(); break;
                 }
                 window?.ShowDialog();

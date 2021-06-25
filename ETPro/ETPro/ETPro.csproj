@@ -146,6 +146,12 @@
     <Compile Include="DryShtlsPassengerWindow.xaml.cs">
       <DependentUpon>DryShtlsPassengerWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EventCategWindow.xaml.cs">
+      <DependentUpon>EventCategWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EventWindow.xaml.cs">
+      <DependentUpon>EventWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LincWindow.xaml.cs">
       <DependentUpon>LincWindow.xaml</DependentUpon>
     </Compile>
@@ -202,6 +208,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DryShtlsPassengerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EventCategWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EventWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

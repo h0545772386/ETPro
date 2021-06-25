@@ -180,6 +180,12 @@
   <data name="ClientName" xml:space="preserve">
     <value>ClientName</value>
   </data>
+  <data name="ClntAddishtionCharge" xml:space="preserve">
+    <value>ClntAddishtionCharge</value>
+  </data>
+  <data name="ClntAddishtionCredit" xml:space="preserve">
+    <value>ClntAddishtionCredit</value>
+  </data>
   <data name="ClntDesc" xml:space="preserve">
     <value>Client Desc</value>
   </data>
@@ -243,14 +249,32 @@
   <data name="DocText" xml:space="preserve">
     <value>DocText</value>
   </data>
+  <data name="DrvAddishtionCharge" xml:space="preserve">
+    <value>DrvAddishtionCharge</value>
+  </data>
+  <data name="DrvAddishtionCredit" xml:space="preserve">
+    <value>DrvAddishtionCredit</value>
+  </data>
   <data name="DrvDesc" xml:space="preserve">
     <value>DrvDesc</value>
   </data>
   <data name="DrvFee" xml:space="preserve">
     <value>DrvFee</value>
   </data>
+  <data name="DryShtlsPassenger" xml:space="preserve">
+    <value>DryShtlsPassenger</value>
+  </data>
+  <data name="DryText" xml:space="preserve">
+    <value>DryText</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>
+  </data>
+  <data name="EvntDate_YYYYMMDD" xml:space="preserve">
+    <value>EvntDate_YYYYMMDD</value>
+  </data>
+  <data name="EvntText" xml:space="preserve">
+    <value>EvntText</value>
   </data>
   <data name="FreeAtHour" xml:space="preserve">
     <value>FreeAtHour</value>
@@ -273,8 +297,35 @@
   <data name="InActive" xml:space="preserve">
     <value>לא פעיל</value>
   </data>
+  <data name="IsApproved" xml:space="preserve">
+    <value>IsApproved</value>
+  </data>
+  <data name="IsChecked" xml:space="preserve">
+    <value>IsChecked</value>
+  </data>
+  <data name="IsDoneOk" xml:space="preserve">
+    <value>IsDoneOk</value>
+  </data>
+  <data name="IsFeeChecked" xml:space="preserve">
+    <value>IsFeeChecked</value>
+  </data>
+  <data name="IsFinished" xml:space="preserve">
+    <value>IsFinished</value>
+  </data>
+  <data name="IsMarkedOk" xml:space="preserve">
+    <value>IsMarkedOk</value>
+  </data>
+  <data name="IsPayed" xml:space="preserve">
+    <value>IsPayed</value>
+  </data>
+  <data name="IsReadOnly" xml:space="preserve">
+    <value>IsReadOnly</value>
+  </data>
   <data name="IsRecorsive" xml:space="preserve">
     <value>IsRecorsive</value>
+  </data>
+  <data name="IsReminder" xml:space="preserve">
+    <value>IsReminder</value>
   </data>
   <data name="LenghtMinutes" xml:space="preserve">
     <value>LenghtMinutes</value>
@@ -291,6 +342,9 @@
   <data name="LockCode" xml:space="preserve">
     <value>LockCode</value>
   </data>
+  <data name="MainCateg" xml:space="preserve">
+    <value>MainCateg</value>
+  </data>
   <data name="ManufYear" xml:space="preserve">
     <value>ManufYear</value>
   </data>
@@ -299,6 +353,9 @@
   </data>
   <data name="Monday" xml:space="preserve">
     <value>Monday</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
   </data>
   <data name="NetProfit" xml:space="preserve">
     <value>NetProfit</value>
@@ -363,6 +420,9 @@
   <data name="PersonName" xml:space="preserve">
     <value>PersonName</value>
   </data>
+  <data name="PersonRole" xml:space="preserve">
+    <value>PersonRole</value>
+  </data>
   <data name="PerWaitHour" xml:space="preserve">
     <value>PerWaitHour</value>
   </data>
@@ -390,17 +450,29 @@
   <data name="RemText" xml:space="preserve">
     <value>RemText</value>
   </data>
-  <data name="Role" xml:space="preserve">
-    <value>Role</value>
-  </data>
   <data name="Saturday" xml:space="preserve">
     <value>Saturday</value>
   </data>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="ScndCateg" xml:space="preserve">
+    <value>ScndCateg</value>
+  </data>
   <data name="Sender" xml:space="preserve">
     <value>Sender</value>
+  </data>
+  <data name="ShtlDateYYYYMMDD" xml:space="preserve">
+    <value>ShtlDateYYYYMMDD</value>
+  </data>
+  <data name="ShtlDay" xml:space="preserve">
+    <value>ShtlDay</value>
+  </data>
+  <data name="ShtlMonth" xml:space="preserve">
+    <value>ShtlMonth</value>
+  </data>
+  <data name="ShtlYear" xml:space="preserve">
+    <value>ShtlYear</value>
   </data>
   <data name="StartHour" xml:space="preserve">
     <value>StartHour</value>
@@ -417,6 +489,9 @@
   <data name="Sunday" xml:space="preserve">
     <value>Sunday</value>
   </data>
+  <data name="ThrdCateg" xml:space="preserve">
+    <value>ThrdCateg</value>
+  </data>
   <data name="Thursday" xml:space="preserve">
     <value>Thursday</value>
   </data>
@@ -428,6 +503,9 @@
   </data>
   <data name="TotalCost" xml:space="preserve">
     <value>TotalCost</value>
+  </data>
+  <data name="TotWaitMinutes" xml:space="preserve">
+    <value>TotWaitMinutes</value>
   </data>
   <data name="Tuesday" xml:space="preserve">
     <value>Tuesday</value>

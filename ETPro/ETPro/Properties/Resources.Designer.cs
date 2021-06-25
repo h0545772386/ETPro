@@ -250,6 +250,24 @@ namespace ETPro.Properties {
         }
         
         /// <summary>
+        ///   查找类似 ClntAddishtionCharge 的本地化字符串。
+        /// </summary>
+        public static string ClntAddishtionCharge {
+            get {
+                return ResourceManager.GetString("ClntAddishtionCharge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ClntAddishtionCredit 的本地化字符串。
+        /// </summary>
+        public static string ClntAddishtionCredit {
+            get {
+                return ResourceManager.GetString("ClntAddishtionCredit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Client Desc 的本地化字符串。
         /// </summary>
         public static string ClntDesc {
@@ -439,6 +457,24 @@ namespace ETPro.Properties {
         }
         
         /// <summary>
+        ///   查找类似 DrvAddishtionCharge 的本地化字符串。
+        /// </summary>
+        public static string DrvAddishtionCharge {
+            get {
+                return ResourceManager.GetString("DrvAddishtionCharge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 DrvAddishtionCredit 的本地化字符串。
+        /// </summary>
+        public static string DrvAddishtionCredit {
+            get {
+                return ResourceManager.GetString("DrvAddishtionCredit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 DrvDesc 的本地化字符串。
         /// </summary>
         public static string DrvDesc {
@@ -457,11 +493,47 @@ namespace ETPro.Properties {
         }
         
         /// <summary>
+        ///   查找类似 DryShtlsPassenger 的本地化字符串。
+        /// </summary>
+        public static string DryShtlsPassenger {
+            get {
+                return ResourceManager.GetString("DryShtlsPassenger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 DryText 的本地化字符串。
+        /// </summary>
+        public static string DryText {
+            get {
+                return ResourceManager.GetString("DryText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Email 的本地化字符串。
         /// </summary>
         public static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 EvntDate_YYYYMMDD 的本地化字符串。
+        /// </summary>
+        public static string EvntDate_YYYYMMDD {
+            get {
+                return ResourceManager.GetString("EvntDate_YYYYMMDD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 EvntText 的本地化字符串。
+        /// </summary>
+        public static string EvntText {
+            get {
+                return ResourceManager.GetString("EvntText", resourceCulture);
             }
         }
         
@@ -529,11 +601,92 @@ namespace ETPro.Properties {
         }
         
         /// <summary>
+        ///   查找类似 IsApproved 的本地化字符串。
+        /// </summary>
+        public static string IsApproved {
+            get {
+                return ResourceManager.GetString("IsApproved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 IsChecked 的本地化字符串。
+        /// </summary>
+        public static string IsChecked {
+            get {
+                return ResourceManager.GetString("IsChecked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 IsDoneOk 的本地化字符串。
+        /// </summary>
+        public static string IsDoneOk {
+            get {
+                return ResourceManager.GetString("IsDoneOk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 IsFeeChecked 的本地化字符串。
+        /// </summary>
+        public static string IsFeeChecked {
+            get {
+                return ResourceManager.GetString("IsFeeChecked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 IsFinished 的本地化字符串。
+        /// </summary>
+        public static string IsFinished {
+            get {
+                return ResourceManager.GetString("IsFinished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 IsMarkedOk 的本地化字符串。
+        /// </summary>
+        public static string IsMarkedOk {
+            get {
+                return ResourceManager.GetString("IsMarkedOk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 IsPayed 的本地化字符串。
+        /// </summary>
+        public static string IsPayed {
+            get {
+                return ResourceManager.GetString("IsPayed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 IsReadOnly 的本地化字符串。
+        /// </summary>
+        public static string IsReadOnly {
+            get {
+                return ResourceManager.GetString("IsReadOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 IsRecorsive 的本地化字符串。
         /// </summary>
         public static string IsRecorsive {
             get {
                 return ResourceManager.GetString("IsRecorsive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 IsReminder 的本地化字符串。
+        /// </summary>
+        public static string IsReminder {
+            get {
+                return ResourceManager.GetString("IsReminder", resourceCulture);
             }
         }
         
@@ -583,6 +736,15 @@ namespace ETPro.Properties {
         }
         
         /// <summary>
+        ///   查找类似 MainCateg 的本地化字符串。
+        /// </summary>
+        public static string MainCateg {
+            get {
+                return ResourceManager.GetString("MainCateg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 ManufYear 的本地化字符串。
         /// </summary>
         public static string ManufYear {
@@ -606,6 +768,15 @@ namespace ETPro.Properties {
         public static string Monday {
             get {
                 return ResourceManager.GetString("Monday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Name 的本地化字符串。
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
             }
         }
         
@@ -799,6 +970,15 @@ namespace ETPro.Properties {
         }
         
         /// <summary>
+        ///   查找类似 PersonRole 的本地化字符串。
+        /// </summary>
+        public static string PersonRole {
+            get {
+                return ResourceManager.GetString("PersonRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 PerWaitHour 的本地化字符串。
         /// </summary>
         public static string PerWaitHour {
@@ -880,15 +1060,6 @@ namespace ETPro.Properties {
         }
         
         /// <summary>
-        ///   查找类似 Role 的本地化字符串。
-        /// </summary>
-        public static string Role {
-            get {
-                return ResourceManager.GetString("Role", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 Saturday 的本地化字符串。
         /// </summary>
         public static string Saturday {
@@ -907,11 +1078,56 @@ namespace ETPro.Properties {
         }
         
         /// <summary>
+        ///   查找类似 ScndCateg 的本地化字符串。
+        /// </summary>
+        public static string ScndCateg {
+            get {
+                return ResourceManager.GetString("ScndCateg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Sender 的本地化字符串。
         /// </summary>
         public static string Sender {
             get {
                 return ResourceManager.GetString("Sender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ShtlDateYYYYMMDD 的本地化字符串。
+        /// </summary>
+        public static string ShtlDateYYYYMMDD {
+            get {
+                return ResourceManager.GetString("ShtlDateYYYYMMDD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ShtlDay 的本地化字符串。
+        /// </summary>
+        public static string ShtlDay {
+            get {
+                return ResourceManager.GetString("ShtlDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ShtlMonth 的本地化字符串。
+        /// </summary>
+        public static string ShtlMonth {
+            get {
+                return ResourceManager.GetString("ShtlMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ShtlYear 的本地化字符串。
+        /// </summary>
+        public static string ShtlYear {
+            get {
+                return ResourceManager.GetString("ShtlYear", resourceCulture);
             }
         }
         
@@ -961,6 +1177,15 @@ namespace ETPro.Properties {
         }
         
         /// <summary>
+        ///   查找类似 ThrdCateg 的本地化字符串。
+        /// </summary>
+        public static string ThrdCateg {
+            get {
+                return ResourceManager.GetString("ThrdCateg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Thursday 的本地化字符串。
         /// </summary>
         public static string Thursday {
@@ -993,6 +1218,15 @@ namespace ETPro.Properties {
         public static string TotalCost {
             get {
                 return ResourceManager.GetString("TotalCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 TotWaitMinutes 的本地化字符串。
+        /// </summary>
+        public static string TotWaitMinutes {
+            get {
+                return ResourceManager.GetString("TotWaitMinutes", resourceCulture);
             }
         }
         

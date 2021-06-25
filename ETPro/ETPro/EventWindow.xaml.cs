@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace ETPro
 {
     /// <summary>
-    /// DiaryShuttleWindow.xaml 的交互逻辑
+    /// EventWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class DiaryShuttleWindow : MetroWindow
+    public partial class EventWindow : MetroWindow
     {
-        public DiaryShuttleWindow()
+        public EventWindow()
         {
             InitializeComponent();
-        }
-
-        private void BCancel_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void BSave_Click(object sender, RoutedEventArgs e)
@@ -35,7 +30,7 @@ namespace ETPro
 
         }
 
-        private void BDryShtlsPassenger_Click(object sender, RoutedEventArgs e)
+        private void BCancel_Click(object sender, RoutedEventArgs e)
         {
 
         }

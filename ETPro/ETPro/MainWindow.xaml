@@ -24,10 +24,14 @@
                  Height="768"
                  Width="1024">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
         <!--<TextBlock Text="GGGGGGGGGGGGGGGGGGG"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>-->
-        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center" >
             <Button  Content="UserWindow" Width="140" Height="40" Click="Button_Click"></Button>
             <Button Content="AddressWindow" Width="140" Height="40" Click="Button_Click" Margin="0,10"></Button>
             <Button Content="ClientWindow" Width="140" Height="40" Click="Button_Click" Margin="0,10"></Button>
@@ -36,11 +40,19 @@
             <Button Content="CommuWindow" Width="160" Height="40" Click="Button_Click" Margin="0,10"></Button>
             <Button Content="DriverWindow" Width="140" Height="40" Click="Button_Click" Margin="0,10"></Button>
             <Button Content="LincWindow" Width="140" Height="40" Click="Button_Click" Margin="0,10"></Button>
+          
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Margin="10,0">
             <Button Content="VehicleWindow" Width="140" Height="40" Click="Button_Click" Margin="0,10"></Button>
             <Button Content="PassengerWindow" Width="140" Height="40" Click="Button_Click" Margin="0,10"></Button>
             <Button Content="ReminderWindow" Width="140" Height="40" Click="Button_Click" Margin="0,10"></Button>
             <Button Content="DocWindow" Width="140" Height="40" Click="Button_Click" Margin="0,10"></Button>
+            <Button Content="DryShtlsPassengerWindow" Width="200" Height="40" Click="Button_Click" Margin="0,10"></Button>
+            <Button Content="DiaryShuttleWindow" Width="200" Height="40" Click="Button_Click" Margin="0,10"></Button>
+            <Button Content="EventCategWindow" Width="200" Height="40" Click="Button_Click" Margin="0,10"></Button>
+            <Button Content="EventWindow" Width="140" Height="40" Click="Button_Click" Margin="0,10"></Button>
         </StackPanel>
-    
+
     </Grid>
 </mah:MetroWindow>

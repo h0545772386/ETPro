@@ -126,3 +126,7 @@ E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DryShtlsPassengerWindow.g.cs
 E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DryShtlsPassengerWindow.baml
 E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DiaryShuttleWindow.g.cs
 E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\DiaryShuttleWindow.baml
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\EventWindow.g.cs
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\EventWindow.baml
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\EventCategWindow.g.cs
+E:\work\fiverr\ETProGit\ETPro\ETPro\ETPro\obj\Debug\EventCategWindow.baml

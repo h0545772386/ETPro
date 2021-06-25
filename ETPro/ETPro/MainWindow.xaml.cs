@@ -56,6 +56,10 @@ namespace ETPro
                     case "PassengerWindow": window = new PassengerWindow(); break;
                     case "ReminderWindow": window = new ReminderWindow(); break;
                     case "DocWindow": window = new DocWindow(); break;
+                    case "DiaryShuttleWindow": window = new DiaryShuttleWindow(); break;
+                    case "DryShtlsPassengerWindow": window = new DryShtlsPassengerWindow(); break;
+                    case "EventCategWindow": window = new EventCategWindow(); break;
+                    case "EventWindow": window = new EventWindow(); break;
                 }
                 window?.ShowDialog();
             }

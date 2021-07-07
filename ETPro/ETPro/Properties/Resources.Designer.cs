@@ -871,6 +871,24 @@ namespace ETPro.Properties {
         }
         
         /// <summary>
+        ///   查找类似 Off 的本地化字符串。
+        /// </summary>
+        public static string Off {
+            get {
+                return ResourceManager.GetString("Off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 On 的本地化字符串。
+        /// </summary>
+        public static string On {
+            get {
+                return ResourceManager.GetString("On", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 OrdDays 的本地化字符串。
         /// </summary>
         public static string OrdDays {
@@ -939,6 +957,15 @@ namespace ETPro.Properties {
         public static string OrdType {
             get {
                 return ResourceManager.GetString("OrdType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 OtherStatuses 的本地化字符串。
+        /// </summary>
+        public static string OtherStatuses {
+            get {
+                return ResourceManager.GetString("OtherStatuses", resourceCulture);
             }
         }
         

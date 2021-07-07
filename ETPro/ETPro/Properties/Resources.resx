@@ -387,6 +387,12 @@
   <data name="ObjType" xml:space="preserve">
     <value>ObjType</value>
   </data>
+  <data name="Off" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>On</value>
+  </data>
   <data name="OrdDays" xml:space="preserve">
     <value>OrdDays</value>
   </data>
@@ -410,6 +416,9 @@
   </data>
   <data name="OrdType" xml:space="preserve">
     <value>OrdType</value>
+  </data>
+  <data name="OtherStatuses" xml:space="preserve">
+    <value>OtherStatuses</value>
   </data>
   <data name="OthrCosts" xml:space="preserve">
     <value>OthrCosts</value>

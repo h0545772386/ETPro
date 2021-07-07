@@ -9,7 +9,7 @@
         Style="{StaticResource defWindow}"
          WindowStartupLocation="CenterOwner"        
         mc:Ignorable="d"
-        Title="EventWindow" Height="500" Width="600">
+        Title="EventWindow" Height="560" Width="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -64,17 +64,18 @@
         <StackPanel Orientation="Vertical"
                     Grid.Row="2"
                     Grid.Column="1" >
-            <mah:Tile Style="{StaticResource header}" 
-                              Title="{x:Static properties:Resources.ObjType}"/>
-            <TextBox x:Name="tbObjType"
-                             Text="{Binding ObjType, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <StackPanel Orientation="Vertical" Margin="1,0">
-                
+                    <mah:Tile Style="{StaticResource header}" 
+                              Title="{x:Static properties:Resources.ObjType}"/>
+                    <ComboBox x:Name="cbObjType"
+                      DisplayMemberPath = "WorthyNameHeb"
+                      SelectedItem="{Binding ObjType}">
+                    </ComboBox>
                     <mah:Tile  Style="{StaticResource header}" 
                                Width="200"
                               Title="{x:Static properties:Resources.EvntDate_YYYYMMDD}"/>
@@ -89,7 +90,7 @@
                 </StackPanel>
                 
                 <StackPanel Orientation="Vertical" Grid.Column="1" Margin="1,0">
-                  
+                    <Grid Height="85"></Grid>
                     <mah:Tile  Style="{StaticResource header}" 
                                  Width="260"
                                 Title="{x:Static properties:Resources.PopUpAt_YYYYMMDDHHMM}"/>
@@ -102,6 +103,7 @@
             <mah:Tile  Style="{StaticResource header}"
                        Title="{x:Static properties:Resources.EvntText}"/>
             <TextBox x:Name="tbEvntText"
+                     Height="80"
                      Text="{Binding EvntText, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -120,10 +122,12 @@
                     </ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Vertical">
-                    <Grid Height="45"></Grid>
+                    <mah:Tile Style="{StaticResource header}"
+                              Title="{x:Static properties:Resources.IsReminder}"/>
                     <CheckBox x:Name="cbIsReminder" 
                               IsChecked="{Binding IsReminder}"
-                              Content="{x:Static properties:Resources.IsReminder}"></CheckBox>
+                              Style="{StaticResource toggleCk}"
+                              ></CheckBox>
                 </StackPanel>
             </Grid>
         </StackPanel>

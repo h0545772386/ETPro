@@ -34,5 +34,12 @@ namespace ETPro
         {
 
         }
+
+        private void BSwich_Click(object sender, RoutedEventArgs e)
+        {
+            string str = tbToLocation.Text;
+            tbToLocation.Text = tbFromLocation.Text;
+            tbFromLocation.Text = str;
+        }
     }
 }

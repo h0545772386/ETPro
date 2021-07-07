@@ -23,6 +23,7 @@ namespace ETPro
         public EventWindow()
         {
             InitializeComponent();
+            cbObjType.ItemsSource = new Classes.LSaverities();
         }
 
         private void BSave_Click(object sender, RoutedEventArgs e)

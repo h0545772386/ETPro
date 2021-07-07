@@ -110,7 +110,9 @@
     </Compile>
     <Compile Include="Classes\Address.cs" />
     <Compile Include="Classes\Commu.cs" />
+    <Compile Include="Classes\LSaverity.cs" />
     <Compile Include="Classes\PassengerCommu.cs" />
+    <Compile Include="Classes\RPriority.cs" />
     <Compile Include="Classes\Status.cs" />
     <Compile Include="Classes\Worthy.cs" />
     <Compile Include="Classes\Reminder.cs" />
@@ -156,12 +158,14 @@
       <DependentUpon>LincWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="NumberText.cs" />
+    <Compile Include="OrderDayCombox.cs" />
     <Compile Include="PassengerWindow.xaml.cs">
       <DependentUpon>PassengerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ReminderWindow.xaml.cs">
       <DependentUpon>ReminderWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StatusCombox.cs" />
     <Compile Include="UCBack.xaml.cs">
       <DependentUpon>UCBack.xaml</DependentUpon>
     </Compile>

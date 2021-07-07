@@ -73,8 +73,12 @@
                 <StackPanel Orientation="Vertical" Margin="1,0">
                     <mah:Tile Style="{StaticResource header}" 
                               Title="{x:Static properties:Resources.ObjType}"/>
-                    <TextBox x:Name="tbObjType"
-                             Text="{Binding ObjType, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
+                    <!--<TextBox x:Name="tbObjType"
+                             Text="{Binding ObjType, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>-->
+                    <ComboBox x:Name="cbObjType"
+                      DisplayMemberPath = "WorthyNameHeb"
+                      SelectedItem="{Binding ObjType}">
+                    </ComboBox>
 
                     <mah:Tile  Style="{StaticResource header}" 
                                  Width="260"

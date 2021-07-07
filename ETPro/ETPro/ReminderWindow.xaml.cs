@@ -23,6 +23,10 @@ namespace ETPro
         public ReminderWindow()
         {
             InitializeComponent();
+            cbObjType.ItemsSource = new Classes.RPriorities();
+            //ETPro.Classes.RPriorities rPriorities = 
+            //cbObjType.ItemsSource = rPriorities;
+          
         }
 
         private void BSave_Click(object sender, RoutedEventArgs e)

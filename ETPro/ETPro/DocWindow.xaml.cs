@@ -1,4 +1,5 @@
 ﻿using MahApps.Metro.Controls;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace ETPro
         public DocWindow()
         {
             InitializeComponent();
+            cbObjType.ItemsSource = new ETPro.Classes.LSaverities();
         }
 
         private void BSave_Click(object sender, RoutedEventArgs e)
@@ -33,6 +35,15 @@ namespace ETPro
         private void BCancel_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void BBrowers_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if(openFileDialog.ShowDialog().Value)
+            {
+                tbDocPath.Text = openFileDialog.FileName;
+            }
         }
     }
 }

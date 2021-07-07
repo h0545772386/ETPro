@@ -71,8 +71,16 @@
                     Grid.Column="1">
             <mah:Tile Style="{StaticResource header}"
                       Title="{x:Static properties:Resources.ObjType}" />
-            <TextBox x:Name="tbObjType"
-                     Text="{Binding ObjType, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+            <!--<TextBox x:Name="tbObjType"
+                     Text="{Binding ObjType, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />-->
+            <ComboBox x:Name="cbObjType"
+                      DisplayMemberPath = "WorthyNameHeb"
+                      SelectedItem="{Binding ObjType}">
+            </ComboBox>
+      
+
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="3">
             <mah:Tile Style="{StaticResource header}"
                       Width="300"
                       Title="{x:Static properties:Resources.PopUpAt_YYYYMMDDHHMM}" />
@@ -83,35 +91,35 @@
                                 FontFamily="Arial"
                                 FontWeight="Medium"
                                 SelectedDateTime="{Binding PopUpAt_YYYYMMDDHHMM,Converter={StaticResource dateTimeConverter},ConverterParameter=time}"></mah:DateTimePicker>
-
-        </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="3">
-            <mah:Tile Style="{StaticResource header}"
+            <!--<mah:Tile Style="{StaticResource header}"
                       Title="{x:Static properties:Resources.RecorsivType}" />
             <TextBox x:Name="tbRecorsivType"
                      Text="{Binding RecorsivType, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
             <mah:Tile Style="{StaticResource header}"
                       Title="{x:Static properties:Resources.Frequence}" />
             <TextBox x:Name="tbFrequence"
-                     Text="{Binding Frequence, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+                     Text="{Binding Frequence, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />-->
           
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3">
             <mah:Tile Style="{StaticResource header}"
                       Title="{x:Static properties:Resources.RemText}" />
             <TextBox x:Name="tbRemText"
+                     Height="80"
                      Text="{Binding RemText, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
         </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Row="4" Grid.Column="1">
-            <Grid Height="45"></Grid>
+        <!--<StackPanel Orientation="Vertical" Grid.Row="4" Grid.Column="1">
+            <mah:Tile Style="{StaticResource header}"
+                      Title="{x:Static properties:Resources.IsRecorsive}" />
             <CheckBox x:Name="cbIsRecorsive"
-                      Content="{x:Static properties:Resources.IsRecorsive}"
-                      IsChecked="{Binding IsRecorsive}"></CheckBox>
-        </StackPanel>
+                      Style="{StaticResource toggleCk}"
+                      IsChecked="{Binding IsRecorsive}"
+                      HorizontalAlignment="Left"></CheckBox>
+        </StackPanel>-->
         <StackPanel Visibility="Visible"
                     Grid.Row="4"
                     Orientation="Vertical" 
-                     Grid.Column="3">
+                     Grid.Column="1">
             <mah:Tile Style="{StaticResource header}"
                                   Title="{x:Static properties:Resources.Status}"/>
             <ComboBox x:Name="cbStatus"

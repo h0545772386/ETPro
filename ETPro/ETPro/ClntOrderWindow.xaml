@@ -20,11 +20,9 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40"></ColumnDefinition>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
-            <ColumnDefinition Width="10"></ColumnDefinition>
             <ColumnDefinition Width="3*"></ColumnDefinition>
             <ColumnDefinition Width="10"></ColumnDefinition>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="40"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <local:UCBack   Background="AliceBlue" 
@@ -71,85 +69,146 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition  Width="auto"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <StackPanel Orientation="Vertical">
-                    <mah:Tile Style="{StaticResource header}"
-                              Title="{x:Static properties:Resources.OrdNum}" />
-                    <TextBox x:Name="tbOrdNum"
-                             Text="{Binding OrdNum, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
-                </StackPanel>
-                <StackPanel Grid.Column="1" 
-                            Orientation="Vertical">
-                    <Grid Height="45"></Grid>
-                    <CheckBox  x:Name="cbOrdIsActive" 
-                               Grid.Column="1"  
-                               Content="{x:Static properties:Resources.OrdIsActive}"
-                               IsChecked="{Binding OrdIsActive}"     ></CheckBox>
-                </StackPanel>
+            
+             
             </Grid>
-           
-            <mah:Tile  Style="{StaticResource header}" 
-                       Title="{x:Static properties:Resources.OrdType}" />
-            <ComboBox   x:Name="cbOrdType"
-                        SelectedValue="{Binding OrdType}">
-                <ComboBoxItem Content="פיזור"></ComboBoxItem>
-                <ComboBoxItem Content="איסוף"></ComboBoxItem>
-            </ComboBox>
-            <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.OrdTime}" Width="200" />
-            <ComboBox  x:Name="cbOrdTime"
-                        SelectedValue="{Binding OrdTime}">
-                <ComboBoxItem Content="לילה"></ComboBoxItem>
-                <ComboBoxItem Content="צהריים"></ComboBoxItem>
-                <ComboBoxItem Content="בוקר"></ComboBoxItem>
-            </ComboBox>
-            <mah:Tile  Style="{StaticResource header}" 
-                       Title="{x:Static properties:Resources.OrdPath}"
-                       Width="200" />
-            <ComboBox x:Name="tbOrdPath"
-                      SelectedValue="{Binding OrdPath}"
-                      >
-                <ComboBoxItem Content="בינוני"></ComboBoxItem>
-                <ComboBoxItem Content="קצר"></ComboBoxItem>
-                <ComboBoxItem Content="ארוך"></ComboBoxItem>
-            </ComboBox>
-            <mah:Tile  Style="{StaticResource header}"
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition  ></ColumnDefinition>
+                    <ColumnDefinition  ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Vertical"  Margin="1,0">
+                    <StackPanel Orientation="Vertical"  Margin="1,0">
+                        <mah:Tile Style="{StaticResource header}"
+                              Title="{x:Static properties:Resources.OrdNum}" />
+                        <TextBox x:Name="tbOrdNum"
+                             Text="{Binding OrdNum, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
+                    </StackPanel>
+                    <mah:Tile Style="{StaticResource header}" 
+                              Title="{x:Static properties:Resources.StartHour}" />
+                    <local:NumberText   x:Name="tbStartHour"
+                                        Style="{StaticResource numText}"
+                                        Text="{Binding StartHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
+                </StackPanel>
+                <StackPanel Orientation="Vertical"  Grid.Column="1" Margin="1,0">
+                    <StackPanel Orientation="Vertical" Grid.Column="1"  Margin="1,0">
+                        <mah:Tile  Style="{StaticResource header}"
                        Title="{x:Static properties:Resources.ClientName}" 
                        Width="200" />
-            <TextBox x:Name="tbClientName"
+                        <TextBox x:Name="tbClientName"
                      Text="{Binding ClientName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
-            <StackPanel Visibility="Visible"
-                            Orientation="Vertical" 
-                            Grid.Column="1">
-                <mah:Tile Style="{StaticResource header}"
-                              Title="{x:Static properties:Resources.Status}"/>
-                <ComboBox x:Name="cbStatus"
-                              SelectedValue="{Binding Status}">
-                    <ComboBoxItem Content="{x:Static properties:Resources.Active}"></ComboBoxItem>
-                    <ComboBoxItem Content="{x:Static properties:Resources.InActive}"></ComboBoxItem>
-                </ComboBox>
-            </StackPanel>
-        </StackPanel>
-        <StackPanel Orientation="Vertical"
-                    Grid.Row="2" 
-                    Grid.Column="3">
-            <mah:Tile  Style="{StaticResource header}" 
+                    </StackPanel>
+                    <mah:Tile Style="{StaticResource header}" 
+                              Title="{x:Static properties:Resources.AriveHour}" />
+                    <local:NumberText   x:Name="tbAriveHour"
+                                        Style="{StaticResource numText}"
+                                        Text="{Binding AriveHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Grid.Column="2" Margin="1,0">
+                    <mah:Tile  Style="{StaticResource header}" 
                        Title="{x:Static properties:Resources.NumPsngrs}"
                        Width="200" />
-            <local:NumberText  x:Name="tbNumPsngrs"
+                    <local:NumberText  x:Name="tbNumPsngrs"
                                Style="{StaticResource numText}"
                                Text="{Binding NumPsngrs, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
-            <mah:Tile Style="{StaticResource header}" 
+                    <mah:Tile Style="{StaticResource header}"  
+                              Title="{x:Static properties:Resources.FreeAtHour}" />
+                    <local:NumberText  x:Name="tbFreeAtHour"
+                                       Style="{StaticResource numText}"
+                                       Text="{Binding FreeAtHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
+                </StackPanel>
+
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical"  Margin="1,0">
+                    <mah:Tile Style="{StaticResource header}" 
                       Title="{x:Static properties:Resources.FromLocation}" />
-            <TextBox  x:Name="tbFromLocation"
+                    <TextBox  x:Name="tbFromLocation"
                       Text="{Binding FromLocation, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
                      
                 ></TextBox>
-            <mah:Tile Style="{StaticResource header}"  
+                </StackPanel>
+                <Button x:Name="bSwich"
+                        Grid.Column="1" 
+                        Height="40"
+                        VerticalAlignment="Bottom"
+                        Style="{StaticResource imgButton}"
+                        Click="BSwich_Click">
+                    <StackPanel>
+                        <TextBlock  
+                                  FontFamily="Segoe MDL2 Assets"
+                                  ToolTip="{x:Static properties:Resources.Cancel}"
+                                  Text="&#xF1CB;"
+                                  FontSize="20" 
+                                  Foreground="{StaticResource blue1}"/>
+                    </StackPanel>
+                </Button>
+                <StackPanel Orientation="Vertical" Grid.Column="2" Margin="1,0">
+                    <mah:Tile Style="{StaticResource header}"  
                       Title="{x:Static properties:Resources.ToLocation}" />
-            <TextBox x:Name="tbToLocation"
+                    <TextBox x:Name="tbToLocation"
                      Text="{Binding ToLocation, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
                 ></TextBox>
+                </StackPanel>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition  ></ColumnDefinition>
+                    <ColumnDefinition  ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Vertical" Grid.Row="1" Margin="1,0">
+                    
+                    <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.OrdType}" />
+                    <ComboBox   x:Name="cbOrdType"
+                        SelectedValue="{Binding OrdType}">
+                        <ComboBoxItem Content="פיזור"></ComboBoxItem>
+                        <ComboBoxItem Content="איסוף"></ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1" Margin="1,0">
+                  
+                    <mah:Tile  Style="{StaticResource header}" Title="{x:Static properties:Resources.OrdTime}" Width="200" />
+                    <ComboBox  x:Name="cbOrdTime"
+                        SelectedValue="{Binding OrdTime}">
+                        <ComboBoxItem Content="לילה"></ComboBoxItem>
+                        <ComboBoxItem Content="צהריים"></ComboBoxItem>
+                        <ComboBoxItem Content="בוקר"></ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2" Margin="1,0">
+                  
+                    <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.OrdPath}"
+                       Width="200" />
+                    <ComboBox x:Name="tbOrdPath"
+                      SelectedValue="{Binding OrdPath}"
+                      >
+                        <ComboBoxItem Content="בינוני"></ComboBoxItem>
+                        <ComboBoxItem Content="קצר"></ComboBoxItem>
+                        <ComboBoxItem Content="ארוך"></ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+
+            </Grid>
+
             <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
@@ -162,6 +221,7 @@
                     <local:NumberText x:Name="tbDistanceKM"
                                       Style="{StaticResource numText}"
                                       Text="{Binding DistanceKM, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
+                   
                 </StackPanel>
                 <StackPanel Orientation="Vertical" 
                             Grid.Column="1"
@@ -171,129 +231,142 @@
                     <local:NumberText x:Name="tbLenghtMinutes"
                                       Style="{StaticResource numText}"
                                       Text="{Binding LenghtMinutes, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
+
+
+                   
                 </StackPanel>
             </Grid>
+
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition  ></ColumnDefinition>
+                    <ColumnDefinition  ></ColumnDefinition>
+                    <ColumnDefinition  ></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <StackPanel Orientation="Vertical" 
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Vertical" 
                             Margin="1,0">
-                    <mah:Tile Style="{StaticResource header}" 
-                              Title="{x:Static properties:Resources.StartHour}" />
-                    <local:NumberText   x:Name="tbStartHour"
-                                        Style="{StaticResource numText}"
-                                        Text="{Binding StartHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
-                    <mah:Tile Style="{StaticResource header}" 
-                              Title="{x:Static properties:Resources.AriveHour}" />
-                    <local:NumberText   x:Name="tbAriveHour"
-                                        Style="{StaticResource numText}"
-                                        Text="{Binding AriveHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
-                </StackPanel>
-                <StackPanel Orientation="Vertical" 
+
+                        <StackPanel Grid.Column="1" 
+                            Orientation="Vertical">
+                            <mah:Tile Style="{StaticResource header}" 
+                              Title="{x:Static properties:Resources.OrdIsActive}" />
+                            <CheckBox  x:Name="cbOrdIsActive" 
+                               Style="{StaticResource toggleCk}"
+                               Grid.Column="1"  
+                               IsChecked="{Binding OrdIsActive}"     ></CheckBox>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" 
                             Grid.Column="1"
                             Margin="1,0">
-                    <mah:Tile Style="{StaticResource header}"  
-                              Title="{x:Static properties:Resources.FreeAtHour}" />
-                    <local:NumberText  x:Name="tbFreeAtHour"
-                                       Style="{StaticResource numText}"
-                                       Text="{Binding FreeAtHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
-                    <Grid Height="45"></Grid>
-                    <CheckBox x:Name="cbOrdIfExtraHours"
+
+                        <mah:Tile Style="{StaticResource header}" 
+                                  Title="{x:Static properties:Resources.OrdIfExtraHours}"
+                                  TitleFontSize="13"/>
+                        <CheckBox x:Name="cbOrdIfExtraHours"
+                              Style="{StaticResource toggleCk}"
                               IsChecked="{Binding OrdIfExtraHours}"
-                              Content="{x:Static properties:Resources.OrdIfExtraHours}"
                         ></CheckBox>
-                </StackPanel>
-            </Grid>
-        </StackPanel>
-        <StackPanel Orientation="Vertical"
-                    Grid.Column="5"
-                    Grid.Row="2">
-            <mah:Tile Style="{StaticResource header}" 
-                      Title="{x:Static properties:Resources.TotalCost}" />
-            <local:NumberText   x:Name="tbTotalCost"
-                                Style="{StaticResource numText}"
-                                Text="{Binding TotalCost, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
-            <Grid >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <StackPanel Orientation="Vertical"
-                            Margin="1,0">
-                    <mah:Tile Style="{StaticResource header}" 
-                              Title="{x:Static properties:Resources.DrvFee}" />
-                    <local:NumberText  x:Name="tbDrvFee"
-                                       Style="{StaticResource numText}"
-                                       Text="{Binding DrvFee, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
-                    <mah:Tile Style="{StaticResource header}" 
-                              Title="{x:Static properties:Resources.VehFee}" />
-                    <local:NumberText   x:Name="tbVehFee"
-                                        Style="{StaticResource numText}"
-                                        Text="{Binding VehFee, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Grid.Column="1" Margin="1,0">
-                    <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.CommitionFee}" />
-                    <TextBox   x:Name="tbCommitionFee"
-                        Text="{Binding CommitionFee, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
-                    <mah:Tile Style="{StaticResource header}"  
-                              Title="{x:Static properties:Resources.NetProfit}" />
-                    <local:NumberText  x:Name="tbNetProfit"
-                                       Style="{StaticResource numText}"
-                                       Text="{Binding NetProfit, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
-                </StackPanel>
-            </Grid>
-            <mah:Tile Style="{StaticResource header}"
-                      Title="{x:Static properties:Resources.OthrCosts}" />
-            <local:NumberText  x:Name="tbOthrCosts"
-                               Style="{StaticResource numText}"
-                               Text="{Binding OthrCosts, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
-            <mah:Tile Style="{StaticResource header}" 
-                              Title="{x:Static properties:Resources.OrdDays}" />
-            <TextBox x:Name="tbOrdDays"
-                     Text="{Binding OrdDays, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
-            <!--<Grid >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <StackPanel Orientation="Vertical"
-                            Margin="1,0">
+                    </StackPanel>
+                </Grid>
+                <StackPanel  Orientation="Vertical"
+                         Grid.Column="1">
                     <mah:Tile Style="{StaticResource header}" 
                               Title="{x:Static properties:Resources.OrdDays}" />
-                    <TextBox  x:Name="tbOrdDays"
-                              Text="{Binding OrdDays, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
+                    <local:OrderDayCombox x:Name="cbOrdDays"
+                                  IsEditable="True"></local:OrderDayCombox>
                 </StackPanel>
-                <StackPanel Orientation="Vertical" 
-                            Grid.Column="1" 
+                <StackPanel Visibility="Visible"
+                            Orientation="Vertical" 
+                            Grid.Column="2"
                             Margin="1,0">
-                    <mah:Tile Style="{StaticResource header}" 
-                              Title="{x:Static properties:Resources.OrdDays1111111}" />
-                    <TextBox  x:Name="tbOrdDays1111111"
-                        Text="{Binding OrdDays1111111, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
-                </StackPanel>
-            </Grid>-->
-            <Grid Visibility="Collapsed">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition Width="auto"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <StackPanel Orientation="Vertical">
-                    <mah:Tile Style="{StaticResource header}" 
-                              Title="{x:Static properties:Resources.WeekDay}" />
-                    <ComboBox x:Name="cbWeekDay">
-                        <ComboBoxItem Content="{x:Static properties:Resources.Sunday}"></ComboBoxItem>
-                        <ComboBoxItem Content="{x:Static properties:Resources.Monday}"></ComboBoxItem>
-                        <ComboBoxItem Content="{x:Static properties:Resources.Tuesday}"></ComboBoxItem>
-                        <ComboBoxItem Content="{x:Static properties:Resources.Wednesday}"></ComboBoxItem>
-                        <ComboBoxItem Content="{x:Static properties:Resources.Thursday}"></ComboBoxItem>
-                        <ComboBoxItem Content="{x:Static properties:Resources.Friday}"></ComboBoxItem>
-                        <ComboBoxItem Content="{x:Static properties:Resources.Saturday}"></ComboBoxItem>
+                    <mah:Tile Style="{StaticResource header}"
+                              Title="{x:Static properties:Resources.Status}"/>
+                    <ComboBox x:Name="cbStatus"
+                              SelectedValue="{Binding Status}">
+                        <ComboBoxItem Content="{x:Static properties:Resources.Active}"></ComboBoxItem>
+                        <ComboBoxItem Content="{x:Static properties:Resources.InActive}"></ComboBoxItem>
                     </ComboBox>
                 </StackPanel>
-               
             </Grid>
+         
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical"   Grid.Column="3"
+                    Grid.Row="2">
+            <Grid Height="45"></Grid>
+            <GroupBox Header="{x:Static properties:Resources.TotalCost}" 
+                      BorderBrush="{StaticResource blue1}"  >
+                <StackPanel Orientation="Vertical">
+                    <mah:Tile Style="{StaticResource header}" 
+                      Title="{x:Static properties:Resources.TotalCost}" />
+                    <local:NumberText   x:Name="tbTotalCost"
+                                Style="{StaticResource numText}"
+                                Text="{Binding TotalCost, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Vertical"
+                            Margin="1,0">
+                            <mah:Tile Style="{StaticResource header}" 
+                              Title="{x:Static properties:Resources.DrvFee}" />
+                            <local:NumberText  x:Name="tbDrvFee"
+                                       Style="{StaticResource numText}"
+                                       Text="{Binding DrvFee, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
+                            <mah:Tile Style="{StaticResource header}" 
+                              Title="{x:Static properties:Resources.VehFee}" />
+                            <local:NumberText   x:Name="tbVehFee"
+                                        Style="{StaticResource numText}"
+                                        Text="{Binding VehFee, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Grid.Column="1" Margin="1,0">
+                            <mah:Tile Style="{StaticResource header}"  Title="{x:Static properties:Resources.CommitionFee}" />
+                            <TextBox   x:Name="tbCommitionFee"
+                        Text="{Binding CommitionFee, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></TextBox>
+                            <mah:Tile Style="{StaticResource header}"  
+                              Title="{x:Static properties:Resources.NetProfit}" />
+                            <local:NumberText  x:Name="tbNetProfit"
+                                       Style="{StaticResource numText}"
+                                       Text="{Binding NetProfit, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
+                        </StackPanel>
+                    </Grid>
+                    <mah:Tile Style="{StaticResource header}"
+                      Title="{x:Static properties:Resources.OthrCosts}" />
+                    <local:NumberText  x:Name="tbOthrCosts"
+                               Style="{StaticResource numText}"
+                               Text="{Binding OthrCosts, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"></local:NumberText>
+                    <Grid Visibility="Collapsed">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Vertical">
+                            <mah:Tile Style="{StaticResource header}" 
+                              Title="{x:Static properties:Resources.WeekDay}" />
+                            <ComboBox x:Name="cbWeekDay">
+                                <ComboBoxItem Content="{x:Static properties:Resources.Sunday}"></ComboBoxItem>
+                                <ComboBoxItem Content="{x:Static properties:Resources.Monday}"></ComboBoxItem>
+                                <ComboBoxItem Content="{x:Static properties:Resources.Tuesday}"></ComboBoxItem>
+                                <ComboBoxItem Content="{x:Static properties:Resources.Wednesday}"></ComboBoxItem>
+                                <ComboBoxItem Content="{x:Static properties:Resources.Thursday}"></ComboBoxItem>
+                                <ComboBoxItem Content="{x:Static properties:Resources.Friday}"></ComboBoxItem>
+                                <ComboBoxItem Content="{x:Static properties:Resources.Saturday}"></ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+
+                    </Grid>
+                  
+                </StackPanel>
+                
+            </GroupBox>
+
         </StackPanel>
     </Grid>
 </mah:MetroWindow>

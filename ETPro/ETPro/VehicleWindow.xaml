@@ -104,10 +104,12 @@
                        Width="200" />
                     <local:NumberText x:Name="tbNumPsngrs"
                               Style="{StaticResource numText}"></local:NumberText>
-                    <Grid Height="45"></Grid>
+                    <mah:Tile  Style="{StaticResource header}" 
+                       Title="{x:Static properties:Resources.HasWIFI}" 
+                       />
                     <CheckBox x:Name="cbHasWIFI"
-                              Content="{x:Static properties:Resources.HasWIFI}"
-                              IsChecked="{Binding HasWIFI}"></CheckBox>
+                              IsChecked="{Binding HasWIFI}"
+                              Style="{StaticResource toggleCk}"></CheckBox>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Grid.Column="1" Margin="1,0">
                     <mah:Tile  Style="{StaticResource header}" 
